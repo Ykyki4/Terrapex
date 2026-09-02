@@ -7,30 +7,31 @@ The world cracked long before you got here. The crack is not an event, it is a s
 [b]Wiki:[/b] [url=https://ykyki4.github.io/Terrapex/]ykyki4.github.io/Terrapex[/url] — every item, enemy, buff and recipe, plus class setups for all seven tiers. Also in [url=https://ykyki4.github.io/Terrapex/ru/]Russian / на русском[/url].
 
 [hr][/hr]
-[h2]The bosses[/h2]
+[h2]What is in it[/h2]
+
+[b]Creatures[/b]
 [list]
-[*][b]The Dormant Eye[/b] — pre-hardmode, after the Eye of Cthulhu. A boulder with a lid grown shut over it. Four plates, and the lid splits exactly once.
-[*][b]Keeper of the Rift[/b] — post-Wall of Flesh, in the emptiest stretch of vanilla progression. Three phases, eight destructible plates, thirteen attacks.
-[*][b]The Weaver of the Rift[/b] — post-Plantera. A loom that walks. It drives its own legs into the ground as anchors and strings the arena between them; the weapon is not a projectile, it is the room.
-[*][b]The First Keeper[/b] — post-Moon Lord. It does not aim at you. It [i]looks[/i], and the looking is the attack: stand in its cone of sight and you both hurt each other twice as easily. Its eight lids are a dial you can turn in either direction.
+[*]4 bosses — one per tier from pre-hardmode to post-Moon Lord
+[*]2 rare mini-bosses that nobody summons; you just meet them
+[*]16 enemies
 [/list]
 
-[h2]How the fights are built[/h2]
+[b]144 items[/b]
 [list]
-[*][b]Every attack is announced.[/b] An eye flash, a wind-up, a drawn aim line, a thread pulling tight — something you can read before anything can hurt you.
-[*][b]Attack order is a fixed rotation per phase, never random.[/b] These are bosses you learn, not bosses you react to.
-[*][b]Nothing a boss fires homes.[/b] Volleys are laid on where you were standing when they left, so leading a shot is a skill the fight actually asks for.
+[*]38 weapons — 12 melee, 8 ranged, 7 magic, 6 summon staves, 5 whips
+[*]7 armour sets, 37 pieces in all — the top four tiers carry four heads each, one per class
+[*]22 accessories, including 2 pairs of wings
+[*]13 materials, 12 consumables, 5 tools, 2 kinds of ammunition
+[*]13 blocks and furniture — ore, torches, lanterns, trophies, banners
+[*]1 mount, 1 pet
 [/list]
 
-[h2]Armour that does something[/h2]
-From the third tier on, every set has [b]four heads — one per class[/b] — that share a mechanic and then rewrite what it is for. The sets differ in kind rather than by a number: a shell of orbiting plates that eats enemy shots, a stitch that joins two enemies so hitting one hits the other, a loom that plants anchors in the arena and strings your own thread between them, and a cone of regard that pays you for facing your problem instead of kiting it.
-
-[h2]And the rest[/h2]
+[b]And around them[/b]
 [list]
-[*]15 enemies and 2 rare mini-bosses that nobody summons — you just meet them.
-[*]Weapons for all four classes at every tier, plus accessories, wings, a mount and a pet.
-[*]Its own ore with world generation, two crafting stations, furniture and trophies.
-[*]All art is hand-drawn pixel work.
+[*]102 recipes and 2 crafting stations of the mod's own
+[*]16 buffs and debuffs
+[*]Its own ore, with world generation
+[*]All art is hand-drawn pixel work
 [/list]
 
 [hr][/hr]

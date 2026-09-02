@@ -10,27 +10,24 @@ Every item, enemy, buff and recipe, plus class setups for all seven tiers:
   https://ykyki4.github.io/Terrapex/          (English)
   https://ykyki4.github.io/Terrapex/ru/       (на русском)
 
-CONTENT
-- 4 bosses: The Dormant Eye (after the Eye of Cthulhu), Keeper of the Rift (post-Wall of
-  Flesh), The Weaver of the Rift (post-Plantera), The First Keeper (post-Moon Lord).
-- 2 rare mini-bosses that nobody summons, and 15 enemies across the whole progression.
-- 144 items: weapons for all four classes at every tier, seven armour sets, accessories,
-  wings, a mount, a pet, ore, furniture and two crafting stations of its own.
+CREATURES
+- 4 bosses, one per tier from pre-hardmode to post-Moon Lord
+- 2 rare mini-bosses that nobody summons; you just meet them
+- 16 enemies
 
-HOW THE FIGHTS ARE BUILT
-- Every attack is announced. An eye flash, a wind-up, a drawn aim line, a thread pulling
-  tight - something you can read before anything can hurt you.
-- Attack order is a fixed rotation per phase, never random. These are bosses you learn.
-- Nothing a boss fires homes. Volleys are laid on where you were standing when they left,
-  so leading a shot is a skill the fight actually asks for.
+144 ITEMS
+- 38 weapons: 12 melee, 8 ranged, 7 magic, 6 summon staves, 5 whips
+- 7 armour sets, 37 pieces in all - the top four tiers carry four heads each, one per class
+- 22 accessories, including 2 pairs of wings
+- 13 materials, 12 consumables, 5 tools, 2 kinds of ammunition
+- 13 blocks and furniture: ore, torches, lanterns, trophies, banners
+- 1 mount, 1 pet
 
-ARMOUR THAT DOES SOMETHING
-From the third tier on, every set has four heads - one per class - that share one mechanic
-and then rewrite what it is for. The sets themselves differ in kind rather than by a number:
-a shell of orbiting plates, a stitch that joins two enemies together, a loom that plants
-anchors in the arena, and a cone of regard that pays you for facing your problem.
-
-All the art is hand-drawn pixel work.
+AND AROUND THEM
+- 102 recipes and 2 crafting stations of the mod's own
+- 16 buffs and debuffs
+- Its own ore, with world generation
+- All art is hand-drawn pixel work
 
 This is an early release. Bug reports and balance complaints are wanted - especially from
 multiplayer, which has had far less testing than single player. There is no custom music yet;
