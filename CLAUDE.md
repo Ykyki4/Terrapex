@@ -8,7 +8,8 @@ Design docs for the bosses: **`BOSS_KEEPER.md`**, **`BOSS_WEAVER.md`** and
 **`BOSS_FIRST_KEEPER.md`** (phases,
 attack tables with tells, projectile table, what is still missing). Read the relevant one
 before changing fight behaviour — the numbers in it and the numbers in the code are meant
-to stay in sync.
+to stay in sync. **`EVENT_BREACH.md`** is the same document for the Breach, the wave event
+planned for 0.4.0 — designed, not yet built.
 
 ## Build
 

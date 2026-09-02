@@ -124,7 +124,6 @@ namespace Terrapex.Content.NPCs.Bosses
 
 		private int patternIndex;
 		private int regrow;
-		private int lidsCut;
 
 		public override void SetStaticDefaults()
 		{
@@ -176,8 +175,20 @@ namespace Terrapex.Content.NPCs.Bosses
 
 		// --------------------------------------------------------------------- the Regard
 
+		/// <summary>
+		/// How many lids are gone, counted rather than remembered.
+		///
+		/// It has to be a live scan. `GazeHalf` feeds `Regards`, `Regards` is read inside
+		/// `ModifyHitByItem` / `ModifyHitByProjectile`, and those run on the *attacking
+		/// client* — so a stored counter that only the server keeps current gives every
+		/// client its own idea of how wide the cone is, and each player is then paid against
+		/// the wrong one. `Main.npc[]` is synced, so counting from it gives every machine the
+		/// same answer for free. Same trick as `WeaverOfTheRift.CountAnchors`.
+		/// </summary>
+		private int LidsCut => Lids - CountLids();
+
 		/// <summary>How wide the cone is right now, as a half-angle.</summary>
-		public float GazeHalf => GazeBase + GazePerLid * lidsCut;
+		public float GazeHalf => GazeBase + GazePerLid * LidsCut;
 
 		/// <summary>True while that player is inside the cone.</summary>
 		public bool Regards(Player player)
@@ -206,7 +217,7 @@ namespace Terrapex.Content.NPCs.Bosses
 		/// <summary>Called by a lid as it dies: the eye opens another notch.</summary>
 		public void LidCut()
 		{
-			lidsCut = Math.Min(Lids, lidsCut + 1);
+			// nothing to count here: LidsCut reads Main.npc[] and the lid is already gone
 			if (Main.netMode != NetmodeID.Server)
 				Main.instance.CameraModifiers.Add(new PunchCameraModifier(NPC.Center,
 					Main.rand.NextVector2Unit(), 6f, 6f, 16, 2400f, FullName));
@@ -326,7 +337,6 @@ namespace Terrapex.Content.NPCs.Bosses
 				// it sheds the shell itself rather than waiting to be undressed: from here the
 				// eye is open all the way and neither side is hiding any more
 				ShedLids();
-				lidsCut = Lids;
 				State = Move.Idle;
 				Timer = -60f;
 				Shake(14f, 34);
@@ -746,7 +756,6 @@ namespace Terrapex.Content.NPCs.Bosses
 				if (taken[slot])
 					continue;
 				SpawnLid(slot);
-				lidsCut = Math.Max(0, lidsCut - 1);
 				SoundEngine.PlaySound(SoundID.Item37, NPC.Center);
 				return;
 			}
