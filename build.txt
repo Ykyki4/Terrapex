@@ -1,6 +1,6 @@
 displayName = Terrapex
 author = Ykyki4
-version = 0.3.0
+version = 0.3.1
 
 # Shown as a clickable link on the mod's page in the in-game browser. Points at
 # the wiki rather than the repository: a player opening this wants the item
