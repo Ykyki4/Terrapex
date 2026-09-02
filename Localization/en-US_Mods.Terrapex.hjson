@@ -1049,6 +1049,20 @@ Items: {
 			15% increased mining speed
 			'''
 	}
+	# ---------------------------------------------------------------- the Breach event
+	Ejecta: {
+		DisplayName: Ejecta
+		Tooltip: Rock from the far side of the crack, thrown up when it opened
+	}
+
+	BreachFlare: {
+		DisplayName: Breach Flare
+		Tooltip:
+			'''
+			Opens a Breach where you are standing
+			Underground only — the crack has to come from somewhere
+			'''
+	}
 }
 
 SetBonus: {
@@ -1295,6 +1309,11 @@ NPCs: {
 		DisplayName: Plate Shepherd
 		Bestiary: It does not wear a plate. It carries spares, and hands one to whichever of its escort has just lost theirs.
 	}
+
+	BreachMouth: {
+		DisplayName: Breach Mouth
+		Bestiary: A crack that has decided to be a door. It cannot reach you, and it never stops handing you things that can.
+	}
 }
 
 Projectiles: {
@@ -1360,6 +1379,11 @@ Chat: {
 	WeaverPhase3: The anchors come loose. The Weaver stops weaving and starts running.
 	FirstKeeperPhase2: The lids grind apart. It has stopped pretending it cannot see you.
 	FirstKeeperPhase3: The First Keeper throws away its shell. Nothing is hidden from here.
+	BreachBegin: The stone gives way. The Breach is open.
+	BreachWave2: The mouths widen. More is coming through.
+	BreachWave3: The crack will not hold. Whatever is left is coming now.
+	BreachWon: The Breach closes.
+	BreachFailed: The Breach seals itself. Nobody was left to hold it open.
 }
 
 Common: {
