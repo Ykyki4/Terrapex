@@ -1,0 +1,9 @@
+{
+  "_comment": "The only file you must edit by hand before the first deploy. Set `owner` to your GitHub username and `repo` to the repository name; everything else — site_url, the repo link, the language switcher — is derived from them.",
+
+  "owner": "Ykyki4",
+  "repo": "Terrapex",
+
+  "site_name_en": "Terrapex Wiki",
+  "site_name_ru": "Terrapex Вики"
+}

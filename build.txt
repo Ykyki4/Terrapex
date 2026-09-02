@@ -1,0 +1,8 @@
+displayName = Terrapex
+author = Ykyki4
+version = 0.3.0
+
+# Art/ holds working sheets, generators and previews — source material, not shipping
+# assets. Keeping it out of the .tmod stops the package from carrying the GIFs and the
+# horizontal master sheets the game never reads.
+buildIgnore = Art\*, *.py, .vs\*

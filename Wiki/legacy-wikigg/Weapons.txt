@@ -1,0 +1,126 @@
+{{modname}}
+'''Weapons''' in [[Terrapex]] cover all four damage classes at every one of the mod's seven tiers. Every tier offers at least one melee weapon, one ranged, one magic and one summon or whip, so no class is ever left behind a gate.
+
+Damage figures below are the base values before any modifier, difficulty scaling or armour bonus.
+
+__TOC__
+
+== Tier 0 &ndash; Fissurite (pre-boss) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex Skol.png|32px|link=]] || [[Terrapex/Skol|Skol]] || 19 || Melee || 21 || 5 || Crafted: [[Terrapex/Fissurite Bar|Fissurite Bar]] (9) <br /> at any Anvil
+|-
+| [[File:Terrapex Wedge.png|32px|link=]] || [[Terrapex/Wedge|Wedge]] || 16 || Melee || 26 || 6.5 || Crafted: [[Terrapex/Fissurite Bar|Fissurite Bar]] (8), Wood (6) <br /> at any Anvil
+|-
+| [[File:Terrapex Crackthrower.png|32px|link=]] || [[Terrapex/Crackthrower|Crackthrower]] || 13 || Ranged || 24 || 2.2 || Crafted: [[Terrapex/Fissurite Bar|Fissurite Bar]] (9), Wood (8) <br /> at any Anvil
+|-
+| [[File:Terrapex Dust Beam.png|32px|link=]] || [[Terrapex/Dust Beam|Dust Beam]] || 15 || Magic || 22 || 2.5 || Crafted: [[Terrapex/Fissurite Bar|Fissurite Bar]] (8), [[Terrapex/Rift Dust|Rift Dust]] (10) <br /> at any Anvil
+|-
+| [[File:Terrapex Dust Lash.png|32px|link=]] || [[Terrapex/Dust Lash|Dust Lash]] || 11 || Summon (whip) || 32 || 1.4 || Crafted: [[Terrapex/Fissurite Bar|Fissurite Bar]] (6), [[Terrapex/Rift Dust|Rift Dust]] (15) <br /> at any Anvil
+|}
+
+== Tier 1 &ndash; Riftglass (after the Dormant Eye) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex Glasscutter.png|32px|link=]] || [[Terrapex/Glasscutter|Glasscutter]] || 27 || Melee || 18 || 4.2 || Crafted: [[Terrapex/Riftglass|Riftglass]] (12), [[Terrapex/Fissurite Bar|Fissurite Bar]] (6) <br /> at any Anvil
+|-
+| [[File:Terrapex Lid.png|32px|link=]] || [[Terrapex/Lid|Lid]] || 31 || Melee || 32 || 8.5 || Dropped by [[Terrapex/The Dormant Eye|The Dormant Eye]]
+|-
+| [[File:Terrapex Stone Eye.png|32px|link=]] || [[Terrapex/Stone Eye|Stone Eye]] || 20 || Ranged || 27 || 2.6 || Dropped by [[Terrapex/The Dormant Eye|The Dormant Eye]]
+|-
+| [[File:Terrapex Rockfall.png|32px|link=]] || [[Terrapex/Rockfall|Rockfall]] || 24 || Magic || 34 || 4 || Dropped by [[Terrapex/The Dormant Eye|The Dormant Eye]]
+|-
+| [[File:Terrapex Sleeper's Rod.png|32px|link=]] || [[Terrapex/Sleeper's Rod|Sleeper's Rod]] || 17 || Summon || 26 || 2.5 || Dropped by [[Terrapex/The Dormant Eye|The Dormant Eye]]
+|}
+
+== Tier 2 &ndash; Dustseeker (post-Skeletron) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex Bonefissure.png|32px|link=]] || [[Terrapex/Bonefissure|Bonefissure]] || 42 || Melee || 22 || 5.5 || Crafted: [[Terrapex/Riftglass|Riftglass]] (14), Bone (30) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Cleft.png|32px|link=]] || [[Terrapex/Cleft|Cleft]] || 30 || Ranged || 32 || 3.2 || Crafted: [[Terrapex/Riftglass|Riftglass]] (16), Bone (20), Chain (3) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Scree.png|32px|link=]] || [[Terrapex/Scree|Scree]] || 22 || Magic || 34 || 3.5 || Crafted: [[Terrapex/Riftglass|Riftglass]] (10), [[Terrapex/Cracked Stone|Cracked Stone]] (30) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Glassthread.png|32px|link=]] || [[Terrapex/Glassthread|Glassthread]] || 24 || Summon (whip) || 30 || 2 || Crafted: [[Terrapex/Riftglass|Riftglass]] (14), Cobweb (30) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Hatchling Rod.png|32px|link=]] || [[Terrapex/Hatchling Rod|Hatchling Rod]] || 26 || Summon || 26 || 3 || Crafted: [[Terrapex/Rift Dust|Rift Dust]] (35), [[Terrapex/Riftglass|Riftglass]] (10), Bone (20) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|}
+
+== Tier 3 &ndash; Riftsteel (post-Wall of Flesh, Keeper of the Rift) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex Riftshard Cleaver.png|32px|link=]] || [[Terrapex/Riftshard Cleaver|Riftshard Cleaver]] || 52 || Melee || 20 || 6.5 || Dropped by [[Terrapex/Keeper of the Rift|Keeper of the Rift]]
+|-
+| [[File:Terrapex Rib.png|32px|link=]] || [[Terrapex/Rib|Rib]] || 34 || Ranged || 20 || 3.4 || Dropped by [[Terrapex/Keeper of the Rift|Keeper of the Rift]]
+|-
+| [[File:Terrapex Shardcaster.png|32px|link=]] || [[Terrapex/Shardcaster|Shardcaster]] || 26 || Ranged || 14 || 3 || Dropped by [[Terrapex/Keeper of the Rift|Keeper of the Rift]]
+|-
+| [[File:Terrapex Riftflow.png|32px|link=]] || [[Terrapex/Riftflow|Riftflow]] || 30 || Magic || 6 || 1.5 || Dropped by [[Terrapex/Keeper of the Rift|Keeper of the Rift]]
+|-
+| [[File:Terrapex Orbit Lash.png|32px|link=]] || [[Terrapex/Orbit Lash|Orbit Lash]] || 33 || Summon (whip) || 34 || 3 || Dropped by [[Terrapex/Keeper of the Rift|Keeper of the Rift]]
+|-
+| [[File:Terrapex Warden Plate.png|32px|link=]] || [[Terrapex/Warden Plate|Warden Plate]] || 38 || Summon || 26 || 4 || Dropped by [[Terrapex/Keeper of the Rift|Keeper of the Rift]]
+|}
+
+== Tier 4 &ndash; Darner (post-mechanical bosses) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex Rift Scythe.png|32px|link=]] || [[Terrapex/Rift Scythe|Rift Scythe]] || 88 || Melee || 32 || 7 || Dropped by [[Terrapex/Rift Colossus|Rift Colossus]] (1/25)
+|-
+| [[File:Terrapex Seam.png|32px|link=]] || [[Terrapex/Seam|Seam]] || 84 || Melee || 22 || 5.5 || Crafted: [[Terrapex/Void Cloth|Void Cloth]] (6), Hallowed Bar (12), Soulof Might (8) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Threadcaster.png|32px|link=]] || [[Terrapex/Threadcaster|Threadcaster]] || 46 || Ranged || 15 || 2.5 || Crafted: [[Terrapex/Void Cloth|Void Cloth]] (6), Hallowed Bar (12), Soulof Sight (8) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Stitch.png|32px|link=]] || [[Terrapex/Stitch|Stitch]] || 62 || Magic || 40 || 4 || Crafted: [[Terrapex/Void Cloth|Void Cloth]] (6), Hallowed Bar (12), Soulof Fright (8) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|-
+| [[File:Terrapex Spindle.png|32px|link=]] || [[Terrapex/Spindle|Spindle]] || 34 || Summon || 26 || 3 || Crafted: [[Terrapex/Void Cloth|Void Cloth]] (5), Hallowed Bar (10), Soulof Might (6) <br /> at [[Terrapex/Rift Altar|Rift Altar]]
+|}
+
+== Tier 5 &ndash; Weaver (post-Plantera, the Weaver of the Rift) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex Warp.png|32px|link=]] || [[Terrapex/Warp|Warp]] || 132 || Melee || 26 || 6.5 || Crafted: [[Terrapex/Echo Alloy|Echo Alloy]] (14), Chlorophyte Bar (8) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Weft.png|32px|link=]] || [[Terrapex/Weft|Weft]] || 58 || Ranged || 14 || 2 || Crafted: [[Terrapex/Echo Alloy|Echo Alloy]] (14), Chlorophyte Bar (8) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Loom.png|32px|link=]] || [[Terrapex/Loom|Loom]] || 74 || Magic || 34 || 2 || Crafted: [[Terrapex/Echo Alloy|Echo Alloy]] (14), Chlorophyte Bar (8) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Rend.png|32px|link=]] || [[Terrapex/Rend|Rend]] || 68 || Summon (whip) || 30 || 3.5 || Crafted: [[Terrapex/Echo Alloy|Echo Alloy]] (12), Chlorophyte Bar (6) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Sailcloth.png|32px|link=]] || [[Terrapex/Sailcloth|Sailcloth]] || 62 || Summon || 28 || 2 || Crafted: [[Terrapex/Echo Alloy|Echo Alloy]] (12), Chlorophyte Bar (6) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Shuttle.png|32px|link=]] || [[Terrapex/Shuttle|Shuttle]] || 96 || &mdash; || 25 || 2.5 || Dropped by [[Terrapex/Weaver of the Rift|Weaver of the Rift]] (1/8)
+|}
+
+== Tier 6 &ndash; Primordium (post-Moon Lord, the First Keeper) ==
+{| class="wikitable sortable" style="width:100%;"
+! Icon !! Name !! Damage !! Class !! Use time !! Knockback !! Source
+|-
+| [[File:Terrapex The First Shard.png|32px|link=]] || [[Terrapex/The First Shard|The First Shard]] || 210 || Melee || 24 || 7.5 || Crafted: [[Terrapex/Primordium Bar|Primordium Bar]] (18) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Nothing.png|32px|link=]] || [[Terrapex/Nothing|Nothing]] || 190 || Melee || 20 || 6 || Dropped by [[Terrapex/The First Keeper|The First Keeper]] (1/20)
+|-
+| [[File:Terrapex The Unblinking.png|32px|link=]] || [[Terrapex/The Unblinking|The Unblinking]] || 78 || Ranged || 6 || 1.5 || Crafted: [[Terrapex/Primordium Bar|Primordium Bar]] (16) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Regard.png|32px|link=]] || [[Terrapex/Regard|Regard]] || 165 || Magic || 30 || 3 || Crafted: [[Terrapex/Primordium Bar|Primordium Bar]] (16) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Closure.png|32px|link=]] || [[Terrapex/Closure|Closure]] || 118 || Summon (whip) || 32 || 4 || Crafted: [[Terrapex/Primordium Bar|Primordium Bar]] (14) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|-
+| [[File:Terrapex Keeper Staff.png|32px|link=]] || [[Terrapex/Keeper Staff|Keeper Staff]] || 108 || Summon || 26 || 2 || Crafted: [[Terrapex/Primordium Bar|Primordium Bar]] (14) <br /> at [[Terrapex/Anchor Leg|Anchor Leg]]
+|}
+
+== See also ==
+* [[Terrapex/Armor|Armor]]
+* [[Terrapex/Accessories|Accessories]]
+* [[Terrapex/Recipes|Recipes]]
+* [[Terrapex/Progression Guide|Progression Guide]]
+
+[[Category:Terrapex]]
+[[Category:Terrapex/Weapons]]

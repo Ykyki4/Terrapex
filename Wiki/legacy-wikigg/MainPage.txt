@@ -1,0 +1,120 @@
+{{modname|mainpageset}}<!--
+
+#####################################################################
+######              TERRAPEX WIKI MAIN PAGE                    ######
+######  Based on the Terraria Mods Wiki mainpage template.     ######
+######  Paste this into the wiki page "Terrapex".              ######
+#####################################################################
+
+// SETTING CSS PROPERTIES FOR MULTIPLE ELEMENTS
+-->{{#vardefine:box|border-color: var(--theme-widget-border-color); border-radius: 8px;}}<!--
+-->{{#vardefine:table_header|text-align: center; border-bottom: var(--theme-border-color) 1px solid; background:var(--theme-link-dynamic-color-2);}}<!--
+-->{{#vardefine:table_row|text-align: center; background: var(--theme-page-background-color); padding:5px;}}<!--
+-->{{#vardefine:mclist|-moz-column-count: 2; -moz-column-gap: 1em; -webkit-column-count: 2; -webkit-column-gap: 1em; column-count: 2; column-gap: 1em;}}<!--
+
+--><div id="mainpage-wrapper"><!--
+
+
+############ HEADER
+
+--><div id="section-header"><!--
+
+--><div class="terraria" id="box-header" style="{{#var:box}}">{{flexstart|justify=center|alignlines=center|alignitems=center}}<!--
+    --><div class="boxcontent" style="width: 100%;"><!--
+        --><div>{{image|#Logo.png|100px|link=|redlink=y}}</div><!--
+        --><div class="heading">Welcome to the '''{{safesubst:FULLPAGENAME}} Wiki''',</div><!--
+        --><div>the comprehensive reference about {{safesubst:FULLPAGENAME}} written and maintained by the players.</div><!--
+        --><div>The encyclopedia has [[:Category:{{safesubst:FULLPAGENAME}}|{{NUMBEROFMODARTICLES}} {{plural:{{NUMBEROFMODARTICLES}}|article|articles}}]] and [[:Category:{{safesubst:FULLPAGENAME}}/Images|{{NUMBEROFMODFILES}} {{plural:{{NUMBEROFMODFILES}}|file|files}}]].</div><!--
+
+        --><div class="linksbox"><!--
+            -->{{dotlist|class=plainlinks|style=padding:3px|title=Official links:<!--
+                -->|'''{{safesubst:FULLPAGENAME}} on Steam'''<!-- TODO: replace with [https://steamcommunity.com/sharedfiles/filedetails/?id=XXXXXXXX '''Terrapex on Steam'''] once published
+            -->}}<!--
+        --></div><!--
+    --></div><!--
+-->{{flexend}}</div><!--
+
+--></div><!-- id="section-header"
+
+############ DESCRIPTION / VERSION
+
+-->{{flexstart|class=section|id=section-main}}<!--
+
+##### MOD DESCRIPTION
+
+-->{{infocard|css=flex: 10 0 240px; {{#var:box}}|class=compact terraria<!--
+-->|name={{safesubst:FULLPAGENAME}}<!--
+-->|icon=<!-- left empty: this slot scales its image to a fixed box, so the size cannot be set from here or by shrinking the file. The icon is drawn at the top of text= below with plain [[File:...]] syntax. If it shows as a red link, the file is not uploaded under that exact name - fix the name in the four File: links.
+-->|text=<!--
+    --><div class="boxcontent"><!--
+        --><div style="text-align:left; margin-bottom:4px;">[[File:Terrapex Icon.png|24px|link=]]</div><!--
+        --><div>'''Terrapex''' adds a full progression to Terraria: seven tiers, four bosses and two mini-bosses, running from your first cave to the far side of the [[Moon Lord]]. The world cracked long before you got here, and the crack is not an event but a substance &ndash; it crystallises into ore, grows dust, grows creatures, and eventually grows an eye to keep watch over itself. Every tier is a question about how many of them are looking at you.</div><!--
+        --><div>Its fights are built to be learned rather than reacted to. Every attack is announced by an eye flash, a wind-up, a drawn aim line or a thread pulling tight; attack order is a fixed rotation per phase rather than random; and nothing a boss fires homes, so leading a shot is a skill the fight actually asks for. From the third tier onward every armour set carries four heads, one per class, that share a mechanic and then rewrite what it is for.</div><!--
+    --></div><!--
+-->}}<!--
+
+##### VERSIONS
+
+-->{{infocard|css=flex: 1 1 240px; {{#var:box}}|class=compact terraria<!--
+-->|name=Latest Versions<!--
+-->|icon=<!-- left empty: this slot scales its image to a fixed box, so the size cannot be set from here or by shrinking the file. The icon is drawn at the top of text= below with plain [[File:...]] syntax. If it shows as a red link, the file is not uploaded under that exact name - fix the name in the four File: links.
+-->|text=<!--
+    --><div class="align-center"><!--
+        --><div style="text-align:left; margin-bottom:4px;">[[File:Terrapex Icon.png|24px|link=]]</div><!--
+        --><div>{{heading|{{safesubst:FULLPAGENAME}}}}</div><!--
+        --><div>0.3.0</div><!--
+        --><div>{{heading|[[tModLoader]]}}</div><!--
+        --><div>1.4.4</div><!--
+        --><div>{{heading|[[Terraria]]}}</div><!--
+        --><div>1.4.4.9</div><!--
+    --></div><!--
+-->}}<!--
+
+-->{{flexend|}}<!-- id=section-main
+
+############ ITEMS / MISC
+
+-->{{flexstart|class=section|id=section-misc}}<!--
+
+-->{{infocard|css=flex: 1 0 240px; {{#var:box}}|class=compact terraria<!--
+-->|name=Items<!--
+-->|icon=<!-- left empty: this slot scales its image to a fixed box, so the size cannot be set from here or by shrinking the file. The icon is drawn at the top of text= below with plain [[File:...]] syntax. If it shows as a red link, the file is not uploaded under that exact name - fix the name in the four File: links.
+-->|text=<!--
+--><div style="text-align:left; margin-bottom:4px;">[[File:Terrapex Icon.png|24px|link=]]</div><!--
+--><div style="{{#var:mclist}}">
+* {{+|Weapons}}
+* {{+|Armor}}
+* {{+|Accessories}}
+* {{+|Tools}}
+* {{+|Ammunition}}
+* {{+|Materials}}
+* {{+|Consumables}}
+* {{+|Placeables}}
+* {{+|Vanity}}
+* {{+|Mounts and Pets}}
+* {{+|Recipes}}
+</div><!--
+-->}}<!--
+
+-->{{infocard|css=flex: 1 0 240px; {{#var:box}}|class=compact terraria<!--
+-->|name=Other<!--
+-->|icon=<!-- left empty: this slot scales its image to a fixed box, so the size cannot be set from here or by shrinking the file. The icon is drawn at the top of text= below with plain [[File:...]] syntax. If it shows as a red link, the file is not uploaded under that exact name - fix the name in the four File: links.
+-->|text=<!--
+--><div style="text-align:left; margin-bottom:4px;">[[File:Terrapex Icon.png|24px|link=]]</div><!--
+--><div style="{{#var:mclist}}">
+* {{+|Bosses}}
+* {{+|Mini-bosses}}
+* {{+|Enemies}}
+* {{+|NPCs}}
+* {{+|Mechanics}}
+* {{+|Buffs and Debuffs}}
+* {{+|Crafting Stations}}
+* {{+|Progression Guide}}
+</div><!--
+-->}}<!--
+
+-->{{flexend|}}<!-- id=section-misc
+
+--></div><!-- id="mainpage-wrapper"
+
+-->[[Category:{{safesubst:FULLPAGENAME}}| ]]

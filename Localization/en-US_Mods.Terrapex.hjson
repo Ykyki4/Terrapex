@@ -1,0 +1,1370 @@
+# This file will automatically update with entries for new content after a build and reload.
+# Please read https://github.com/tModLoader/tModLoader/wiki/Localization to learn more about localization and these files.
+
+Items: {
+	# ---------------------------------------------------------------- T0, fissurite
+	FissuriteOre: {
+		DisplayName: Fissurite Ore
+		Tooltip: The rock gave up holding itself together
+	}
+
+	FissuriteBar: {
+		DisplayName: Fissurite Bar
+		Tooltip: ""
+	}
+
+	RiftDust: {
+		DisplayName: Rift Dust
+		Tooltip: What is left where the crack has already been
+	}
+
+	CrackedStone: {
+		DisplayName: Cracked Stone
+		Tooltip: ""
+	}
+
+	RiftTorch: {
+		DisplayName: Rift Torch
+		Tooltip:
+			'''
+			Provides light
+			Water does not put it out
+			'''
+	}
+
+	FissuritePickaxe: {
+		DisplayName: Fissurite Pickaxe
+		Tooltip: ""
+	}
+
+	FissuriteAxe: {
+		DisplayName: Fissurite Axe
+		Tooltip: ""
+	}
+
+	FissuriteHammer: {
+		DisplayName: Fissurite Hammer
+		Tooltip: ""
+	}
+
+	Skol: {
+		DisplayName: Skol
+		Tooltip:
+			'''
+			A blade with a fault line down the middle
+			Every third swing throws a chip of stone
+			"Sharpened once, then split by itself."
+			'''
+	}
+
+	Wedge: {
+		DisplayName: Wedge
+		Tooltip: Splits the stone, then whatever is standing on it
+	}
+
+	Crackthrower: {
+		DisplayName: Crackthrower
+		Tooltip: Occasionally looses a second arrow
+	}
+
+	DustBeam: {
+		DisplayName: Dust Beam
+		Tooltip: Fires a bolt that gathers speed as it goes
+	}
+
+	DustLash: {
+		DisplayName: Dust Lash
+		Tooltip:
+			'''
+			Cracks whatever it tags
+			Summon tag damage
+			'''
+	}
+
+	FissuriteHelmet: {
+		DisplayName: Fissurite Helmet
+		Tooltip: 4% increased melee critical strike chance
+	}
+
+	FissuriteBreastplate: {
+		DisplayName: Fissurite Breastplate
+		Tooltip: 5% increased melee damage
+	}
+
+	FissuriteGreaves: {
+		DisplayName: Fissurite Greaves
+		Tooltip:
+			'''
+			6% increased movement speed
+			5% increased melee speed
+			'''
+	}
+
+	PocketShard: {
+		DisplayName: Pocket Shard
+		Tooltip:
+			'''
+			4 extra defence below half health
+			"Everyone underground carries one. Nobody says why."
+			'''
+	}
+
+	DustyBoots: {
+		DisplayName: Dusty Boots
+		Tooltip:
+			'''
+			12% increased movement speed and acceleration
+			Immunity to Slow
+			'''
+	}
+
+	FissurePotion: {
+		DisplayName: Fissure Potion
+		Tooltip: Fissurite ore shows through stone
+	}
+
+	StoneLid: {
+		DisplayName: Stone Lid
+		Tooltip:
+			'''
+			Summons the Dormant Eye
+			Only underground — it has to have something to drop on you
+			'''
+	}
+
+	# ---------------------------------------------------------------- T1, the glass branch
+	DormantCornea: {
+		DisplayName: Dormant Cornea
+		Tooltip: Still faintly warm
+	}
+
+	Riftglass: {
+		DisplayName: Riftglass
+		Tooltip: ""
+	}
+
+	RiftglassBlock: {
+		DisplayName: Riftglass Block
+		Tooltip: ""
+	}
+
+	Lid: {
+		DisplayName: Lid
+		Tooltip:
+			'''
+			Slow, heavy, and it cracks what it hits
+			Swung on the ground, it drives a shockwave along the floor
+			"It kept something shut for a long time."
+			'''
+	}
+
+	StoneEye: {
+		DisplayName: Stone Eye
+		Tooltip: Its arrows ricochet twice
+	}
+
+	RockfallStaff: {
+		DisplayName: Rockfall
+		Tooltip: Drops three stones where you point
+	}
+
+	SleepersRod: {
+		DisplayName: Sleeper's Rod
+		Tooltip:
+			'''
+			Summons a sleeper eye to fight for you
+			It never quite woke up
+			'''
+	}
+
+	PlateShield: {
+		DisplayName: Plate Shield
+		Tooltip:
+			'''
+			Absorbs one hit every 60 seconds
+			A slab kept off the shell, still doing its job
+			'''
+	}
+
+	DormantEyeMask: {
+		DisplayName: Dormant Eye Mask
+		Tooltip: ""
+	}
+
+	DormantEyeTrophy: {
+		DisplayName: Dormant Eye Trophy
+		Tooltip: ""
+	}
+
+	DormantEyeBag: {
+		DisplayName: Treasure Bag
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	Glasscutter: {
+		DisplayName: Glasscutter
+		Tooltip:
+			'''
+			12% increased critical strike chance
+			Each swing throws a pane of glass that shatters into splinters
+			'''
+	}
+
+	GlassArrow: {
+		DisplayName: Glass Arrow
+		Tooltip: Shatters into splinters on impact
+	}
+
+	RiftLens: {
+		DisplayName: Rift Lens
+		Tooltip:
+			'''
+			Extended block reach and night vision
+			Fissurite ore shows through stone
+			'''
+	}
+
+	GlassblowerHood: {
+		DisplayName: Glassblower Hood
+		Tooltip:
+			'''
+			6% increased magic critical strike chance
+			Increases maximum mana by 20
+			'''
+	}
+
+	GlassblowerRobe: {
+		DisplayName: Glassblower Robe
+		Tooltip:
+			'''
+			7% increased magic damage
+			Increases maximum mana by 20
+			'''
+	}
+
+	GlassblowerBoots: {
+		DisplayName: Glassblower Boots
+		Tooltip:
+			'''
+			8% reduced mana cost
+			8% increased movement speed
+			'''
+	}
+
+	# ---------------------------------------------------------------- T3, the Keeper
+	RiftshardCleaver: {
+		DisplayName: Riftshard Cleaver
+		Tooltip:
+			'''
+			A blade broken in three places, held together by the rift running through it
+			Each swing tears a wave out of the crack
+			"It should not still be a sword."
+			'''
+	}
+
+	FracturedEye: {
+		DisplayName: Fractured Eye
+		Tooltip:
+			'''
+			Summons the Keeper of the Rift
+			It is already looking at you
+			'''
+	}
+
+	# ---------------------------------------------------------------- T2, post-Skeletron
+	RiftAltar: {
+		DisplayName: Rift Altar
+		Tooltip: Every rift recipe from here on is worked at this slab
+	}
+
+	Bonefissure: {
+		DisplayName: Bonefissure
+		Tooltip:
+			'''
+			A femur split lengthwise and packed with riftglass
+			Each swing throws two splinters that ricochet
+			Cracks what it hits
+			'''
+	}
+
+	Cleft: {
+		DisplayName: Cleft
+		Tooltip:
+			'''
+			Converts any arrow into a bolt that splits on impact
+			Aim into the crowd, not at its edge
+			'''
+	}
+
+	ScreeTome: {
+		DisplayName: Scree
+		Tooltip: Throws a cone of falling stone
+	}
+
+	HatchlingRod: {
+		DisplayName: Hatchling Rod
+		Tooltip:
+			'''
+			Summons a riftling that never learned to fly
+			It holds the ground you are not standing on
+			'''
+	}
+
+	Glassthread: {
+		DisplayName: Glassthread
+		Tooltip:
+			'''
+			Long reach
+			Tagged enemies are struck critically by your minions far more often
+			'''
+	}
+
+	MirrorCharm: {
+		DisplayName: Mirrorling Charm
+		Tooltip:
+			'''
+			A chance to hand an incoming shot straight back, harder
+			"It only ever does what you did."
+			'''
+	}
+
+	EchoPendant: {
+		DisplayName: Echo Pendant
+		Tooltip:
+			'''
+			Creatures show through walls
+			3% increased critical strike chance
+			'''
+	}
+
+	DustCloak: {
+		DisplayName: Dust Cloak
+		Tooltip:
+			'''
+			Double tap a direction to dash
+			Increased movement speed
+			'''
+	}
+
+	DustseekerHood: {
+		DisplayName: Dustseeker Hood
+		Tooltip:
+			'''
+			15% increased mining speed
+			6% increased ranged critical strike chance
+			'''
+	}
+
+	DustseekerGarb: {
+		DisplayName: Dustseeker Garb
+		Tooltip:
+			'''
+			8% increased ranged damage
+			Increased maximum life
+			'''
+	}
+
+	DustseekerTreads: {
+		DisplayName: Dustseeker Treads
+		Tooltip:
+			'''
+			Increased movement speed
+			3% increased ranged critical strike chance
+			10% increased mining speed
+			'''
+	}
+
+	EchoPotion: {
+		DisplayName: Echo Potion
+		Tooltip: Creatures show through walls
+	}
+
+	GlassBroth: {
+		DisplayName: Glass Broth
+		Tooltip: Nobody should eat this
+	}
+
+	RiftLantern: {
+		DisplayName: Rift Lantern
+		Tooltip: ""
+	}
+
+	ShardChandelier: {
+		DisplayName: Shard Chandelier
+		Tooltip: ""
+	}
+
+	# ---------------------------------------------------------------- T3, the Keeper
+	PlateShard: {
+		DisplayName: Plate Shard
+		Tooltip: Knocked off the shell, not out of the core
+	}
+
+	RiftEssence: {
+		DisplayName: Rift Essence
+		Tooltip: ""
+	}
+
+	RiftsteelBar: {
+		DisplayName: Riftsteel Bar
+		Tooltip: ""
+	}
+
+	Rib: {
+		DisplayName: Rib
+		Tooltip:
+			'''
+			Every arrow becomes a marking arrow
+			Marked enemies take 12% more damage from everything
+			'''
+	}
+
+	Riftflow: {
+		DisplayName: Riftflow
+		Tooltip:
+			'''
+			Hold to channel a beam that stops at the first wall
+			"It is the same beam. It simply points the other way now."
+			'''
+	}
+
+	WardenPlate: {
+		DisplayName: Warden Plate
+		Tooltip:
+			'''
+			Summons a shell plate to orbit you
+			It stops one hostile shot at a time, and rams what comes close
+			'''
+	}
+
+	OrbitLash: {
+		DisplayName: Orbit Lash
+		Tooltip: The longest reach in the rift
+	}
+
+	ShardCaster: {
+		DisplayName: Shardcaster
+		Tooltip:
+			'''
+			Turns any bullet into a rift shard
+			Shards leave the barrel slow and wind up as they travel
+			'''
+	}
+
+	RiftsteelHelm: {
+		DisplayName: Riftsteel Helm
+		Tooltip:
+			'''
+			8% increased melee damage
+			6% increased melee critical strike chance
+			'''
+	}
+
+	RiftsteelVisor: {
+		DisplayName: Riftsteel Visor
+		Tooltip:
+			'''
+			8% increased ranged damage
+			6% increased ranged critical strike chance
+			'''
+	}
+
+	RiftsteelBreastplate: {
+		DisplayName: Riftsteel Breastplate
+		Tooltip:
+			'''
+			6% increased damage
+			Increased maximum life
+			'''
+	}
+
+	RiftsteelGreaves: {
+		DisplayName: Riftsteel Greaves
+		Tooltip:
+			'''
+			Increased movement speed
+			5% increased attack speed
+			'''
+	}
+
+	CarapaceCharm: {
+		DisplayName: Carapace Charm
+		Tooltip:
+			'''
+			Four plates orbit you, each stopping one hostile shot
+			Does not stack with the Riftsteel set bonus
+			'''
+	}
+
+	CompanionEye: {
+		DisplayName: Companion Eye
+		Tooltip:
+			'''
+			Keeps the nearest enemy marked, and points your minions at it
+			4% increased critical strike chance
+			'''
+	}
+
+	ShardAccelerator: {
+		DisplayName: Shard Accelerator
+		Tooltip:
+			'''
+			Your projectiles wind up as they travel
+			Worth nothing at point blank
+			'''
+	}
+
+	KeeperMask: {
+		DisplayName: Keeper Mask
+		Tooltip: ""
+	}
+
+	KeeperTrophy: {
+		DisplayName: Keeper of the Rift Trophy
+		Tooltip: ""
+	}
+
+	KeeperBag: {
+		DisplayName: Treasure Bag
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	RiftSightPotion: {
+		DisplayName: Rift Sight Potion
+		Tooltip: Every incoming attack lights up before it lands
+	}
+
+	RiftlingBanner: {
+		DisplayName: Riftling Banner
+		Tooltip: ""
+	}
+
+	VoidThread: {
+		DisplayName: Void Thread
+		Tooltip: It is still trying to reach something
+	}
+
+	VoidCloth: {
+		DisplayName: Void Cloth
+		Tooltip: Woven out of the gap between two places
+	}
+
+	Seam: {
+		DisplayName: Seam
+		Tooltip:
+			'''
+			Hit one enemy, then another, and the two are stitched together
+			Damage to either is echoed down the thread to the other
+			'''
+	}
+
+	Threadcaster: {
+		DisplayName: Threadcaster
+		Tooltip:
+			'''
+			Every round pays out thread behind it
+			Two hits on two enemies stitch them together
+			'''
+	}
+
+	Stitch: {
+		DisplayName: Stitch
+		Tooltip:
+			'''
+			Blinks up to 16 tiles and leaves a cut along the path
+			Everything caught on the line is stitched together
+			'''
+	}
+
+	Spindle: {
+		DisplayName: Spindle
+		Tooltip:
+			'''
+			Summons a spindle to fight for you
+			It hunts whatever is stitched before anything that is merely closer
+			'''
+	}
+
+	RiftScythe: {
+		DisplayName: Rift Scythe
+		Tooltip: Throws a crescent that widens as it flies
+	}
+
+	DarnerHood: {
+		DisplayName: Darner Hood
+		Tooltip:
+			'''
+			11% increased magic damage
+			Increases maximum mana by 60
+			Reduces mana usage by 18%
+			'''
+	}
+
+	DarnerCoat: {
+		DisplayName: Darner Coat
+		Tooltip:
+			'''
+			6% increased damage
+			4% damage reduction
+			Increases maximum life by 20
+			'''
+	}
+
+	DarnerBoots: {
+		DisplayName: Darner Boots
+		Tooltip:
+			'''
+			12% increased movement speed
+			4% increased critical strike chance
+			5% increased attack speed
+			'''
+	}
+
+	ThreadAnchor: {
+		DisplayName: Thread Anchor
+		Tooltip: A needle on thirty-two tiles of thread
+	}
+
+	ClothBelt: {
+		DisplayName: Cloth Belt
+		Tooltip: Nothing gets to slow you down
+	}
+
+	ShardResonator: {
+		DisplayName: Shard Resonator
+		Tooltip: Every fifth shot is fired twice
+	}
+
+	RiftWings: {
+		DisplayName: Rift Wings
+		Tooltip: Cut from the same cloth as the hole they cross
+	}
+
+	RiftDrill: {
+		DisplayName: Rift Drill
+		Tooltip: Can mine anything the tier can reach
+	}
+
+	RiftAxe: {
+		DisplayName: Rift Axe
+		Tooltip: ""
+	}
+
+	DarnerMask: {
+		DisplayName: Darner Mask
+		Tooltip:
+			'''
+			10% increased melee damage
+			6% increased melee critical strike chance
+			'''
+	}
+
+	DarnerVisor: {
+		DisplayName: Darner Visor
+		Tooltip:
+			'''
+			10% increased ranged damage
+			6% increased ranged critical strike chance
+			'''
+	}
+
+	DarnerCowl: {
+		DisplayName: Darner Cowl
+		Tooltip:
+			'''
+			Increases your max number of minions by 1
+			9% increased summon damage
+			'''
+	}
+
+	RiftsteelHood: {
+		DisplayName: Riftsteel Hood
+		Tooltip:
+			'''
+			9% increased magic damage
+			Increases maximum mana by 40
+			Reduces mana usage by 8%
+			'''
+	}
+
+	RiftsteelCrown: {
+		DisplayName: Riftsteel Crown
+		Tooltip:
+			'''
+			Increases your max number of minions by 1
+			10% increased summon damage
+			'''
+	}
+
+	ThreadSkein: {
+		DisplayName: Thread Skein
+		Tooltip: Summons the Weaver of the Rift
+	}
+
+	WeaverHeart: {
+		DisplayName: Weaver Heart
+		Tooltip: What was doing the weaving
+	}
+
+	EchoAlloy: {
+		DisplayName: Echo Alloy
+		Tooltip: The heart, drawn out into bar stock
+	}
+
+	AnchorLeg: {
+		DisplayName: Anchor Leg
+		Tooltip:
+			'''
+			The Weaver left one behind
+			Works as a crafting station, and as a Rift Altar
+			'''
+	}
+
+	Warp: {
+		DisplayName: Warp
+		Tooltip: Every swing stands a wall of thread across its path
+	}
+
+	Weft: {
+		DisplayName: Weft
+		Tooltip: Each round stitches on to the next target, and the next
+	}
+
+	LoomStaff: {
+		DisplayName: Loom
+		Tooltip:
+			'''
+			Stands a frame where you point, and the frame does the shooting
+			Only one frame at a time
+			'''
+	}
+
+	Sailcloth: {
+		DisplayName: Sailcloth
+		Tooltip:
+			'''
+			Summons a panel that stays where it is put
+			It lashes whatever comes near it
+			'''
+	}
+
+	Rend: {
+		DisplayName: Rend
+		Tooltip: Reaches further for every minion you are running
+	}
+
+	Shuttle: {
+		DisplayName: Shuttle
+		Tooltip: Ties each target it bites to the one before it
+	}
+
+	WeaverHelm: {
+		DisplayName: Weaver Helm
+		Tooltip:
+			'''
+			14% increased melee damage
+			8% increased melee attack speed
+			'''
+	}
+
+	WeaverVisor: {
+		DisplayName: Weaver Visor
+		Tooltip:
+			'''
+			14% increased ranged damage
+			20% chance not to consume ammunition
+			'''
+	}
+
+	WeaverHood: {
+		DisplayName: Weaver Hood
+		Tooltip:
+			'''
+			15% increased magic damage
+			Increases maximum mana by 100
+			Reduces mana usage by 16%
+			'''
+	}
+
+	WeaverCowl: {
+		DisplayName: Weaver Cowl
+		Tooltip:
+			'''
+			Increases your max number of minions by 2
+			12% increased summon damage
+			'''
+	}
+
+	WeaverChasuble: {
+		DisplayName: Weaver Chasuble
+		Tooltip:
+			'''
+			8% increased damage
+			7% damage reduction
+			Increases maximum life by 60
+			'''
+	}
+
+	WeaverTreads: {
+		DisplayName: Weaver Treads
+		Tooltip:
+			'''
+			12% increased movement speed
+			The threads you leave behind last half again as long
+			Immunity to fall damage
+			'''
+	}
+
+	WeaveCharm: {
+		DisplayName: Weave Charm
+		Tooltip:
+			'''
+			One killing blow is refused outright
+			Three minutes before it can do so again
+			'''
+	}
+
+	ThreadOfFate: {
+		DisplayName: Thread of Fate
+		Tooltip:
+			'''
+			8% increased damage
+			6 less defense
+			'''
+	}
+
+	EchoSpindle: {
+		DisplayName: Echo Spindle
+		Tooltip: A quarter of your minion hits land twice
+	}
+
+	WeaverMask: {
+		DisplayName: Weaver Mask
+		Tooltip: ""
+	}
+
+	WeaverTrophy: {
+		DisplayName: Weaver Trophy
+		Tooltip: ""
+	}
+
+	WeaverBag: {
+		DisplayName: Treasure Bag
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	# ------------------------------------------------- T6, the First Keeper
+	Primordium: {
+		DisplayName: Primordium
+		Tooltip: What the crack was made of before there was anything to crack
+	}
+
+	PrimordiumBar: {
+		DisplayName: Primordium Bar
+		Tooltip: It will not hold a shape alone, so the luminite holds it
+	}
+
+	UnbrokenEye: {
+		DisplayName: Unbroken Eye
+		Tooltip:
+			'''
+			The Fractured Eye, put back together
+			Summons the First Keeper
+			'''
+	}
+
+	FirstShard: {
+		DisplayName: The First Shard
+		Tooltip:
+			'''
+			Every enemy that can see you takes 40% of the same blow
+			Worthless around a corner
+			'''
+	}
+
+	Unblinking: {
+		DisplayName: The Unblinking
+		Tooltip:
+			'''
+			Held on one target, its damage climbs to two and a half times
+			It falls away three times as fast as it built
+			'''
+	}
+
+	Regard: {
+		DisplayName: Regard
+		Tooltip:
+			'''
+			Decides that a circle of the world is being looked at
+			Four pulses, and only one field at a time
+			'''
+	}
+
+	KeeperStaff: {
+		DisplayName: Keeper Staff
+		Tooltip:
+			'''
+			Summons a Keeper of your own
+			It throws nothing - the line it is looking down is simply live
+			'''
+	}
+
+	Closure: {
+		DisplayName: Closure
+		Tooltip: Minions always crit a target it has marked
+	}
+
+	Nothing: {
+		DisplayName: Nothing
+		Tooltip:
+			'''
+			Its damage doubles over twelve seconds without being hit
+			Anything that touches you takes all of it back
+			'''
+	}
+
+	Primordust: {
+		DisplayName: Primordust
+		Tooltip: Endless
+	}
+
+	FirstHelm: {
+		DisplayName: Helm of the First
+		Tooltip:
+			'''
+			16% increased melee damage
+			12 melee armour penetration
+			'''
+	}
+
+	FirstVisor: {
+		DisplayName: Visor of the First
+		Tooltip:
+			'''
+			16% increased ranged damage
+			12 ranged armour penetration
+			'''
+	}
+
+	FirstHood: {
+		DisplayName: Hood of the First
+		Tooltip:
+			'''
+			17% increased magic damage
+			Increases maximum mana by 120
+			'''
+	}
+
+	FirstCrown: {
+		DisplayName: Crown of the First
+		Tooltip:
+			'''
+			Increases your max number of minions by 2
+			14% increased summon damage
+			'''
+	}
+
+	FirstCuirass: {
+		DisplayName: Cuirass of the First
+		Tooltip:
+			'''
+			10% increased damage
+			8 armour penetration
+			Increases maximum life by 100
+			'''
+	}
+
+	FirstGreaves: {
+		DisplayName: Greaves of the First
+		Tooltip:
+			'''
+			16% increased movement speed and no fall damage
+			Improved life regeneration
+			Your regard reaches 25% further
+			'''
+	}
+
+	WholeEye: {
+		DisplayName: The Whole Eye
+		Tooltip: Eight plates orbit you, each eating one enemy shot
+	}
+
+	PrimeCharm: {
+		DisplayName: Charm of the First Cause
+		Tooltip:
+			'''
+			Increases your max number of minions by 1
+			15% increased summon damage
+			'''
+	}
+
+	RealityAnchor: {
+		DisplayName: Anchor of Reality
+		Tooltip:
+			'''
+			Nothing gets to move you or take your senses
+			Immunity to knockback and to every debuff that steers or blinds
+			'''
+	}
+
+	FirstWings: {
+		DisplayName: Wings of the First
+		Tooltip:
+			'''
+			Allows flight and slow fall
+			Grants a dash
+			'''
+	}
+
+	Shardling: {
+		DisplayName: Shardling in a Jar
+		Tooltip: Summons a riftling that decided to follow you home
+	}
+
+	RidingPlate: {
+		DisplayName: Riding Plate
+		Tooltip: Summons a shell plate large enough to stand on
+	}
+
+	FirstKeeperMask: {
+		DisplayName: First Keeper Mask
+		Tooltip: ""
+	}
+
+	FirstKeeperTrophy: {
+		DisplayName: First Keeper Trophy
+		Tooltip: ""
+	}
+
+	FirstKeeperBag: {
+		DisplayName: Treasure Bag
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	FacetCarapace: {
+		DisplayName: Facet Carapace
+		Tooltip:
+			'''
+			4 defense
+			15% increased mining speed
+			'''
+	}
+}
+
+SetBonus: {
+	Fissurite: Every {0}th hit cracks the target, taking {1}% more damage for 3 seconds
+	Dustseeker: Ore and creatures both show through stone, and you deal 8% more ranged damage
+	Glassblower: Broken glass gathers around you, and magic damage is increased by 10%
+	Riftsteel: Three plates orbit you, each eating one enemy shot; the shell returns 8 seconds after it breaks
+	DarnerMelee: Stitched enemies take 20% more damage from you, and your melee strikes on them always crit
+	DarnerRanged: Stitched enemies take 20% more damage from you, and your shots ride the thread to the other end
+	DarnerMagic: Stitched enemies take 20% more damage from you
+	DarnerSummon: Stitched enemies take 20% more damage from you, and 25% more again from your minions
+	WeaverMelee: Your hits plant anchors and the loom strings a thread between them; it weaves on every second hit and its threads cut half again as hard
+	WeaverRanged: Your hits plant anchors and the loom strings a thread between them; its threads stand twice as long
+	WeaverMagic: Your hits plant anchors and the loom strings a thread between them; it holds three, and weaves a triangle
+	WeaverSummon: Your hits plant anchors and the loom strings a thread between them; your minions work the loom for you
+	FirstMelee: Enemies you are looking at take 36% more damage from you; the melee stare is narrow and heavy
+	FirstRanged: Enemies you are looking at take 18% more damage from you, and your regard reaches twice as far
+	FirstMagic: Enemies inside the circle at your cursor take 18% more damage from you
+	FirstSummon: Enemies you are looking at take 18% more damage from you, and 18% more again from your minions, which always go for what you are watching
+}
+
+Buffs: {
+	Cracked: {
+		DisplayName: Cracked
+		Description: Taking 15% more damage
+	}
+
+	SleeperEyeBuff: {
+		DisplayName: Sleeper Eye
+		Description: A sleeper eye is fighting for you
+	}
+
+	FissureSight: {
+		DisplayName: Fissure Sight
+		Description: Fissurite ore shows through stone
+	}
+
+	HatchlingBuff: {
+		DisplayName: Riftling Hatchling
+		Description: A hatchling is fighting for you
+	}
+
+	GlassthreadTag: {
+		DisplayName: Glassthread
+		Description: Your minions strike this target critically
+	}
+
+	EchoSight: {
+		DisplayName: Echo Sight
+		Description: Creatures show through walls
+	}
+
+	GlassBrothBuff: {
+		DisplayName: Glass Broth
+		Description: Minor improvements to all stats
+	}
+
+	RiftMark: {
+		DisplayName: Rift Mark
+		Description: Taking 12% more damage from everything
+	}
+
+	WardenPlateBuff: {
+		DisplayName: Warden Plate
+		Description: A shell plate is guarding you
+	}
+
+	RiftSight: {
+		DisplayName: Rift Sight
+		Description: Incoming attacks light up
+	}
+
+	SpindleBuff: {
+		DisplayName: Spindle
+		Description: A spindle is fighting for you
+	}
+
+	SailclothBuff: {
+		DisplayName: Sailcloth
+		Description: A panel of sailcloth is fighting for you
+	}
+
+	Closing: {
+		DisplayName: Closing
+		Description: Your minions always crit it
+	}
+
+	KeeperMinionBuff: {
+		DisplayName: Keeper
+		Description: A Keeper of your own is watching for you
+	}
+
+	ShardlingBuff: {
+		DisplayName: Shardling
+		Description: A shardling is following you
+	}
+
+	PlateMountBuff: {
+		DisplayName: Riding Plate
+		Description: A shell plate is carrying you
+	}
+}
+
+Tiles: {
+	FissuriteOreTile.MapEntry: Fissurite Ore
+	CrackedStoneTile.MapEntry: Cracked Stone
+	RiftTorchTile.MapEntry: Rift Torch
+	RiftglassBlockTile.MapEntry: Riftglass Block
+	DormantEyeTrophyTile.MapEntry: Dormant Eye Trophy
+	RiftAltarTile.MapEntry: Rift Altar
+	RiftLanternTile.MapEntry: Rift Lantern
+	ShardChandelierTile.MapEntry: Shard Chandelier
+	KeeperTrophyTile.MapEntry: Keeper of the Rift Trophy
+	RiftlingBannerTile.MapEntry: Riftling Banner
+	AnchorLegTile.MapEntry: Anchor Leg
+	WeaverTrophyTile.MapEntry: Weaver Trophy
+	FirstKeeperTrophyTile.MapEntry: First Keeper Trophy
+}
+
+NPCs: {
+	DormantEye: {
+		DisplayName: The Dormant Eye
+		Bestiary: A boulder with a lid grown shut over it. Knock the slabs off or wait for the lid to split, because the rock itself barely feels you.
+	}
+
+	EyePlate: {
+		DisplayName: Eye Plate
+		Bestiary: A slab of the crust the Dormant Eye grew instead of a shell.
+	}
+
+	KeeperOfTheRift: {
+		DisplayName: Keeper of the Rift
+		Bestiary: A shattered core that refuses to fall apart. Break its plates or punish the moment it opens its eye, because nothing else gets through.
+	}
+
+	KeeperPlate: {
+		DisplayName: Keeper Plate
+		Bestiary: A slab of the Keeper's shell, orbiting the thing it protects until it is thrown.
+	}
+
+	Riftling: {
+		DisplayName: Riftling
+		Bestiary: A splinter of something far larger, still carrying enough of the rift to hold itself together.
+	}
+
+	Mirrorling: {
+		DisplayName: Mirrorling
+		Bestiary: It does not follow you. It repeats you, half a second late and the wrong way round, so running is what brings it closer.
+	}
+
+	HollowEcho: {
+		DisplayName: Hollow Echo
+		Bestiary: Stone means nothing to it, so it announces itself instead. The sound it makes before a charge is the only warning you get, and it is enough.
+	}
+
+	Weaverling: {
+		DisplayName: Weaverling
+		Bestiary: Alone it is barely a threat. In pairs it strings a thread between itself and its neighbour, and the thread is the part that kills you.
+	}
+
+	RiftColossus: {
+		DisplayName: Rift Colossus
+		Bestiary: It does not go around the wall. Whatever arena you end up fighting it in is one that it dug.
+	}
+
+	WeaverOfTheRift: {
+		DisplayName: Weaver of the Rift
+		Bestiary: A loom that walks. It drives its own legs into the ground as anchors and strings the arena between them, and behind enough fabric it cannot be touched at all.
+	}
+
+	WeaverAnchor.DisplayName: Anchor Leg
+
+	ShardSwarm: {
+		DisplayName: Shard Swarm
+		Bestiary: Eight pieces that have agreed to be one thing. Cut enough of them away and the agreement lapses.
+	}
+
+	NullWarden: {
+		DisplayName: Null Warden
+		Bestiary: Nothing touches it while the eye is shut. It stops chasing to open it, which is the only bargain it offers.
+	}
+
+	FirstKeeper: {
+		DisplayName: The First Keeper
+		Bestiary: It has been open since before the crack. It does not aim at you - it looks, and while it is looking at you the two of you can hurt each other twice as easily. Its lids are what narrow the eye; cutting one is a bargain, not a chore.
+	}
+
+	KeeperLid: {
+		DisplayName: Keeper Lid
+		Bestiary: A slab grown over the First Keeper's eye. It is not armour - it is how little of the world the eye can see.
+	}
+
+	KeeperEcho: {
+		DisplayName: Keeper Echo
+		Bestiary: A splinter of the First Keeper that got loose, still doing the only thing it knows. Meet three of them and you have been taught the whole fight.
+	}
+
+	FissureSlime: {
+		DisplayName: Fissure Slime
+		Bestiary: It swallowed the rock it was sitting on and never digested it. Killing it does not finish it - it comes apart into three that are still moving.
+	}
+
+	FissureSlimelet: {
+		DisplayName: Fissure Slimelet
+		Bestiary: A piece of a larger one, carrying on as though nothing happened.
+	}
+
+	Hangstone: {
+		DisplayName: Hangstone
+		Bestiary: It waits on the ceiling for something to walk under it. The rattle before it lets go is the only warning it gives, and it is enough.
+	}
+
+	FacetBeetle: {
+		DisplayName: Facet Beetle
+		Bestiary: It eats fissurite and carries what it has not digested. Easier to kill than a vein is to find.
+	}
+
+	Voidfly: {
+		DisplayName: Voidfly
+		Bestiary: The only thing in the crack that wants nothing from you. It will not fight and it will not stay still.
+	}
+
+	Spall: {
+		DisplayName: Spall
+		Bestiary: A slab that grew a front and hides behind it. Hitting the face it shows you is nearly pointless. Get behind it.
+	}
+
+	PlateBearer: {
+		DisplayName: Plate Bearer
+		Bestiary: It found one of the Keeper's plates and worked out which way to hold it. The plate is a budget, not a second health bar - spend it and there is an ordinary enemy underneath.
+	}
+
+	RiftReaper: {
+		DisplayName: Rift Reaper
+		Bestiary: It hangs back, draws a line across the cavern, and then is standing where the line ended.
+	}
+
+	FacetBroodmother: {
+		DisplayName: Facet Broodmother
+		Bestiary: A beetle that got old and kept laying. Rare, and worth a tier of ore in one sitting.
+	}
+
+	PlateShepherd: {
+		DisplayName: Plate Shepherd
+		Bestiary: It does not wear a plate. It carries spares, and hands one to whichever of its escort has just lost theirs.
+	}
+}
+
+Projectiles: {
+	RiftShard.DisplayName: Rift Shard
+	RiftTear.DisplayName: Rift Tear
+	RiftLaser.DisplayName: Rift Beam
+	RiftMine.DisplayName: Rift Mine
+	WedgeSpear.DisplayName: Wedge
+	DustBeamShot.DisplayName: Dust Bolt
+	DustLashWhip.DisplayName: Dust Lash
+	Rockfall.DisplayName: Rockfall
+	FriendlyRockfall.DisplayName: Rockfall
+	StoneEyeArrow.DisplayName: Stone Eye Arrow
+	SleeperEye.DisplayName: Sleeper Eye
+	GlassArrowProjectile.DisplayName: Glass Arrow
+	StoneChip.DisplayName: Stone Chip
+	GlassEdge.DisplayName: Glass Edge
+	RiftWave.DisplayName: Rift Wave
+	StoneShockwave.DisplayName: Shockwave
+	BoneSplinter.DisplayName: Bone Splinter
+	CleftBolt.DisplayName: Cleft Bolt
+	ScreeStone.DisplayName: Scree
+	RiftlingHatchling.DisplayName: Riftling Hatchling
+	GlassthreadWhip.DisplayName: Glassthread
+	RibArrow.DisplayName: Rift Arrow
+	RiftflowBeam.DisplayName: Riftflow
+	WardenPlateMinion.DisplayName: Warden Plate
+	OrbitLashWhip.DisplayName: Orbit Lash
+	CasterShard.DisplayName: Rift Shard
+	GuardPlate.DisplayName: Guard Plate
+	ThreadShot.DisplayName: Thread
+	StitchSlash.DisplayName: Stitch
+	ScytheArc.DisplayName: Rift Crescent
+	SpindleMinion.DisplayName: Spindle
+	ThreadAnchorHook.DisplayName: Thread Anchor
+	RiftThread.DisplayName: Rift Thread
+	WebCollapse.DisplayName: Closing Web
+	FriendlyThread.DisplayName: Thread
+	WeftBolt.DisplayName: Weft
+	ShuttleYoyo.DisplayName: Shuttle
+	LoomFrame.DisplayName: Loom Frame
+	SailclothMinion.DisplayName: Sailcloth
+	RendWhip.DisplayName: Rend
+	PrimalShard.DisplayName: Primal Shard
+	GazeRay.DisplayName: Gaze
+	Watcher.DisplayName: Watcher
+	BlinkRing.DisplayName: Blink
+	SightLine.DisplayName: Line of Sight
+	PrimalBullet.DisplayName: Primordust
+	UnblinkingBeam.DisplayName: The Unblinking
+	GazeField.DisplayName: Regard
+	KeeperMinion.DisplayName: Keeper
+	ClosureWhip.DisplayName: Closure
+	ShardlingCompanion.DisplayName: Shardling
+}
+
+Chat: {
+	DormantEyeOpens: The lid splits. Something under the stone is awake.
+	DormantEyeDown: The Dormant Eye has been cracked open.
+	KeeperPhase2: The shell splits. The eye will not close again.
+	KeeperPhase3: Something inside the Keeper tears open.
+	WeaverPhase2: The Weaver drives four legs into the ground and hides behind its own cloth.
+	WeaverPhase3: The anchors come loose. The Weaver stops weaving and starts running.
+	FirstKeeperPhase2: The lids grind apart. It has stopped pretending it cannot see you.
+	FirstKeeperPhase3: The First Keeper throws away its shell. Nothing is hidden from here.
+}
+
+Common: {
+	Reaped: Reaped: {0}/{1}
+	Untouched: Untouched: {0}%
+}
+
+Mounts.PlateMount.DisplayName: Riding Plate

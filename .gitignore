@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+Wiki/docs/
+Wiki/site/
+__pycache__/
+.venv/
+Wiki/mkdocs.en.yml
+Wiki/mkdocs.ru.yml

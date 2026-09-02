@@ -1,0 +1,36 @@
+[h1]Terrapex[/h1]
+
+[b]Seven tiers, four bosses, two mini-bosses and 144 items[/b], running from your first cave to the far side of the Moon Lord.
+
+The world cracked long before you got here. The crack is not an event, it is a substance — it crystallises into ore, grows dust, grows creatures, and eventually grows an eye to keep watch over itself. Every tier of this mod is a question about how many of them are looking at you.
+
+[hr][/hr]
+[h2]The bosses[/h2]
+[list]
+[*][b]The Dormant Eye[/b] — pre-hardmode, after the Eye of Cthulhu. A boulder with a lid grown shut over it. Four plates, and the lid splits exactly once.
+[*][b]Keeper of the Rift[/b] — post-Wall of Flesh, in the emptiest stretch of vanilla progression. Three phases, eight destructible plates, thirteen attacks.
+[*][b]The Weaver of the Rift[/b] — post-Plantera. A loom that walks. It drives its own legs into the ground as anchors and strings the arena between them; the weapon is not a projectile, it is the room.
+[*][b]The First Keeper[/b] — post-Moon Lord. It does not aim at you. It [i]looks[/i], and the looking is the attack: stand in its cone of sight and you both hurt each other twice as easily. Its eight lids are a dial you can turn in either direction.
+[/list]
+
+[h2]How the fights are built[/h2]
+[list]
+[*][b]Every attack is announced.[/b] An eye flash, a wind-up, a drawn aim line, a thread pulling tight — something you can read before anything can hurt you.
+[*][b]Attack order is a fixed rotation per phase, never random.[/b] These are bosses you learn, not bosses you react to.
+[*][b]Nothing a boss fires homes.[/b] Volleys are laid on where you were standing when they left, so leading a shot is a skill the fight actually asks for.
+[/list]
+
+[h2]Armour that does something[/h2]
+From the third tier on, every set has [b]four heads — one per class[/b] — that share a mechanic and then rewrite what it is for. The sets differ in kind rather than by a number: a shell of orbiting plates that eats enemy shots, a stitch that joins two enemies so hitting one hits the other, a loom that plants anchors in the arena and strings your own thread between them, and a cone of regard that pays you for facing your problem instead of kiting it.
+
+[h2]And the rest[/h2]
+[list]
+[*]15 enemies and 2 rare mini-bosses that nobody summons — you just meet them.
+[*]Weapons for all four classes at every tier, plus accessories, wings, a mount and a pet.
+[*]Its own ore with world generation, two crafting stations, furniture and trophies.
+[*]All art is hand-drawn pixel work.
+[/list]
+
+[hr][/hr]
+[h2]This is an early release[/h2]
+Bug reports and balance complaints are wanted, [b]especially from multiplayer[/b] — it has had far less testing than single player. There is no custom music yet; the bosses use vanilla tracks.

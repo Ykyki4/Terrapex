@@ -1,0 +1,32 @@
+Terrapex adds a full progression to Terraria: seven tiers, four bosses and two mini-bosses,
+running from your first cave to the far side of the Moon Lord.
+
+The world cracked long before you got here. The crack is not an event, it is a substance -
+it crystallises into ore, grows dust, grows creatures, and eventually grows an eye to keep
+watch over itself. Every tier is a question about how many of them are looking at you.
+
+CONTENT
+- 4 bosses: The Dormant Eye (after the Eye of Cthulhu), Keeper of the Rift (post-Wall of
+  Flesh), The Weaver of the Rift (post-Plantera), The First Keeper (post-Moon Lord).
+- 2 rare mini-bosses that nobody summons, and 15 enemies across the whole progression.
+- 144 items: weapons for all four classes at every tier, seven armour sets, accessories,
+  wings, a mount, a pet, ore, furniture and two crafting stations of its own.
+
+HOW THE FIGHTS ARE BUILT
+- Every attack is announced. An eye flash, a wind-up, a drawn aim line, a thread pulling
+  tight - something you can read before anything can hurt you.
+- Attack order is a fixed rotation per phase, never random. These are bosses you learn.
+- Nothing a boss fires homes. Volleys are laid on where you were standing when they left,
+  so leading a shot is a skill the fight actually asks for.
+
+ARMOUR THAT DOES SOMETHING
+From the third tier on, every set has four heads - one per class - that share one mechanic
+and then rewrite what it is for. The sets themselves differ in kind rather than by a number:
+a shell of orbiting plates, a stitch that joins two enemies together, a loom that plants
+anchors in the arena, and a cone of regard that pays you for facing your problem.
+
+All the art is hand-drawn pixel work.
+
+This is an early release. Bug reports and balance complaints are wanted - especially from
+multiplayer, which has had far less testing than single player. There is no custom music yet;
+the bosses use vanilla tracks.

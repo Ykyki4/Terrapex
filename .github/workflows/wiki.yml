@@ -1,0 +1,64 @@
+name: Wiki
+
+# Regenerates the wiki from Content/ and Localization/ and publishes it to
+# GitHub Pages. Nothing under Wiki/docs is committed — a push to main is the
+# only thing that has to happen for a balance change to reach the site.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Content/**"
+      - "Localization/**"
+      - "Wiki/**"
+      - ".github/workflows/wiki.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install pillow mkdocs-material
+
+      - name: Generate pages
+        run: python Wiki/generate.py
+
+      - name: Build English
+        working-directory: Wiki
+        run: mkdocs build -f mkdocs.en.yml --strict
+
+      # Must run after English: the English build cleans site/ wholesale, which
+      # would take site/ru with it.
+      - name: Build Russian
+        working-directory: Wiki
+        run: mkdocs build -f mkdocs.ru.yml --strict
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: Wiki/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
