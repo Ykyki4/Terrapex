@@ -5,6 +5,11 @@ The world cracked long before you got here. The crack is not an event, it is a s
 it crystallises into ore, grows dust, grows creatures, and eventually grows an eye to keep
 watch over itself. Every tier is a question about how many of them are looking at you.
 
+WIKI
+Every item, enemy, buff and recipe, plus class setups for all seven tiers:
+  https://ykyki4.github.io/Terrapex/          (English)
+  https://ykyki4.github.io/Terrapex/ru/       (на русском)
+
 CONTENT
 - 4 bosses: The Dormant Eye (after the Eye of Cthulhu), Keeper of the Rift (post-Wall of
   Flesh), The Weaver of the Rift (post-Plantera), The First Keeper (post-Moon Lord).

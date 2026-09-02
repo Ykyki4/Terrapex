@@ -2,6 +2,11 @@ displayName = Terrapex
 author = Ykyki4
 version = 0.3.0
 
+# Shown as a clickable link on the mod's page in the in-game browser. Points at
+# the wiki rather than the repository: a player opening this wants the item
+# tables, not the C#.
+homepage = https://ykyki4.github.io/Terrapex/
+
 # Art/ holds working sheets, generators and previews — source material, not shipping
 # assets. Keeping it out of the .tmod stops the package from carrying the GIFs and the
 # horizontal master sheets the game never reads.
