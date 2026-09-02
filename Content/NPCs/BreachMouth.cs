@@ -43,7 +43,6 @@ namespace Terrapex.Content.NPCs
 
 		private ref float Timer => ref NPC.ai[0];
 		private ref float SpawnTimer => ref NPC.ai[1];
-		private ref float Spawned => ref NPC.ai[2];
 
 		private bool Opening => Timer < OpenTicks;
 
@@ -146,7 +145,7 @@ namespace Terrapex.Content.NPCs
 
 			// the dial: more mouths standing means every one of them spawns faster
 			SpawnTimer += BreachSystem.SpawnMultiplier;
-			if (SpawnTimer < SpawnInterval || Spawned >= Brood)
+			if (SpawnTimer < SpawnInterval || Alive() >= Brood)
 				return;
 
 			SpawnTimer = 0f;
@@ -168,7 +167,6 @@ namespace Terrapex.Content.NPCs
 			BreachGlobalNPC mark = born.GetGlobalNPC<BreachGlobalNPC>();
 			mark.FromBreach = true;
 			mark.Parent = NPC.whoAmI;
-			Spawned++;
 
 			if (Main.netMode == NetmodeID.Server)
 				NetMessage.SendData(MessageID.SyncNPC, number: index);
@@ -182,15 +180,23 @@ namespace Terrapex.Content.NPCs
 			SoundEngine.PlaySound(SoundID.Item8, NPC.Center);
 		}
 
-		/// <summary>A mouth's brood is counted, not remembered, so a killed child frees its slot.</summary>
-		public void Recount()
+		/// <summary>
+		/// How much of this mouth's brood is still out there, counted rather than remembered.
+		///
+		/// A stored tally only ever came back down when a child was *killed*. Anything that
+		/// leaves without dying — despawning because the players walked away, most obviously —
+		/// left the count high, and a mouth that believes it already has four children out
+		/// stops spawning for the rest of the event. Same reasoning as
+		/// <c>FirstKeeper.LidsCut</c>: count from Main.npc and the bookkeeping cannot rot.
+		/// </summary>
+		private int Alive()
 		{
 			int n = 0;
 			for (int i = 0; i < Main.maxNPCs; i++)
 				if (Main.npc[i].active
 					&& Main.npc[i].GetGlobalNPC<BreachGlobalNPC>().Parent == NPC.whoAmI)
 					n++;
-			Spawned = n;
+			return n;
 		}
 
 		// ------------------------------------------------------------------ presentation

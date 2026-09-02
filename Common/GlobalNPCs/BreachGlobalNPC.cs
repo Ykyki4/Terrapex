@@ -2,7 +2,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terrapex.Common.Systems;
-using Terrapex.Content.NPCs;
 
 namespace Terrapex.Common.GlobalNPCs
 {
@@ -29,11 +28,8 @@ namespace Terrapex.Common.GlobalNPCs
 			if (!FromBreach || Main.netMode == NetmodeID.MultiplayerClient)
 				return;
 
+			// the parent mouth counts its own brood live, so nothing to tell it here
 			BreachSystem.CountKill();
-
-			if (Parent >= 0 && Parent < Main.maxNPCs && Main.npc[Parent].active
-				&& Main.npc[Parent].ModNPC is BreachMouth mouth)
-				mouth.Recount();
 		}
 	}
 }
