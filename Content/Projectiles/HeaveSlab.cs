@@ -42,6 +42,12 @@ namespace Terrapex.Content.Projectiles
 		private ref float Permanent => ref Projectile.ai[1];
 		private ref float GroundY => ref Projectile.ai[2];
 
+		/// <summary>Standing far enough out of the ground for the Slabmaul to break it.</summary>
+		public bool Standing => Risen > 0.4f;
+
+		/// <summary>Where the stone actually is, which is not where the projectile sits.</summary>
+		public Vector2 Face => new Vector2(Projectile.Center.X, GroundY - SlabHeight * Risen * 0.6f);
+
 		/// <summary>0 while it is still a crack, 1 once the slab is all the way out.</summary>
 		private float Risen => MathHelper.Clamp((Timer - Crack) / Rise, 0f, 1f)
 			* (1f - MathHelper.Clamp((Timer - Crack - Rise - Stand) / (float)Sink, 0f, 1f));

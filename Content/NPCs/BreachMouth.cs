@@ -145,23 +145,59 @@ namespace Terrapex.Content.NPCs
 
 			// the dial: more mouths standing means every one of them spawns faster
 			SpawnTimer += BreachSystem.SpawnMultiplier;
-			if (SpawnTimer < SpawnInterval || Alive() >= Brood)
+			if (SpawnTimer < SpawnInterval || Brooding() >= Brood)
 				return;
 
 			SpawnTimer = 0f;
 			Emit();
 		}
 
+		/// <summary>
+		/// How many of one kind the event will keep alive at once.
+		///
+		/// The pools are rolled flat, and flat rolls do not survive six mouths firing every three
+		/// seconds: the heavy, slow, shielded kinds pile up until the arena is nothing but them.
+		/// Plate Bearers were the worst of it — a Shepherd brings three of its own on top of what
+		/// the mouths roll — and the answer is not to take them out of the table but to keep them
+		/// rare enough that meeting one is an event.
+		/// </summary>
+		private static int Cap(int type)
+		{
+			if (type == ModContent.NPCType<PlateShepherd>()) return 1;
+			if (type == ModContent.NPCType<RiftColossus>()) return 2;
+			if (type == ModContent.NPCType<PlateBearer>()) return 4;
+			if (type == ModContent.NPCType<Mirrorling>()) return 4;
+			if (type == ModContent.NPCType<RiftReaper>()) return 6;
+			return int.MaxValue;            // the light kinds carry the wave
+		}
+
+		private static int Alive(int type)
+		{
+			int n = 0;
+			for (int i = 0; i < Main.maxNPCs; i++)
+				if (Main.npc[i].active && Main.npc[i].type == type)
+					n++;
+			return n;
+		}
+
 		private void Emit()
 		{
 			int[] pool = Pool(BreachSystem.Wave);
-			int type = pool[Main.rand.Next(pool.Length)];
+			int type = 0;
 
-			// a Plate Shepherd arrives with an escort of three, so six mouths rolling shepherds
-			// freely bury the arena in bearers. Its own SpawnChance already refuses a second one;
-			// spawning it from here walks straight past that guard, so repeat it
-			if (type == ModContent.NPCType<PlateShepherd>() && NPC.AnyNPCs(type))
-				type = ModContent.NPCType<RiftReaper>();
+			// three rolls against the caps, then fall back to something light. A mouth that
+			// simply skipped its turn would quietly halve the spawn rate the dial promises
+			for (int roll = 0; roll < 3; roll++)
+			{
+				type = pool[Main.rand.Next(pool.Length)];
+				if (Alive(type) < Cap(type))
+					break;
+				type = 0;
+			}
+			if (type == 0)
+				type = Main.rand.NextBool()
+					? ModContent.NPCType<Riftling>()
+					: ModContent.NPCType<Spall>();
 
 			int index = NPC.NewNPC(NPC.GetSource_FromAI(),
 				(int)NPC.Center.X, (int)NPC.Center.Y, type);
@@ -195,7 +231,7 @@ namespace Terrapex.Content.NPCs
 		/// stops spawning for the rest of the event. Same reasoning as
 		/// <c>FirstKeeper.LidsCut</c>: count from Main.npc and the bookkeeping cannot rot.
 		/// </summary>
-		private int Alive()
+		private int Brooding()
 		{
 			int n = 0;
 			for (int i = 0; i < Main.maxNPCs; i++)

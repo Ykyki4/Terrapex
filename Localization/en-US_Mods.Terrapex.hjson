@@ -1070,7 +1070,8 @@ Items: {
 		Tooltip:
 			'''
 			Swing at the ground and a plate of it comes up where you aimed
-			The plate needs a floor. In the air you get the maul and nothing else
+			Swing at a plate that is standing and it breaks toward your cursor
+			Raise the wall, then throw it at whatever is flying
 			'''
 	}
 
@@ -1384,6 +1385,7 @@ Projectiles: {
 	HeaveSlab.DisplayName: Upthrust
 	FriendlySlab.DisplayName: Upthrust
 	HeaveWave.DisplayName: Shelf
+	SlabShard.DisplayName: Slab Shard
 	RiftlingHatchling.DisplayName: Riftling Hatchling
 	GlassthreadWhip.DisplayName: Glassthread
 	RibArrow.DisplayName: Rift Arrow
