@@ -157,6 +157,12 @@ namespace Terrapex.Content.NPCs
 			int[] pool = Pool(BreachSystem.Wave);
 			int type = pool[Main.rand.Next(pool.Length)];
 
+			// a Plate Shepherd arrives with an escort of three, so six mouths rolling shepherds
+			// freely bury the arena in bearers. Its own SpawnChance already refuses a second one;
+			// spawning it from here walks straight past that guard, so repeat it
+			if (type == ModContent.NPCType<PlateShepherd>() && NPC.AnyNPCs(type))
+				type = ModContent.NPCType<RiftReaper>();
+
 			int index = NPC.NewNPC(NPC.GetSource_FromAI(),
 				(int)NPC.Center.X, (int)NPC.Center.Y, type);
 			if (index < 0 || index >= Main.maxNPCs)

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -28,8 +29,12 @@ namespace Terrapex.Common.Systems
 		public const int MaxMouths = 6;
 		public const int MouthInterval = 60 * 20;
 
-		/// <summary>Kill counts that close each wave.</summary>
-		public static readonly int[] WaveGoals = { 40, 70, 100 };
+		/// <summary>
+		/// Kill counts that close each wave. 40/70/100 was 210 kills for one run and played as a
+		/// slaughter rather than as three waves — the first pass at these numbers assumed adds
+		/// died slower than they do with six mouths open.
+		/// </summary>
+		public static readonly int[] WaveGoals = { 20, 35, 50 };
 
 		/// <summary>
 		/// Indexed by mouths currently standing. Written as tables rather than a formula so the
@@ -45,6 +50,10 @@ namespace Terrapex.Common.Systems
 		public static bool downedHeave;
 
 		private static int mouthTimer;
+
+		/// <summary>The finale is owed but not placed yet. Retried every tick until it stands.</summary>
+		private static bool pendingHeave;
+		private static int heaveMouths;
 
 		/// <summary>Where the event was started. Mouths open around it, not around whoever wandered off.</summary>
 		public static Vector2 Origin;
@@ -155,7 +164,11 @@ namespace Terrapex.Common.Systems
 			}
 
 			if (Wave > WaveGoals.Length)
-				return;                     // Heave is out; mouths stop opening
+			{
+				if (pendingHeave)
+					TrySpawnHeave();
+				return;                     // the finale is out; mouths stop opening
+			}
 
 			if (++mouthTimer < MouthInterval)
 				return;
@@ -172,6 +185,53 @@ namespace Terrapex.Common.Systems
 			if (OpenMouth())
 				mouthTimer = 0;
 		}
+
+		/// <summary>
+		/// The event's progress, drawn by vanilla's own invasion bar.
+		///
+		/// <c>Main.ReportInvasionProgress</c> only writes four fields on the local client — there
+		/// is no netcode behind it — so every client reports its own from the state the system
+		/// already syncs. Two details are not optional: <c>invasionProgressMode</c> 0 forces the
+		/// bar's alpha to zero every frame, so it has to be 2, and mode 2 is the one that keeps
+		/// the bar pinned up while <c>invasionProgressNearInvasion</c> is set.
+		///
+		/// The badge next to the bar draws one of vanilla's own icons whatever we pass; an index
+		/// outside 1-7 lands on the default, which is an icon with no name written under it.
+		/// A modded icon is not something this bar can be given.
+		/// </summary>
+		public override void PostUpdateEverything()
+		{
+			if (Main.netMode == NetmodeID.Server || Main.dedServ)
+				return;
+
+			bool show = Active && !Main.gameMenu
+				&& Main.LocalPlayer.active
+				&& Main.LocalPlayer.Distance(Origin) < 4000f;
+
+			if (!show)
+			{
+				// leave the bar exactly as vanilla leaves it when an invasion ends, or it sticks
+				if (barUp)
+				{
+					barUp = false;
+					Main.invasionProgress = -1;
+					Main.invasionProgressMode = 0;
+					Main.invasionProgressNearInvasion = false;
+				}
+				return;
+			}
+
+			barUp = true;
+			bool finale = Wave > WaveGoals.Length;
+			int goal = finale ? 1 : WaveGoals[Math.Clamp(Wave, 1, WaveGoals.Length) - 1];
+			int done = finale ? 1 : Kills;
+
+			Main.invasionProgressMode = 2;
+			Main.invasionProgressNearInvasion = true;
+			Main.ReportInvasionProgress(done, goal, 0, Math.Min(Wave, WaveGoals.Length + 1));
+		}
+
+		private static bool barUp;
 
 		private static bool AnyoneHome()
 		{
@@ -258,39 +318,77 @@ namespace Terrapex.Common.Systems
 		}
 
 		/// <summary>
-		/// The finale. It is summoned with the dial already priced in: every mouth still standing
-		/// when the third wave closes makes the Heave bigger, which is the bill for the extra
-		/// Ejecta those mouths have been paying out all event. The event does not end here — it
-		/// ends when the Heave dies, in <c>Heave.OnKill</c>.
+		/// The finale is priced here and placed later. Every mouth still standing when the third
+		/// wave closes makes the Heave bigger — that is the bill for the extra Ejecta they have
+		/// been paying out all event — and then they are closed: six spawners running through a
+		/// boss fight is not a boss fight.
+		///
+		/// The spawn itself is retried every tick rather than attempted once. The first version
+		/// dropped the boss 460 px to the side and gave up if <c>NewNPC</c> failed, so it could
+		/// land inside solid rock, or fail outright when the swarm had filled the NPC array —
+		/// which is exactly the state the end of wave three is in.
 		/// </summary>
 		private static void SummonHeave()
 		{
+			heaveMouths = MouthsOpen();
+			pendingHeave = true;
+			ClearMouths();
+			Announce("BreachHeave");
+			Sync();
+		}
+
+		private static void TrySpawnHeave()
+		{
+			int type = ModContent.NPCType<Content.NPCs.Bosses.Heave>();
+			if (NPC.AnyNPCs(type))
+			{
+				pendingHeave = false;
+				return;
+			}
+
 			Player host = NearestPlayer();
 			if (host == null)
-			{
-				End(won: false);
 				return;
+
+			Point at = host.Center.ToTileCoordinates();
+			Vector2 where = host.Center - new Vector2(0f, 90f);
+
+			// it is 7x5 tiles: look for somewhere it actually fits, and if the cavern will not
+			// give one up, put it on the player, who is standing in open space by definition
+			for (int attempt = 0; attempt < 80; attempt++)
+			{
+				int reach = 6 + attempt / 2;
+				int x = at.X + Main.rand.Next(-reach, reach + 1);
+				int y = at.Y + Main.rand.Next(-reach / 2 - 3, reach / 2 + 4);
+				if (!WorldGen.InWorld(x, y, 30) || !Fits(x, y))
+					continue;
+				where = new Vector2(x * 16 + 8, y * 16 + 8);
+				break;
 			}
 
-			int mouths = MouthsOpen();
-			Vector2 at = host.Center + new Vector2(host.direction * 460f, -120f);
+			int index = NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
+				(int)where.X, (int)where.Y, type);
+			if (index >= Main.maxNPCs)
+				return;                     // the array is full: try again next tick
 
-			int i = NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
-				(int)at.X, (int)at.Y, ModContent.NPCType<Content.NPCs.Bosses.Heave>());
-			if (i >= Main.maxNPCs)
-			{
-				End(won: false);
-				return;
-			}
-
-			NPC heave = Main.npc[i];
-			heave.lifeMax += Content.NPCs.Bosses.Heave.LifePerMouth * mouths;
+			NPC heave = Main.npc[index];
+			heave.lifeMax += Content.NPCs.Bosses.Heave.LifePerMouth * heaveMouths;
 			heave.life = heave.lifeMax;
-			heave.damage += Content.NPCs.Bosses.Heave.DamagePerMouth * mouths;
+			heave.damage += Content.NPCs.Bosses.Heave.DamagePerMouth * heaveMouths;
+			pendingHeave = false;
 
-			Announce("BreachHeave");
 			if (Main.netMode == NetmodeID.Server)
-				NetMessage.SendData(MessageID.SyncNPC, number: i);
+				NetMessage.SendData(MessageID.SyncNPC, number: index);
+		}
+
+		/// <summary>Room for a 7x5 body with its feet on the tile below (x, y).</summary>
+		private static bool Fits(int x, int y)
+		{
+			for (int dx = -3; dx <= 3; dx++)
+				for (int dy = -4; dy <= 0; dy++)
+					if (WorldGen.SolidTile(x + dx, y + dy))
+						return false;
+			return true;
 		}
 
 		private static Player NearestPlayer()
@@ -391,6 +489,8 @@ namespace Terrapex.Common.Systems
 			Wave = 0;
 			Kills = 0;
 			mouthTimer = 0;
+			pendingHeave = false;
+			heaveMouths = 0;
 			downedHeave = false;
 			Origin = Vector2.Zero;
 		}
@@ -405,6 +505,9 @@ namespace Terrapex.Common.Systems
 				tag["breachWave"] = Wave;
 				tag["breachKills"] = Kills;
 				tag["breachOrigin"] = Origin;
+				tag["breachHeaveMouths"] = heaveMouths;
+				if (pendingHeave)
+					tag["breachPendingHeave"] = true;
 			}
 		}
 
@@ -417,6 +520,8 @@ namespace Terrapex.Common.Systems
 			Wave = tag.GetInt("breachWave");
 			Kills = tag.GetInt("breachKills");
 			Origin = tag.Get<Vector2>("breachOrigin");
+			heaveMouths = tag.GetInt("breachHeaveMouths");
+			pendingHeave = tag.ContainsKey("breachPendingHeave");
 		}
 
 		public override void NetSend(BinaryWriter writer)
