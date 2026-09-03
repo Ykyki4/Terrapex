@@ -94,6 +94,8 @@ namespace Terrapex.Common.Systems
 			Wave = 0;
 			Kills = 0;
 			ClearMouths();
+			if (!won)
+				ClearHeave();
 			Announce(won ? "BreachWon" : "BreachFailed");
 			Sync();
 		}
@@ -181,12 +183,40 @@ namespace Terrapex.Common.Systems
 		}
 
 		/// <summary>
-		/// Step 4 of EVENT_BREACH.md, not built yet. Until Heave exists the event closes at
-		/// the end of wave three instead of pretending to have a finale — a wave counter that
-		/// runs off the end of its own table and waits for a boss that never arrives is worse
-		/// than an event that is honestly one piece short.
+		/// The finale. It is summoned with the dial already priced in: every mouth still standing
+		/// when the third wave closes makes the Heave bigger, which is the bill for the extra
+		/// Ejecta those mouths have been paying out all event. The event does not end here — it
+		/// ends when the Heave dies, in <c>Heave.OnKill</c>.
 		/// </summary>
-		private static void SummonHeave() => End(won: true);
+		private static void SummonHeave()
+		{
+			Player host = NearestPlayer();
+			if (host == null)
+			{
+				End(won: false);
+				return;
+			}
+
+			int mouths = MouthsOpen();
+			Vector2 at = host.Center + new Vector2(host.direction * 460f, -120f);
+
+			int i = NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
+				(int)at.X, (int)at.Y, ModContent.NPCType<Content.NPCs.Bosses.Heave>());
+			if (i >= Main.maxNPCs)
+			{
+				End(won: false);
+				return;
+			}
+
+			NPC heave = Main.npc[i];
+			heave.lifeMax += Content.NPCs.Bosses.Heave.LifePerMouth * mouths;
+			heave.life = heave.lifeMax;
+			heave.damage += Content.NPCs.Bosses.Heave.DamagePerMouth * mouths;
+
+			Announce("BreachHeave");
+			if (Main.netMode == NetmodeID.Server)
+				NetMessage.SendData(MessageID.SyncNPC, number: i);
+		}
 
 		private static Player NearestPlayer()
 		{
@@ -215,6 +245,22 @@ namespace Terrapex.Common.Systems
 				{
 					Main.npc[i].life = 0;
 					Main.npc[i].HitEffect();
+					Main.npc[i].active = false;
+					if (Main.netMode == NetmodeID.Server)
+						NetMessage.SendData(MessageID.SyncNPC, number: i);
+				}
+		}
+
+		/// <summary>
+		/// Only for an abandoned event. A won one is ended from inside the Heave's own death, and
+		/// tearing the NPC out from under itself there would cut the throes short.
+		/// </summary>
+		private static void ClearHeave()
+		{
+			int type = ModContent.NPCType<Content.NPCs.Bosses.Heave>();
+			for (int i = 0; i < Main.maxNPCs; i++)
+				if (Main.npc[i].active && Main.npc[i].type == type)
+				{
 					Main.npc[i].active = false;
 					if (Main.netMode == NetmodeID.Server)
 						NetMessage.SendData(MessageID.SyncNPC, number: i);

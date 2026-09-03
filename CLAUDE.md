@@ -9,7 +9,7 @@ Design docs for the bosses: **`BOSS_KEEPER.md`**, **`BOSS_WEAVER.md`** and
 attack tables with tells, projectile table, what is still missing). Read the relevant one
 before changing fight behaviour — the numbers in it and the numbers in the code are meant
 to stay in sync. **`EVENT_BREACH.md`** is the same document for the Breach, the wave event
-planned for 0.4.0 — designed, not yet built.
+of 0.4.0 — built, not yet playtested.
 
 ## Build
 
@@ -61,6 +61,10 @@ Develop Mods → Reload.
 | `Common/RiftDraw.cs` | shared trail / bloom / ring helpers for every projectile |
 | `Content/NPCs/Bosses/WeaverOfTheRift.cs` | boss 3: three phases, anchors, thread hazards |
 | `Content/NPCs/Bosses/WeaverAnchor.cs` | its legs; each one standing takes 10% off the damage the body receives, and its death staggers the boss |
+| `Content/NPCs/Bosses/Heave.cs` | the Breach's finale: ground-bound, four attacks, and every mouth left standing makes it bigger |
+| `Content/NPCs/TownNPCs/Sifter.cs` | the event's shop. Town NPC, arrives once the Heave is dead, priced only in Ejecta |
+| `Common/Systems/EjectaCurrency.cs` | registers Ejecta as a shop currency (`CustomCurrencySingleCoin`) |
+| `Content/Projectiles/HeaveSlab.cs` | a plate of floor driven up: 44 harmless ticks of crack, then stone. `FriendlySlab` is the player's half |
 | `Content/NPCs/Bosses/FirstKeeper.cs` | boss 4: the Regard - a cone of sight that doubles the damage both ways inside it |
 | `Content/NPCs/Bosses/KeeperLid.cs` | its eight lids. Not armour: each one alive **narrows** the cone |
 | `Content/NPCs/KeeperEcho.cs` | T6 rare mob, the boss's mechanic in miniature - it teaches the fight before you fight it |

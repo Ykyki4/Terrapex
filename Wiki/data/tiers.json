@@ -58,6 +58,10 @@
     "RiftlingBanner": 3, "KeeperTrophyTile": 3, "RiftlingBannerTile": 3,
     "RiftSight": 3, "RiftMark": 3, "WardenPlateBuff": 3,
 
+    "BreachMouth": 3, "Heave": 3, "Sifter": 3,
+    "Ejecta": 3, "BreachFlare": 3, "Slabmaul": 3,
+    "Overburden": 3, "SoundingRod": 3,
+
     "VoidThread": 4, "VoidCloth": 4, "Seam": 4, "Threadcaster": 4,
     "Stitch": 4, "Spindle": 4, "RiftScythe": 4,
     "DarnerMask": 4, "DarnerVisor": 4, "DarnerHood": 4, "DarnerCowl": 4,

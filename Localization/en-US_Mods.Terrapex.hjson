@@ -1063,6 +1063,32 @@ Items: {
 			Underground only — the crack has to come from somewhere
 			'''
 	}
+
+	Slabmaul: {
+		DisplayName: Slabmaul
+		Tooltip:
+			'''
+			Swing at the ground and a plate of it comes up where you aimed
+			The plate needs a floor. In the air you get the maul and nothing else
+			'''
+	}
+
+	Overburden: {
+		DisplayName: Overburden
+		Tooltip:
+			'''
+			1 defense for every 2 enemies near you, up to 12
+			Worth nothing in a fight you were going to win
+			'''
+	}
+
+	SoundingRod: {
+		DisplayName: Sounding Rod
+		Tooltip:
+			'''
+			Breach mouths show through stone, and the way to them is marked
+			'''
+	}
 }
 
 SetBonus: {
@@ -1314,6 +1340,16 @@ NPCs: {
 		DisplayName: Breach Mouth
 		Bestiary: A crack that has decided to be a door. It cannot reach you, and it never stops handing you things that can.
 	}
+
+	Heave: {
+		DisplayName: The Heave
+		Bestiary: One plate of rock shoved up over another, and still moving. It does not chase you across the arena. It rearranges the arena.
+	}
+
+	Sifter: {
+		DisplayName: The Sifter
+		Bestiary: It came up with the rest of the ejecta and then declined to go back. It will take that rock off your hands.
+	}
 }
 
 Projectiles: {
@@ -1336,6 +1372,9 @@ Projectiles: {
 	BoneSplinter.DisplayName: Bone Splinter
 	CleftBolt.DisplayName: Cleft Bolt
 	ScreeStone.DisplayName: Scree
+	HeaveSlab.DisplayName: Upthrust
+	FriendlySlab.DisplayName: Upthrust
+	HeaveWave.DisplayName: Shelf
 	RiftlingHatchling.DisplayName: Riftling Hatchling
 	GlassthreadWhip.DisplayName: Glassthread
 	RibArrow.DisplayName: Rift Arrow
@@ -1382,8 +1421,25 @@ Chat: {
 	BreachBegin: The stone gives way. The Breach is open.
 	BreachWave2: The mouths widen. More is coming through.
 	BreachWave3: The crack will not hold. Whatever is left is coming now.
+	BreachHeave: Something under the third wave stands up. The floor is coming with it.
+	HeavePhase2: The Heave stops letting its plates fall back.
 	BreachWon: The Breach closes.
 	BreachFailed: The Breach seals itself. Nobody was left to hold it open.
+	Sifter0: Everything you are carrying used to be somewhere else. So did I.
+	Sifter1: Rock is rock. Mine came further, that is all.
+	Sifter2: You keep opening it. I am not going to be the one to tell you to stop.
+	Sifter3: It is open right now. You could be down there instead of here.
+}
+
+TownNPCMood: {
+	Sifter: {
+		Content: I am content. The stone here is dull, but it holds still.
+		NoHome: I have nowhere to put anything down.
+		FarFromHome: I am too far from my own walls.
+		LoveSpace: There is room to spread a haul out here.
+		DislikeCrowded: There are too many of you standing on my floor.
+		HateCrowded: I cannot move without treading on somebody.
+	}
 }
 
 Common: {
