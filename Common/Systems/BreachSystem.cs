@@ -97,7 +97,7 @@ namespace Terrapex.Common.Systems
 			Active = true;
 			Wave = 1;
 			Kills = 0;
-			mouthTimer = 0;
+			mouthTimer = MouthInterval;     // the first mouth opens on the next tick, not in 20 s
 			Origin = where;
 			Announce("BreachBegin");
 			Sync();
@@ -160,9 +160,18 @@ namespace Terrapex.Common.Systems
 
 			if (++mouthTimer < MouthInterval)
 				return;
-			mouthTimer = 0;
-			if (MouthsOpen() < MaxMouths)
-				OpenMouth();
+
+			if (MouthsOpen() >= MaxMouths)
+			{
+				mouthTimer = MouthInterval;     // full: check again next tick, do not bank time
+				return;
+			}
+
+			// only a mouth that actually opened costs the player the next twenty seconds. A
+			// failed placement used to zero the timer, so one unlucky roll bought the event
+			// another twenty seconds of doing nothing at all
+			if (OpenMouth())
+				mouthTimer = 0;
 		}
 
 		private static bool AnyoneHome()
@@ -177,27 +186,49 @@ namespace Terrapex.Common.Systems
 			return false;
 		}
 
-		private static void OpenMouth()
+		/// <summary>
+		/// Puts one mouth in the stone near a player. Returns false when it could not find
+		/// anywhere to put it, which is the caller's cue to try again on the next tick.
+		/// </summary>
+		private static bool OpenMouth()
 		{
 			Player host = NearestPlayer();
 			if (host == null)
-				return;
+				return false;
 
-			// a mouth has to sit in stone: walk outward from a random offset until the tile
-			// under the spot is solid, and give up rather than drop one in mid-air
-			for (int attempt = 0; attempt < 30; attempt++)
+			Point at = host.Center.ToTileCoordinates();
+
+			// searched from close to far rather than uniformly across the whole box: a mouth
+			// that opens forty tiles away through solid rock is a spawner the player never
+			// finds, and the dial only works if you can reach what you are choosing about
+			for (int attempt = 0; attempt < 60; attempt++)
 			{
-				int x = (int)(host.Center.X / 16f) + Main.rand.Next(-46, 47);
-				int y = (int)(host.Center.Y / 16f) + Main.rand.Next(-26, 27);
-				if (x < 20 || x > Main.maxTilesX - 20 || y < 20 || y > Main.maxTilesY - 20)
+				int reach = 8 + attempt;
+				int x = at.X + Main.rand.Next(-reach, reach + 1);
+				int y = at.Y + Main.rand.Next(-reach / 2 - 4, reach / 2 + 5);
+				if (!WorldGen.InWorld(x, y, 30))
 					continue;
-				if (!WorldGen.SolidTile(x, y) || WorldGen.SolidTile(x, y - 3))
+				if (!WorldGen.SolidTile(x, y))
+					continue;
+				// a floor with headroom. Testing only three tiles up used to accept a pocket
+				// inside solid rock, where the mouth is buried and nothing it spawns gets out
+				if (WorldGen.SolidTile(x, y - 1) || WorldGen.SolidTile(x, y - 2)
+					|| WorldGen.SolidTile(x, y - 3))
 					continue;
 
-				NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
+				int index = NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
 					x * 16 + 8, y * 16, ModContent.NPCType<BreachMouth>());
-				return;
+				if (index >= Main.maxNPCs)
+					return false;
+
+				// NewNPC does not sync itself, and without this the mouths exist on the server
+				// and on nobody's screen
+				if (Main.netMode == NetmodeID.Server)
+					NetMessage.SendData(MessageID.SyncNPC, number: index);
+				return true;
 			}
+
+			return false;
 		}
 
 		/// <summary>
