@@ -71,6 +71,24 @@ namespace Terrapex.Common.Systems
 			=> !Active && Main.hardMode && DownedBossSystem.downedKeeper
 			   && player.ZoneRockLayerHeight && !player.ZoneDungeon;
 
+		/// <summary>
+		/// A flare used on a client reaches the server here. The flare cannot simply call
+		/// <see cref="Start"/> from the client: nothing on the client may write world state, and
+		/// the mod's other summon item (<c>FracturedEye</c>) already asks the server the same way.
+		/// The conditions are re-tested against the sender because a packet is not a promise.
+		/// </summary>
+		public static void RequestStart(int whoAmI)
+		{
+			if (Main.netMode != NetmodeID.Server || whoAmI < 0 || whoAmI >= Main.maxPlayers)
+				return;
+
+			Player sender = Main.player[whoAmI];
+			if (!sender.active || !CanStart(sender))
+				return;
+
+			Start(sender.Center);
+		}
+
 		public static void Start(Vector2 where)
 		{
 			if (Main.netMode == NetmodeID.MultiplayerClient)

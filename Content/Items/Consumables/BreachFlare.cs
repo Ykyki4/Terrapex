@@ -36,8 +36,19 @@ namespace Terrapex.Content.Items.Consumables
 
 		public override bool? UseItem(Player player)
 		{
-			if (Main.netMode == NetmodeID.MultiplayerClient)
+			if (player.whoAmI != Main.myPlayer)
 				return true;
+
+			// A client cannot open the event itself — world state belongs to the server, and
+			// relying on the server to run this hook a second time is not something the mod's
+			// other summon item does either. So the client asks and the server decides.
+			if (Main.netMode == NetmodeID.MultiplayerClient)
+			{
+				ModPacket packet = ModContent.GetInstance<Terrapex>().GetPacket();
+				packet.Write((byte)TerrapexPacket.BreachStart);
+				packet.Send();
+				return true;
+			}
 
 			BreachSystem.Start(player.Center);
 			return true;

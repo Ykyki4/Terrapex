@@ -1049,6 +1049,7 @@ Items: {
 			15% increased mining speed
 			'''
 	}
+
 	# ---------------------------------------------------------------- the Breach event
 	Ejecta: {
 		DisplayName: Ejecta
@@ -1084,10 +1085,7 @@ Items: {
 
 	SoundingRod: {
 		DisplayName: Sounding Rod
-		Tooltip:
-			'''
-			Breach mouths show through stone, and the way to them is marked
-			'''
+		Tooltip: Breach mouths show through stone, and the way to them is marked
 	}
 }
 
@@ -1349,6 +1347,17 @@ NPCs: {
 	Sifter: {
 		DisplayName: The Sifter
 		Bestiary: It came up with the rest of the ejecta and then declined to go back. It will take that rock off your hands.
+
+		TownNPCMood: {
+			Princess_LovesNPC: I like {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			HateCrowded: "{$Mods.Terrapex.TownNPCMood.Sifter.HateCrowded}"
+			DislikeCrowded: "{$Mods.Terrapex.TownNPCMood.Sifter.DislikeCrowded}"
+			LoveSpace: "{$Mods.Terrapex.TownNPCMood.Sifter.LoveSpace}"
+			FarFromHome: "{$Mods.Terrapex.TownNPCMood.Sifter.FarFromHome}"
+			NoHome: "{$Mods.Terrapex.TownNPCMood.Sifter.NoHome}"
+			Content: "{$Mods.Terrapex.TownNPCMood.Sifter.Content}"
+		}
 	}
 }
 

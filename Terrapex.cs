@@ -8,7 +8,10 @@ namespace Terrapex
 	public enum TerrapexPacket : byte
 	{
 		/// <summary>Server → clients: the Breach's live wave, kill count and origin.</summary>
-		BreachState = 0
+		BreachState = 0,
+
+		/// <summary>Client → server: this player used a Breach Flare. The server decides.</summary>
+		BreachStart = 1
 	}
 
 	public class Terrapex : Mod
