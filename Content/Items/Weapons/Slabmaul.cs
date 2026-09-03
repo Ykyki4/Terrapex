@@ -24,7 +24,7 @@ namespace Terrapex.Content.Items.Weapons
 		{
 			Item.width = 46;
 			Item.height = 46;
-			Item.damage = 74;
+			Item.damage = 56;
 			Item.DamageType = DamageClass.Melee;
 			Item.knockBack = 9f;
 			Item.useTime = 34;
