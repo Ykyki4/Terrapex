@@ -127,10 +127,9 @@ namespace Terrapex.Common.Systems
 			Kills++;
 			if (Kills < WaveGoals[Wave - 1])
 			{
-				// the bar only has to be right on the client that draws it, and it is redrawn
-				// from this value, so a sync every ten kills is enough and costs nothing
-				if (Kills % 10 == 0)
-					Sync();
+				// every kill: the progress bar is drawn from this value, and a bar that moves in
+				// steps of ten looks broken. The packet is twelve bytes
+				Sync();
 				return;
 			}
 
@@ -187,8 +186,13 @@ namespace Terrapex.Common.Systems
 		}
 
 		/// <summary>
-		/// Puts one mouth in the stone near a player. Returns false when it could not find
-		/// anywhere to put it, which is the caller's cue to try again on the next tick.
+		/// Puts one mouth somewhere near a player. Returns false when it could not find anywhere
+		/// to put it, which is the caller's cue to try again on the next tick.
+		///
+		/// A floor is preferred and not required. The first pass looks for one, because a mouth
+		/// standing on rock is what the event is about; after that it will hang in open air, in
+		/// water, indoors, anywhere the body fits. The one thing it will not do is open inside
+		/// solid rock — a buried mouth is invisible and everything it spawns is stuck in stone.
 		/// </summary>
 		private static bool OpenMouth()
 		{
@@ -198,37 +202,59 @@ namespace Terrapex.Common.Systems
 
 			Point at = host.Center.ToTileCoordinates();
 
-			// searched from close to far rather than uniformly across the whole box: a mouth
-			// that opens forty tiles away through solid rock is a spawner the player never
-			// finds, and the dial only works if you can reach what you are choosing about
-			for (int attempt = 0; attempt < 60; attempt++)
+			// searched close to far: a mouth that opens forty tiles away is a spawner nobody
+			// finds, and the dial only works if the player can reach what they are choosing about
+			for (int attempt = 0; attempt < 90; attempt++)
 			{
-				int reach = 8 + attempt;
+				bool wantFloor = attempt < 30;
+				int reach = 8 + attempt / 2;
 				int x = at.X + Main.rand.Next(-reach, reach + 1);
 				int y = at.Y + Main.rand.Next(-reach / 2 - 4, reach / 2 + 5);
 				if (!WorldGen.InWorld(x, y, 30))
 					continue;
-				if (!WorldGen.SolidTile(x, y))
-					continue;
-				// a floor with headroom. Testing only three tiles up used to accept a pocket
-				// inside solid rock, where the mouth is buried and nothing it spawns gets out
-				if (WorldGen.SolidTile(x, y - 1) || WorldGen.SolidTile(x, y - 2)
-					|| WorldGen.SolidTile(x, y - 3))
-					continue;
 
-				int index = NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
-					x * 16 + 8, y * 16, ModContent.NPCType<BreachMouth>());
-				if (index >= Main.maxNPCs)
+				if (wantFloor)
+				{
+					// solid under it, three tiles of headroom over it
+					if (!WorldGen.SolidTile(x, y) || !Clear(x, y - 1, 3))
+						continue;
+					if (!Place(x, y * 16))
+						return false;
+					return true;
+				}
+
+				// anywhere the body fits, floor or no floor
+				if (!Clear(x, y - 1, 3))
+					continue;
+				if (!Place(x, y * 16 + 28))
 					return false;
-
-				// NewNPC does not sync itself, and without this the mouths exist on the server
-				// and on nobody's screen
-				if (Main.netMode == NetmodeID.Server)
-					NetMessage.SendData(MessageID.SyncNPC, number: index);
 				return true;
 			}
 
 			return false;
+		}
+
+		/// <summary>True when <paramref name="rows"/> tiles upward from (x, y) are all passable.</summary>
+		private static bool Clear(int x, int y, int rows)
+		{
+			for (int i = 0; i < rows; i++)
+				if (WorldGen.SolidTile(x, y - i))
+					return false;
+			return true;
+		}
+
+		private static bool Place(int tileX, int worldY)
+		{
+			int index = NPC.NewNPC(new Terraria.DataStructures.EntitySource_WorldEvent(),
+				tileX * 16 + 8, worldY, ModContent.NPCType<BreachMouth>());
+			if (index >= Main.maxNPCs)
+				return false;
+
+			// NewNPC does not sync itself, and without this the mouths exist on the server and
+			// on nobody's screen
+			if (Main.netMode == NetmodeID.Server)
+				NetMessage.SendData(MessageID.SyncNPC, number: index);
+			return true;
 		}
 
 		/// <summary>

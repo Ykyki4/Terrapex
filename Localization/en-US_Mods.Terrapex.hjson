@@ -1454,6 +1454,8 @@ TownNPCMood: {
 Common: {
 	Reaped: Reaped: {0}/{1}
 	Untouched: Untouched: {0}%
+	BreachBar: Breach — wave {0} of {1} · {2}/{3}
+	BreachBarFinale: Breach — the Heave
 }
 
 Mounts.PlateMount.DisplayName: Riding Plate

@@ -63,6 +63,7 @@ Develop Mods → Reload.
 | `Content/NPCs/Bosses/WeaverAnchor.cs` | its legs; each one standing takes 10% off the damage the body receives, and its death staggers the boss |
 | `Content/NPCs/Bosses/Heave.cs` | the Breach's finale: ground-bound, four attacks, and every mouth left standing makes it bigger |
 | `Content/NPCs/TownNPCs/Sifter.cs` | the event's shop. Town NPC, arrives once the Heave is dead, priced only in Ejecta |
+| `Common/UI/BreachBar.cs` | the event's progress bar. Vanilla's invasion bar cannot be borrowed — it draws vanilla's own icon |
 | `Common/Systems/EjectaCurrency.cs` | registers Ejecta as a shop currency (`CustomCurrencySingleCoin`) |
 | `Content/Projectiles/HeaveSlab.cs` | a plate of floor driven up: 44 harmless ticks of crack, then stone. `FriendlySlab` is the player's half |
 | `Content/NPCs/Bosses/FirstKeeper.cs` | boss 4: the Regard - a cone of sight that doubles the damage both ways inside it |
