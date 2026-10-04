@@ -9,7 +9,8 @@ Design docs for the bosses: **`BOSS_KEEPER.md`**, **`BOSS_WEAVER.md`** and
 attack tables with tells, projectile table, what is still missing). Read the relevant one
 before changing fight behaviour — the numbers in it and the numbers in the code are meant
 to stay in sync. **`EVENT_BREACH.md`** is the same document for the Breach, the wave event
-of 0.4.0 — built, not yet playtested.
+of 0.4.0 — built, not yet playtested. **`CLASS_REAPER.md`** is the same again for the fifth
+class, scythes — the edge, the Harvest meter and the Reap, with the ladder of weapons.
 
 ## Build
 
@@ -59,6 +60,11 @@ Develop Mods → Reload.
 | `Common/GlobalNPCs/BoundGlobalNPC.cs` | T4's mechanic: two enemies stitched, 45% of every hit echoed down the thread |
 | `Common/BossDeath.cs` | the throes all four bosses die through - shared timing, own dust each |
 | `Common/RiftDraw.cs` | shared trail / bloom / ring helpers for every projectile |
+| `Common/Reaper/` | the reaper class: `ReapingDamage`, `ReaperPlayer` (Harvest, edge share, Iaido), the Harvest bar layer |
+| `Content/Items/Weapons/Reaper/` | `ScytheItem` (abstract: reach + Reap) and every scythe built on it |
+| `Content/Projectiles/Reaper/ScytheSwing.cs` | the held 270° stroke every scythe shares; its blade segment is the hitbox and the outer part is the edge |
+| `Content/NPCs/TownNPCs/Ronin.cs` | the class's NPC; moves in when anyone carries a scythe |
+| `Art/reaper/` | Aseprite scripts: `lib.lua` (2x2 grid, outline, hafts, crescents, palettes), `scythes.lua` (one hand-drawn map per scythe), `reaper_items.lua` (sickle, kusarigama, Rift Scythe, accessories), `ronin_npc.lua`. `preview_scythes.py` lays every scythe out with its numbers |
 | `Content/NPCs/Bosses/WeaverOfTheRift.cs` | boss 3: three phases, anchors, thread hazards |
 | `Content/NPCs/Bosses/WeaverAnchor.cs` | its legs; each one standing takes 10% off the damage the body receives, and its death staggers the boss |
 | `Content/NPCs/Bosses/Heave.cs` | the Breach's finale: ground-bound, four attacks, and every mouth left standing makes it bigger |
@@ -143,10 +149,21 @@ Reference: `ExampleMod/Content/Projectiles/ExampleSpearProjectile.cs`. With `aut
 held projectile also needs `CanUseItem` to check `ownedProjectileCounts < 1`, or holding the
 button stacks spears.
 
-**Player art is 1:1. Item icons are 2x2. Never mix them.** The Calamity grid belongs to the
-inventory sprite only — equip sheets and wings sit on a vanilla player drawn at 1:1, and
-blocking them out in 2x2 is what made the first Rift Wings read as a row of tiles instead of
-feathers.
+**Player art: 1:1 for the rift tiers, 2x2 from the Ronin on.** The rule used to be "never 2x2
+on the player", after blocky Rift Wings read as a row of tiles. Measuring Calamity's own sheets
+(Reaver, Daedalus, Hydrothermic, in `Art/reference/calamity/armor/`) says otherwise: **100% of
+their equip sheets are 2x2 too**, and the user asked for that look. What failed on the wings
+was the shape, not the grid. The Ronin set is the first 2x2 armour; T0-T6 stay as they are.
+Within one set, never mix the two.
+
+**Judge armour on a player, not on an empty sheet.** An empty preview hides the two worst
+failures: a helmet whose cheek guard puts a black outline over the eye, and a shoulder piece
+that reads as a backpack. `Art/concepts/ronin/compare.py` composites onto the real vanilla
+player, from layers extracted out of the local Terraria install into
+`Art/reference/vanilla_player/` (git-ignored — Re-Logic's assets, never published). The XNBs
+are LZX-compressed; FNA's internal `LzxDecoder` in tModLoader's `Libraries/FNA` unpacks them.
+The vanilla head is cols 6-14 / rows 6-13 in art cells with the eye at col 10 rows 10-11 —
+build a helmet around that and the face shows.
 
 **A head equip sheet is one design stamped into twenty frames.** Twelve head items in this
 mod once shared **three** silhouettes, because the sheets had been copied between tiers and
@@ -484,8 +501,16 @@ into a brick — and draw the rib as a line following the curve, never as scatte
 
 ## Art pipeline
 
-**All sprites are drawn in LibreSprite.** Python is for inspection only — contact
+**All sprites are drawn in LibreSprite or Aseprite.** Python is for inspection only — contact
 sheets, GIF export, sheet assembly — and never paints a shipping pixel.
+
+**Aseprite is built from source** at `C:sepriteuildinseprite.exe` and runs Lua in
+batch mode — `aseprite -b --script-param root=<repo> --script <file>.lua`. That is how the
+Ronin set and the reaper items are drawn (`Art/concepts/ronin/ronin.lua`, `Art/reaper/*.lua`):
+hand-written char maps in a half-size art buffer, outlined there, blitted 2x2. Unlike the
+LibreSprite bridge it has no modal dialogs to hang on, and `Sprite(w, h)` + `saveAs` creates a
+new file directly — no blank PNG needed first. The `aseprite` MCP server (pixel-mcp) drives
+the same binary for one-off pixel work, but whole sheets are far cheaper as a script.
 
 **LibreSprite via MCP** (`libresprite-mcp`) is the tool. Start it with
 `uvx --with "mcp[cli]<2" libresprite-mcp` — the package pins `mcp>=1.12.2` with no upper
@@ -599,6 +624,13 @@ the part that is literally thread.
 
 Shadows hue-shift toward blue-violet, lit ends toward warm — a ramp that only darkens is
 what the earlier passes got wrong.
+
+**A weapon family differs in silhouette first, colour last.** Nine pre-hardmode scythes were
+first built from one crescent rule with nine palettes, and the verdict was "они все слишком
+одинаковые, просто меняются цвета". Each now has its own idea drawn as its own char map in
+`Art/reaper/scythes.lua` - an ice claw, a hook with a lantern, a pincer, a stone slab, an eyelid,
+three loose shards, a worm, a rib on a spine, a comb with a stinger, a leaf, a double-ended
+flaming blade. Shared rules are fine for hafts; the head of a weapon is where it says what it is.
 
 Two failure modes the user called out by name, both from generating a family at once:
 

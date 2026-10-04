@@ -17,6 +17,7 @@ using Terrapex.Content.Items.Consumables;
 using Terrapex.Content.Items.Materials;
 using Terrapex.Content.Items.Placeable;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 using Terrapex.Content.Projectiles;
 
 namespace Terrapex.Content.NPCs.Bosses
@@ -339,7 +340,8 @@ namespace Terrapex.Content.NPCs.Bosses
 				ModContent.ItemType<Lid>(),
 				ModContent.ItemType<StoneEye>(),
 				ModContent.ItemType<RockfallStaff>(),
-				ModContent.ItemType<SleepersRod>()));
+				ModContent.ItemType<SleepersRod>(),
+				ModContent.ItemType<Lidcutter>()));
 			notExpert.OnSuccess(ItemDropRule.Common(ModContent.ItemType<PlateShield>(), 3));
 			npcLoot.Add(notExpert);
 

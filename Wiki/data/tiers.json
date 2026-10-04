@@ -28,6 +28,7 @@
     "FissuriteOreTile": 0, "CrackedStoneTile": 0, "RiftTorchTile": 0,
     "FissureSlime": 0, "FissureSlimelet": 0, "Hangstone": 0, "Voidfly": 0,
     "FacetBeetle": 0, "FissureSight": 0, "Cracked": 0,
+    "FrostbiteSickle": 0, "Gravedigger": 0, "Sandsweeper": 0, "Lidcutter": 1, "Rotreaper": 1, "Veinreaper": 1, "Hivecutter": 1, "Thornreaper": 2, "Hellreaper": 2, "ReapBolt": 0, "ReapingSlash": 0, "FrostIcicle": 0, "LidDisc": 1, "ScytheSwing": 0, "ScytheReapSpin": 0, "RustedSickle": 0, "FissuriteScythe": 0, "Whetstone": 0, "Ronin": 0,
 
     "DormantEye": 1, "EyePlate": 1, "FacetBroodmother": 1, "Spall": 1,
     "Lid": 1, "StoneEye": 1, "RockfallStaff": 1, "SleepersRod": 1,
@@ -36,7 +37,9 @@
     "GlassArrow": 1, "RiftLens": 1, "RiftglassBlock": 1,
     "GlassblowerHood": 1, "GlassblowerRobe": 1, "GlassblowerBoots": 1,
     "DormantEyeTrophyTile": 1, "RiftglassBlockTile": 1, "SleeperEyeBuff": 1,
+    "GlassReaper": 1,
 
+    "Kusarigama": 2, "RoninKabuto": 2, "RoninDo": 2, "RoninSuneate": 2,
     "Bonefissure": 2, "Cleft": 2, "ScreeTome": 2, "HatchlingRod": 2,
     "Glassthread": 2, "MirrorCharm": 2, "EchoPendant": 2, "DustCloak": 2,
     "DustseekerHood": 2, "DustseekerGarb": 2, "DustseekerTreads": 2,
@@ -61,6 +64,7 @@
     "BreachMouth": 3, "Heave": 3, "Sifter": 3,
     "Ejecta": 3, "BreachFlare": 3, "Slabmaul": 3,
     "Overburden": 3, "SoundingRod": 3,
+    "ReaperEmblem": 3,
 
     "VoidThread": 4, "VoidCloth": 4, "Seam": 4, "Threadcaster": 4,
     "Stitch": 4, "Spindle": 4, "RiftScythe": 4,

@@ -47,7 +47,8 @@ ITEM_SECTIONS = [
     ("Pets", "pets", "Pets"),
 ]
 
-CLASSES = [("melee", "Melee"), ("ranged", "Ranged"), ("magic", "Magic"), ("summon", "Summon")]
+CLASSES = [("melee", "Melee"), ("ranged", "Ranged"), ("magic", "Magic"), ("summon", "Summon"),
+           ("reaper", "Reaping")]
 
 
 # ---------------------------------------------------------------- model
@@ -617,7 +618,7 @@ def class_of(e) -> str | None:
     dc = e.stats.get("damageClass", "")
     if dc.startswith("Summon"):
         return "summon"
-    return {"Melee": "melee", "Ranged": "ranged", "Magic": "magic"}.get(dc)
+    return {"Melee": "melee", "Ranged": "ranged", "Magic": "magic", "Reaping": "reaper"}.get(dc)
 
 
 def head_class(w: Wiki, head: str) -> str:
@@ -628,6 +629,8 @@ def head_class(w: Wiki, head: str) -> str:
             return cls
     if re.search(r"maxMinions|GetDamage\(DamageClass\.Summon\)", src):
         return "summon"
+    if "ReapingDamage" in src or "ReaperPlayer" in src:
+        return "reaper"
     return "melee"
 
 

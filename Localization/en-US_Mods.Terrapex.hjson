@@ -590,6 +590,143 @@ Items: {
 		Tooltip: Throws a crescent that widens as it flies
 	}
 
+	// ---------------------------------------------------------------- reaper class (CLASS_REAPER.md)
+	
+	RustedSickle: {
+		DisplayName: Rusted Sickle
+		Tooltip: A field tool, held by someone who has stopped farming
+	}
+
+	FissuriteScythe: {
+		DisplayName: Fissurite Scythe
+		Tooltip: Reap: the ground answers the spin with a ring of stone
+	}
+
+	GlassReaper: {
+		DisplayName: Glass Reaper
+		Tooltip: Reap: throws three glass crescents that shatter where they fall
+	}
+
+	Kusarigama: {
+		DisplayName: Kusarigama
+		Tooltip:
+			'''
+			A sickle on a chain
+			After a strike, the sickle is hauled back on its chain from the point, cutting on the way
+			Reap: throws the blade, hooks the first enemy it bites and drags it into reach
+			'''
+	}
+
+	FrostbiteSickle: {
+		DisplayName: Frostbite Sickle
+		Tooltip:
+			'''
+			After a strike, three icicles burst out of the point, sticking in and shattering
+			Edge hits burn with frost
+			Reap: a ring of icicles
+			'''
+	}
+
+	Gravedigger: {
+		DisplayName: Gravedigger
+		Tooltip:
+			'''
+			After a strike, a soul climbs out of the point and hunts the nearest enemy
+			Kills let out a soul that hunts the next enemy
+			Reap: four souls at once
+			'''
+	}
+
+	Sandsweeper: {
+		DisplayName: Sandsweeper
+		Tooltip: Reap: throws a fan of sand instead of spinning
+	}
+
+	Lidcutter: {
+		DisplayName: Lidcutter
+		Tooltip:
+			'''
+			After a strike, a disc of the lid flies on from the point and back to your hand, cracking what it passes
+			Edge hits crack the target, which then takes more damage
+			Reap: the crack lasts twice as long
+			'''
+	}
+
+	Rotreaper: {
+		DisplayName: Rotreaper
+		Tooltip:
+			'''
+			Kills leave a cloud of rot where the body was
+			Reap: throws four of them
+			'''
+	}
+
+	Veinreaper: {
+		DisplayName: Veinreaper
+		Tooltip:
+			'''
+			Edge hits drink a little life
+			Reap: drinks three times as much
+			'''
+	}
+
+	Hivecutter: {
+		DisplayName: Hivecutter
+		Tooltip:
+			'''
+			After a strike, the point is splashed with honey and three bees get out
+			Edge hits shake a bee loose
+			Reap: empties the hive
+			'''
+	}
+
+	Thornreaper: {
+		DisplayName: Thornreaper
+		Tooltip:
+			'''
+			Every hit poisons
+			Reap: a ring of thorns
+			'''
+	}
+
+	Hellreaper: {
+		DisplayName: Hellreaper
+		Tooltip:
+			'''
+			Every hit sets the target alight
+			Reap: throws three burning crescents
+			'''
+	}
+
+	Whetstone: {
+		DisplayName: Whetstone
+		Tooltip: "{0}% more of every scythe's blade counts as its edge"
+	}
+
+	ReaperEmblem: {
+		DisplayName: Reaper Emblem
+		Tooltip: 15% increased reaping damage
+	}
+
+	RoninKabuto: {
+		DisplayName: Ronin Kabuto
+		Tooltip: 6% increased reaping critical strike chance
+	}
+
+	RoninDo: {
+		DisplayName: Ronin Do
+		Tooltip: 8% increased reaping damage
+	}
+
+	RoninSuneate: {
+		DisplayName: Ronin Suneate
+		Tooltip:
+			'''
+			8% increased movement speed
+			4% increased reaping critical strike chance
+			'''
+	}
+
 	DarnerHood: {
 		DisplayName: Darner Hood
 		Tooltip:
@@ -1091,6 +1228,7 @@ Items: {
 }
 
 SetBonus: {
+	Ronin: Iaido: stand without attacking for {0} seconds and your next stroke strikes with the edge on everything it touches
 	Fissurite: Every {0}th hit cracks the target, taking {1}% more damage for 3 seconds
 	Dustseeker: Ore and creatures both show through stone, and you deal 8% more ranged damage
 	Glassblower: Broken glass gathers around you, and magic damage is increased by 10%
@@ -1208,6 +1346,26 @@ Tiles: {
 }
 
 NPCs: {
+	Ronin: {
+		DisplayName: Ronin
+		Bestiary: A swordsman who outlived his lord and traded the katana for the kama. He says the field is honest work. He does not say what grows in it.
+
+		TownNPCMood: {
+			Content: "{$Mods.Terrapex.TownNPCMood.Ronin.Content}"
+			NoHome: "{$Mods.Terrapex.TownNPCMood.Ronin.NoHome}"
+			FarFromHome: "{$Mods.Terrapex.TownNPCMood.Ronin.FarFromHome}"
+			LoveSpace: "{$Mods.Terrapex.TownNPCMood.Ronin.LoveSpace}"
+			DislikeCrowded: "{$Mods.Terrapex.TownNPCMood.Ronin.DislikeCrowded}"
+			HateCrowded: "{$Mods.Terrapex.TownNPCMood.Ronin.HateCrowded}"
+			LikeBiome: "{$Mods.Terrapex.TownNPCMood.Ronin.LikeBiome}"
+			DislikeBiome: "{$Mods.Terrapex.TownNPCMood.Ronin.DislikeBiome}"
+			LikeNPC: "{$Mods.Terrapex.TownNPCMood.Ronin.LikeNPC}"
+			DislikeNPC: "{$Mods.Terrapex.TownNPCMood.Ronin.DislikeNPC}"
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
 	DormantEye: {
 		DisplayName: The Dormant Eye
 		Bestiary: A boulder with a lid grown shut over it. Knock the slabs off or wait for the lid to split, because the rock itself barely feels you.
@@ -1363,6 +1521,13 @@ NPCs: {
 }
 
 Projectiles: {
+	ScytheSwing.DisplayName: Scythe
+	ScytheReapSpin.DisplayName: Reap
+	ReapStone.DisplayName: Reaped Stone
+	ReapGlass.DisplayName: Glass Crescent
+	KusarigamaHead.DisplayName: Kusarigama
+	ReapBolt.DisplayName: Reaped Bolt
+	ReapingSlash.DisplayName: Reaping Cut
 	RiftShard.DisplayName: Rift Shard
 	RiftTear.DisplayName: Rift Tear
 	RiftLaser.DisplayName: Rift Beam
@@ -1418,9 +1583,17 @@ Projectiles: {
 	KeeperMinion.DisplayName: Keeper
 	ClosureWhip.DisplayName: Closure
 	ShardlingCompanion.DisplayName: Shardling
+	LidDisc.DisplayName: Lid Disc
+	HoneyGlob.DisplayName: Honey Glob
+	FrostIcicle.DisplayName: Frost Icicle
 }
 
 Chat: {
+	Ronin0: A sword asks you to come close. A scythe asks you to stay exactly where you are.
+	Ronin1: Strike with the edge. Anything nearer than that is only leaning on the handle.
+	Ronin2: My lord is dust. The field, at least, still needs cutting.
+	Ronin3: Stand still long enough and the blade will tell you when. Mine always does.
+	Ronin4: The skeleton under the dungeon is gone, so I can sell you the rest of my kit. I kept it for someone who could carry it.
 	DormantEyeOpens: The lid splits. Something under the stone is awake.
 	DormantEyeDown: The Dormant Eye has been cracked open.
 	KeeperPhase2: The shell splits. The eye will not close again.
@@ -1443,6 +1616,19 @@ Chat: {
 }
 
 TownNPCMood: {
+	Ronin: {
+		Content: The rice is poor and the roof is good. I have known worse bargains.
+		NoHome: A ronin sleeps under the sky. He would still rather not.
+		FarFromHome: This is not my house, and I have walked far enough today.
+		LoveSpace: An open field. Room to swing.
+		DislikeCrowded: Too close. Someone will lose an ear.
+		HateCrowded: In this crowd my blade is a liability, and so am I.
+		LikeBiome: The forest is quiet. I like a place that does not talk back.
+		DislikeBiome: The snow gets into the lacquer.
+		LikeNPC: "{NPCName} sews a good seam. My armour has needed one for years."
+		DislikeNPC: "{NPCName} tried to sell me my own sickle."
+	}
+
 	Sifter: {
 		Content: I am content. The stone here is dull, but it holds still.
 		NoHome: I have nowhere to put anything down.
@@ -1454,8 +1640,13 @@ TownNPCMood: {
 }
 
 Common: {
+	ScytheStrike: Click anywhere within {0} tiles to cut there: the further out, the harder, and the outer rim always crits
+	ScytheEdge: The outer {0}% of the blade is its edge, and edge hits always crit
+	ScytheReap: Right-click with a full Harvest to Reap
+	AnyClassEmblem: Any class emblem
 	Reaped: Reaped: {0}/{1}
 	Untouched: Untouched: {0}%
 }
 
 Mounts.PlateMount.DisplayName: Riding Plate
+DamageClasses.ReapingDamage.DisplayName: reaping damage

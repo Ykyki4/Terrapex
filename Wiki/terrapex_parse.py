@@ -177,12 +177,20 @@ def parse_source(path: Path) -> Entity | None:
     cls, base = m.group(1), m.group(2)
     kind = {"ModItem": "item", "ModNPC": "npc", "ModBuff": "buff",
             "ModTile": "tile", "ModProjectile": "projectile",
-            "ModMount": "mount"}.get(base)
+            "ModMount": "mount",
+            # the reaper class: every scythe derives from this abstract item
+            "ScytheItem": "item"}.get(base)
     if kind is None:
         return None
 
     e = Entity(name=cls, kind=kind, path=path)
+    # a class subfolder (Weapons/Reaper) still files under its parent
     e.folder = path.parent.name
+    if path.parent.parent.name in ("Weapons",):
+        e.folder = path.parent.parent.name
+    if base == "ScytheItem":
+        # SetDefaults lives on the base class, so the damage class is not in this file
+        e.stats["damageClass"] = "Reaping"
 
     doc = re.search(r"///\s*<summary>(.*?)///\s*</summary>", src, re.S)
     if doc:
@@ -228,6 +236,8 @@ def parse_source(path: Path) -> Entity | None:
             d = re.search(r"DamageClass\.(\w+)", val)
             if d:
                 e.stats["damageClass"] = DAMAGE_CLASS.get(d.group(1), d.group(1))
+            elif "ReapingDamage" in val:
+                e.stats["damageClass"] = "Reaping"
         elif key == "useStyle":
             d = re.search(r"ItemUseStyleID\.(\w+)", val)
             if d:
