@@ -8,3 +8,5 @@ __pycache__/
 .venv/
 Wiki/mkdocs.en.yml
 Wiki/mkdocs.ru.yml
+# vanilla player layers extracted from the local Terraria install - Re-Logic assets, never published
+Art/reference/vanilla_player/
