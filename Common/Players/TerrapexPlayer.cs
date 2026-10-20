@@ -11,6 +11,7 @@ using Terrapex.Content.Items.Accessories;
 using Terrapex.Common.GlobalNPCs;
 using Terrapex.Content.Tiles;
 using Terrapex.Content.Projectiles;
+using Terrapex.Content.Items.Weapons.Reaper;
 
 namespace Terrapex.Common.Players
 {
@@ -79,11 +80,11 @@ namespace Terrapex.Common.Players
 		public const int ReapMemory = 60 * 4;
 
 		/// <summary>Darner heads. Only one is ever set, and each rewrites the thread differently.</summary>
-		public bool darnerMelee, darnerRanged, darnerMagic, darnerSummon;
+		public bool darnerMelee, darnerRanged, darnerMagic, darnerSummon, darnerReaper;
 
 		/// <summary>Weaver set: the threads you leave behind outlast the ones you cut.</summary>
 		public bool weaverSet;
-		public bool weaverMelee, weaverRanged, weaverMagic, weaverSummon;
+		public bool weaverMelee, weaverRanged, weaverMagic, weaverSummon, weaverReaper;
 
 		/// <summary>Set by the Weaver Treads alone, so the legs carry an identity of their own.</summary>
 		public bool weaverTreads;
@@ -111,7 +112,7 @@ namespace Terrapex.Common.Players
 		public int LoomCapacity => weaverMagic ? 3 : 2;
 
 		/// <summary>Hits per anchor. The melee head runs the loom faster.</summary>
-		private int LoomEvery => weaverMelee ? 2 : 3;
+		private int LoomEvery => weaverReaper ? 1 : weaverMelee ? 2 : 3;
 
 		/// <summary>
 		/// One hit, offered to the loom. Every anchor is a place you chose to stand and swing,
@@ -171,7 +172,7 @@ namespace Terrapex.Common.Players
 
 		/// <summary>First Keeper set, and its four heads. Only ever one head at a time.</summary>
 		public bool firstSet;
-		public bool firstMelee, firstRanged, firstMagic, firstSummon;
+		public bool firstMelee, firstRanged, firstMagic, firstSummon, firstReaper;
 
 		/// <summary>Set by the greaves alone, so the legs carry a line of their own.</summary>
 		public bool firstGreaves;
@@ -212,6 +213,13 @@ namespace Terrapex.Common.Players
 
 			if (firstMagic)
 				return Vector2.DistanceSquared(npc.Center, regardCursor) <= RegardDisc * RegardDisc;
+
+			// the reaper head: the regard is the reach, a circle rather than a cone
+			if (firstReaper && Player.HeldItem.ModItem is ScytheItem scythe)
+			{
+				float reach = scythe.RangeFor(Player);
+				return Vector2.DistanceSquared(npc.Center, Player.MountedCenter) <= reach * reach;
+			}
 
 			Vector2 to = npc.Center - Player.MountedCenter;
 			float range = RegardRange;
@@ -292,17 +300,20 @@ namespace Terrapex.Common.Players
 			darnerRanged = false;
 			darnerMagic = false;
 			darnerSummon = false;
+			darnerReaper = false;
 			weaverSet = false;
 			weaverMelee = false;
 			weaverRanged = false;
 			weaverMagic = false;
 			weaverSummon = false;
+			weaverReaper = false;
 			weaverTreads = false;
 			firstSet = false;
 			firstMelee = false;
 			firstRanged = false;
 			firstMagic = false;
 			firstSummon = false;
+			firstReaper = false;
 			firstGreaves = false;
 			realityAnchor = false;
 			echoSpindle = false;

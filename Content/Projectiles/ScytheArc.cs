@@ -4,6 +4,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terrapex.Common;
 using Terrapex.Common.Players;
+using Terrapex.Common.Reaper;
+using Terrapex.Content.Projectiles.Reaper;
 
 namespace Terrapex.Content.Projectiles
 {
@@ -32,7 +34,7 @@ namespace Terrapex.Content.Projectiles
 			Projectile.height = 26;
 			Projectile.aiStyle = -1;
 			Projectile.friendly = true;
-			Projectile.DamageType = DamageClass.Melee;
+			Projectile.DamageType = ModContent.GetInstance<ReapingDamage>();
 			Projectile.penetrate = -1;
 			Projectile.timeLeft = Life;
 			Projectile.tileCollide = false;
@@ -85,6 +87,7 @@ namespace Terrapex.Content.Projectiles
 		{
 			if (Projectile.owner == Main.myPlayer)
 				Main.player[Projectile.owner].GetModPlayer<TerrapexPlayer>().Reap();
+			ReapingSlash.RangedHit(Projectile, target, hit);
 
 			for (int i = 0; i < 5; i++)
 			{

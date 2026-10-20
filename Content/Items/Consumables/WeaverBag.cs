@@ -6,6 +6,7 @@ using Terrapex.Content.Items.Accessories;
 using Terrapex.Content.Items.Materials;
 using Terrapex.Content.Items.Placeable;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 
 namespace Terrapex.Content.Items.Consumables
 {
@@ -38,7 +39,8 @@ namespace Terrapex.Content.Items.Consumables
 				ModContent.ItemType<Weft>(),
 				ModContent.ItemType<LoomStaff>(),
 				ModContent.ItemType<Sailcloth>(),
-				ModContent.ItemType<Rend>()));
+				ModContent.ItemType<Rend>(),
+				ModContent.ItemType<Shuttlecut>()));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Shuttle>(), 4));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ThreadOfFate>(), 1));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<WeaveCharm>(), 1));

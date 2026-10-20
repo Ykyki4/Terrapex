@@ -2,6 +2,694 @@
 # Please read https://github.com/tModLoader/tModLoader/wiki/Localization to learn more about localization and these files.
 
 Items: {
+	HarvestMoon: {
+		DisplayName: Harvest Moon
+		Tooltip:
+			'''
+			Each cut ends in the next of four rites: tide, sun, frost, fire
+			A whirlpool, a rolling sun pebble, a falling icicle, a burning crescent
+			The moon over your reach shows which comes next
+			Reap: all four at once where you aim
+			'''
+	}
+
+	Eclipse: {
+		DisplayName: Eclipse
+		Tooltip:
+			'''
+			Each cut ends in the next of five rites: tide, sun, frost, fire, rift
+			A cut on the edge gives two rites at once, under a corona
+			Every hit burns with hellfire
+			Reap: all five at once where you aim
+			'''
+	}
+
+	LongNight: {
+		DisplayName: Long Night
+		Tooltip:
+			'''
+			Five rites in turn, two on the edge
+			Reap: all five at once, the Death Sickle's three sickles, and three seconds of night
+			Through the night your reach goes dark and every cut inside it lands on the edge
+			'''
+	}
+
+	EventHorizon: {
+		DisplayName: Event Horizon
+		Tooltip:
+			'''
+			Five rites in turn, two on the edge, and the Long Night on a Reap
+			Every cut opens a vortex on its point that drags small enemies to its core
+			The vortex collapses into all five rites at once
+			'''
+	}
+
+	Almanac: {
+		DisplayName: Almanac
+		Tooltip:
+			'''
+			Casts the page it is open at: Tide, Sun, Snow or Scree
+			Tide blows a bursting brine bubble, Sun lobs a bolt that raises a pillar of sand,
+			Snow rolls a growing snowball, Scree throws a cone of stones
+			The book turns its own page every 4 casts
+			'Four tomes, one binding'
+			'''
+	}
+
+	EquinoxAlmanac: {
+		DisplayName: Equinox Almanac
+		Tooltip:
+			'''
+			Casts the page it is open at: Tide, Sun, Snow or Scree
+			Right-click to turn the page
+			Hold to charge: when the ring closes, the page casts its greater form
+			and a lance of the Riftflow runs down your aim
+			'''
+	}
+
+	Solstice: {
+		DisplayName: Solstice
+		Tooltip:
+			'''
+			Every cast is the chosen page and the page opposite it
+			Right-click to turn the page
+			Hold to charge: both pages cast their greater forms, a Riftflow lance fires
+			and a strand of the Loom is strung across the cursor
+			'''
+	}
+
+	Cosmogony: {
+		DisplayName: Cosmogony
+		Tooltip:
+			'''
+			The four pages stand around you
+			Each cast shuts the book, and every page throws its own spell at the cursor
+			Right-click chooses a page; the chosen page is lit and hits harder
+			Hold to charge: all four greater forms, the lance, the strand,
+			and the Regard opens on the cursor
+			'Before the world, the book'
+			'''
+	}
+
+	MenagerieHorn: {
+		DisplayName: Menagerie Horn
+		Tooltip:
+			'''
+			Summons a beast of the menagerie to fight for you
+			Each summon is the next beast: crab, beetling, rime sprite, hatchling
+			The crab walks and grips its prey, the beetling dives, the sprite rams and chills, the hatchling spits
+			'''
+	}
+
+	WildCourt: {
+		DisplayName: Wild Court
+		Tooltip:
+			'''
+			Summons a beast of the court to fight for you
+			Each summon is the next beast: crab, beetling, rime sprite, hatchling
+			While all four beasts are out, the court is in session: 15% increased summon damage
+			'''
+	}
+
+	GroveConclave: {
+		DisplayName: Grove Conclave
+		Tooltip:
+			'''
+			Summons a beast of the conclave to fight for you
+			Each summon is the next beast; all four out is 15% increased summon damage
+			Every 6 seconds the beasts trade places and each strikes its own target at once
+			'''
+	}
+
+	TheArk: {
+		DisplayName: The Ark
+		Tooltip:
+			'''
+			Summons the whole ark: all four beasts in one minion slot
+			The court is always in session: 15% increased summon damage
+			Every 6 seconds the beasts trade places and strike at once
+			Every 3 seconds each beast fires a volley
+			'''
+	}
+
+	Wayfinder: {
+		DisplayName: Wayfinder
+		Tooltip:
+			'''
+			Wooden arrows leave it as the four winds in turn:
+			spray bursts into three, sun glances off walls,
+			frost drops an icicle where it breaks, the cleft goes through
+			'''
+	}
+
+	CompassRose: {
+		DisplayName: Compass Rose
+		Tooltip:
+			'''
+			Wooden arrows leave it as the four winds in turn
+			Every fourth shot looses all four winds at once in a fan
+			The fan's arrows leave the Rib's mark on what they hit
+			'''
+	}
+
+	TradeWind: {
+		DisplayName: Trade Wind
+		Tooltip:
+			'''
+			The four winds in turn, and every fourth shot all four in a fan
+			Each shot looses a lighter second arrow of the opposite wind
+			Arrows that fly 25 tiles catch the trade wind: they stop falling and hit 40% harder
+			A tailwind arrow threads its first hit on to the next enemy
+			'''
+	}
+
+	Horizon: {
+		DisplayName: Horizon
+		Tooltip:
+			'''
+			The four winds, the fan, the second arrow and the trade wind
+			Every eighth shot a rose of eight bows opens above you
+			and each looses its own arrow at the cursor in turn
+			before the eye at its centre lays one stare down the same line
+			'''
+	}
+
+	Confluence: {
+		DisplayName: Confluence
+		Tooltip:
+			'''
+			Each swing carries the next current: tide, sun, frost, bone
+			Tide shoves and soaks, sun burns and flares, frost sheds splinters, bone cracks and throws a ricocheting splinter
+			Every third swing lets a wave of the current go
+			'''
+	}
+
+	TrueConfluence: {
+		DisplayName: True Confluence
+		Tooltip:
+			'''
+			Each swing carries the next current: tide, sun, frost, bone
+			Every swing lets a wave of the current go
+			Every fourth swing throws all four currents at once, in a fan
+			'''
+	}
+
+	Worldseam: {
+		DisplayName: Worldseam
+		Tooltip:
+			'''
+			Each swing carries the next current and lets its wave go; every fourth throws all four
+			Where a wave lands it leaves a seam in the air
+			The seam snaps shut half a second later and strikes along its line
+			'''
+	}
+
+	Meridian: {
+		DisplayName: Meridian
+		Tooltip:
+			'''
+			Currents, waves, the fan of four and the seams they leave
+			Every swing opens the five blades of the tree around you
+			Each copy strikes through the cursor and lets go of its own sword's trick
+			'''
+	}
+
+	TidewrackHood: {
+		DisplayName: Tidewrack Hood
+		Tooltip:
+			'''
+			{0}% increased reaping critical strike chance
+			Harvest fills {1}% faster
+			'''
+	}
+
+	TidewrackCoat: {
+		DisplayName: Tidewrack Coat
+		Tooltip:
+			'''
+			{0}% increased reaping damage
+			{1}% more of the blade counts as edge
+			'''
+	}
+
+	TidewrackBoots: {
+		DisplayName: Tidewrack Boots
+		Tooltip:
+			'''
+			{0}% increased reaping speed
+			{1}% increased movement speed
+			'''
+	}
+
+	SunwroughtNemes: {
+		DisplayName: Sunwrought Nemes
+		Tooltip:
+			'''
+			{0}% increased reaping critical strike chance
+			Scythe reach is {1}% wider
+			'''
+	}
+
+	SunwroughtCarapace: {
+		DisplayName: Sunwrought Carapace
+		Tooltip:
+			'''
+			{0}% increased reaping damage
+			Reaps deal {1}% more damage
+			'''
+	}
+
+	SunwroughtGreaves: {
+		DisplayName: Sunwrought Greaves
+		Tooltip:
+			'''
+			{0}% increased reaping speed
+			Harvest holds {1}% longer before it drains
+			'''
+	}
+
+	BarnacledHone: {
+		DisplayName: Barnacled Hone
+		Tooltip:
+			'''
+			Critical blade hits crust a barnacle on the target, up to {0}
+			A strike at range knocks them all off: {1}% more damage and extra Harvest for each
+			'''
+	}
+
+	ScarabAmulet: {
+		DisplayName: Scarab Amulet
+		Tooltip:
+			'''
+			After a Reap the sun rises for {0} seconds:
+			scythe reach is {1}% wider and {2}% more of the blade counts as edge
+			'''
+	}
+
+	RimeboundWrap: {
+		DisplayName: Rimebound Wrap
+		Tooltip:
+			'''
+			Hits with the haft throw the target back hard and frostbite it
+			The next edge or strike hit on a frostbitten target shatters the frost for {0}% more damage
+			'''
+	}
+
+	TidewalkerSandals: {
+		DisplayName: Tidewalker Sandals
+		Tooltip:
+			'''
+			Grants the ability to swim
+			Allows walking on water
+			25% increased movement speed in water
+			'''
+	}
+
+	SandstriderWraps: {
+		DisplayName: Sandstrider Wraps
+		Tooltip:
+			'''
+			Faster acceleration on sand, immunity to desert winds
+			10% increased movement speed in the desert
+			Running kicks up sand that confuses enemies behind you
+			'''
+	}
+
+	RimetreadBoots: {
+		DisplayName: Rimetread Boots
+		Tooltip:
+			'''
+			Provides extra mobility on ice
+			Faster acceleration on snow and ice
+			'''
+	}
+
+	WayfarersBoots: {
+		DisplayName: Wayfarer's Boots
+		Tooltip:
+			'''
+			The wearer can run super fast
+			20% increased movement speed, 10% more in the desert and 25% more in water
+			Allows swimming and walking on water, extra mobility on ice
+			Running kicks up sand that confuses enemies behind you
+			Immunity to Slow and desert winds
+			'''
+	}
+
+	RiftstrideBoots: {
+		DisplayName: Riftstride Boots
+		Tooltip:
+			'''
+			Allows flight and super fast running
+			20% increased movement speed, 10% more in the desert and 25% more in water
+			Allows swimming and walking on water, extra mobility on ice
+			Running kicks up sand that confuses enemies behind you
+			Immunity to Slow and desert winds
+			Landing from a great height throws nearby enemies back
+			'''
+	}
+
+	ThreadstepBoots: {
+		DisplayName: Threadstep Boots
+		Tooltip:
+			'''
+			Allows flight and running up to 7.5
+			30% increased movement speed, 10% more in the desert and 25% more in water
+			Allows swimming and walking on water and lava, extra mobility on ice
+			Immunity to lava, fire blocks, Slow and desert winds
+			Running kicks up sand that confuses enemies behind you
+			Landing from a great height throws nearby enemies back
+			Run off a ledge and a thread holds you level for one second
+			'''
+	}
+
+	WorldwalkerBoots: {
+		DisplayName: Worldwalker Boots
+		Tooltip:
+			'''
+			Allows Terraspark flight and running up to 8.5
+			38% increased movement speed, 10% more in the desert and 25% more in water
+			Allows swimming and walking on water and lava, extra mobility on ice
+			Immunity to lava, fire blocks, Slow and desert winds
+			Running kicks up sand that confuses enemies behind you
+			Landing from a great height throws nearby enemies back
+			Run off a ledge and a thread holds you level for one second
+			'''
+	}
+
+	GullFeather: {
+		DisplayName: Gull Feather
+		Tooltip: Double tap a direction for a light dash
+	}
+
+	SquallAegis: {
+		DisplayName: Squall Aegis
+		Tooltip:
+			'''
+			Double tap a direction to dash into an enemy
+			The dash pushes a gust ahead that throws enemies back
+			Grants immunity to knockback and fire blocks
+			'''
+	}
+
+	RiftAegis: {
+		DisplayName: Rift Aegis
+		Tooltip:
+			'''
+			Double tap a direction to dash through enemies, hitting all of them
+			You are briefly invulnerable at the end of the dash
+			The dash still pushes a gust ahead
+			Immunity to knockback and fire blocks
+			Puts a shell around you when below 50% life
+			'''
+	}
+
+	WeaversAegis: {
+		DisplayName: Weaver's Aegis
+		Tooltip:
+			'''
+			Double tap a direction to dash through enemies, hitting all of them
+			You are briefly invulnerable at the end of the dash, and the dash pushes a gust ahead
+			Each dash leaves a damaging thread along its path for 2 seconds
+			Immunity to knockback and fire blocks
+			Puts a shell around you when below 50% life
+			Absorbs 25% of damage done to players on your team while above 25% life
+			Allows the ability to climb walls and a chance to dodge attacks
+			'''
+	}
+
+	RegardAegis: {
+		DisplayName: Regard Aegis
+		Tooltip:
+			'''
+			Press the Regard Dash key to dash toward the cursor, through enemies, hitting all of them
+			Without the key bound, double tap a direction instead
+			You are briefly invulnerable at the end of the dash, and the dash pushes a gust ahead
+			Each dash leaves a damaging thread along its path for 2 seconds
+			For one second after the dash, enemies it passed through take 30% more damage from you
+			Immunity to knockback and fire blocks
+			Puts a shell around you when below 50% life
+			Absorbs 25% of damage done to players on your team while above 25% life
+			Allows the ability to climb walls and a chance to dodge attacks
+			'''
+	}
+
+	SunIdol: {
+		DisplayName: Sun Idol
+		Tooltip:
+			'''
+			Summons the Scarab Sultan
+			Use during the day in the surface desert
+			'''
+	}
+
+	ScarabSultanBag: {
+		DisplayName: Treasure Bag (Scarab Sultan)
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	ScarabSultanMask: {
+		DisplayName: Scarab Sultan Mask
+		Tooltip: ""
+	}
+
+	SultansCarapace: {
+		DisplayName: Sultan's Carapace
+		Tooltip:
+			'''
+			Getting hit releases a ring of eight sun motes
+			Can only happen once every 3 seconds
+			'''
+	}
+
+	GildedChitin: {
+		DisplayName: Gilded Chitin
+		Tooltip: A shell plate lacquered in gold
+	}
+
+	Sunsand: {
+		DisplayName: Sunsand
+		Tooltip: Sand that held the sun too long and still glows
+	}
+
+	SultansKhopesh: {
+		DisplayName: Sultan's Khopesh
+		Tooltip:
+			'''
+			Sets enemies on fire
+			Every third hit sets off a sun flare on the target
+			'''
+	}
+
+	SunwingBow: {
+		DisplayName: Sunwing Bow
+		Tooltip:
+			'''
+			Turns Wooden Arrows into Scarab Arrows
+			Scarab Arrows bounce off the first wall they hit
+			'''
+	}
+
+	SunScepter: {
+		DisplayName: Sun Scepter
+		Tooltip:
+			'''
+			Lobs a sun bolt
+			Where it lands, a pillar of sand bursts out of the ground
+			'''
+	}
+
+	BeetlingStaff: {
+		DisplayName: Beetling Staff
+		Tooltip:
+			'''
+			Summons a gilded beetling to fight for you
+			It lines up on a target and dives straight through it
+			'''
+	}
+
+	KhepriScythe: {
+		DisplayName: Khepri's Scythe
+		Tooltip:
+			'''
+			After each strike, a sun pebble drops out of it and rolls on
+			An edge strike drops two, one each way
+			'''
+	}
+
+	Glacierbreaker: {
+		DisplayName: Glacierbreaker
+		Tooltip:
+			'''
+			Frostburns what it hits
+			The first blow of each swing knocks three ice splinters off the head
+			'''
+	}
+
+	HoarfrostBow: {
+		DisplayName: Hoarfrost Bow
+		Tooltip:
+			'''
+			Turns wooden arrows into icicles
+			Icicles drop after a moment and burst into three splinters where they break
+			'''
+	}
+
+	SnowcapStaff: {
+		DisplayName: Snowcap Staff
+		Tooltip:
+			'''
+			Lobs a snowball that rolls along the ground
+			The snowball grows as it rolls, up to nearly twice the size and damage
+			'''
+	}
+
+	GlacierBell: {
+		DisplayName: Glacier Bell
+		Tooltip:
+			'''
+			Summons a rime-spirit to fight for you
+			Its darting strikes frostburn
+			'''
+	}
+
+	FrostfellScythe: {
+		DisplayName: Frostfell Scythe
+		Tooltip:
+			'''
+			After each strike an icicle drops onto the point - three on the edge
+			The Reap brings a row of six icicles down around you
+			'''
+	}
+
+	PermafrostHeart: {
+		DisplayName: Permafrost Heart
+		Tooltip:
+			'''
+			Standing still for a second grows a shell of frost over you
+			The shell takes 30% off the next hit and bursts into six ice splinters
+			Immunity to Chilled and Frozen
+			'''
+	}
+
+	RimeMask: {
+		DisplayName: Rime Mask
+		Tooltip: ""
+	}
+
+	RimeBag: {
+		DisplayName: Treasure Bag (The Rime)
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	FrozenHorn: {
+		DisplayName: Frozen Horn
+		Tooltip:
+			'''
+			Summons the Rime
+			Use in the Snow biome
+			'''
+	}
+
+	FrostPelt: {
+		DisplayName: Frost Pelt
+		Tooltip: "'Thick enough to sleep in a snowdrift'"
+	}
+
+	RimeCrystal: {
+		DisplayName: Rime Crystal
+		Tooltip: "'It never quite stops glowing'"
+	}
+
+	WreckersCutlass: {
+		DisplayName: Wrecker's Cutlass
+		Tooltip: Every hit knocks two barnacles loose as shrapnel
+	}
+
+	BarnacleBlunderbuss: {
+		DisplayName: Barnacle Blunderbuss
+		Tooltip:
+			'''
+			Fires four bullets in a spread
+			Uses bullets as ammo
+			'''
+	}
+
+	BrineConch: {
+		DisplayName: Brine Conch
+		Tooltip:
+			'''
+			Breathes out a slow, swelling bubble
+			It bursts into six falling droplets on contact or when its breath runs out
+			'''
+	}
+
+	RustedCrabPot: {
+		DisplayName: Rusted Crab Pot
+		Tooltip: Lets out a hermit crab that scuttles along the ground to fight for you
+	}
+
+	Undertow: {
+		DisplayName: Undertow
+		Tooltip:
+			'''
+			After a strike, a whirlpool opens on the point
+			It drags nearby enemies into its middle and wears at them
+			'''
+	}
+
+	BarnacledBell: {
+		DisplayName: Barnacled Bell
+		Tooltip:
+			'''
+			Summons the Old Shellback
+			Ring it on the beach
+			'''
+	}
+
+	ShellbackBag: {
+		DisplayName: Treasure Bag (Old Shellback)
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	OldShellbackMask: {
+		DisplayName: Old Shellback Mask
+		Tooltip: ""
+	}
+
+	HermitsHull: {
+		DisplayName: Hermit's Hull
+		Tooltip:
+			'''
+			Stand still for half a second to pull into your shell
+			While in the shell: +8 defense and 12% less damage taken
+			Moving or attacking brings you out
+			'''
+	}
+
+	BarnacleCluster: {
+		DisplayName: Barnacle Cluster
+		Tooltip: Scraped off a beach crab
+	}
+
+	TuskCharm: {
+		DisplayName: Tusk Charm
+		Tooltip:
+			'''
+			5 armor penetration
+			'It went through a fence. You are not a fence.'
+			'''
+	}
+
+	MolesLantern: {
+		DisplayName: Mole's Lantern
+		Tooltip:
+			'''
+			15% increased mining speed
+			Provides a small light
+			'''
+	}
+
 	# ---------------------------------------------------------------- T0, fissurite
 	FissuriteOre: {
 		DisplayName: Fissurite Ore
@@ -587,7 +1275,7 @@ Items: {
 
 	RiftScythe: {
 		DisplayName: Rift Scythe
-		Tooltip: Throws a crescent that widens as it flies
+		Tooltip: After a strike, a crescent flies out of the point and comes back, widening with every enemy reaped
 	}
 
 	// ---------------------------------------------------------------- reaper class (CLASS_REAPER.md)
@@ -696,6 +1384,197 @@ Items: {
 			Every hit sets the target alight
 			Reap: throws three burning crescents
 			'''
+	}
+
+	RiftsteelScythe: {
+		DisplayName: Riftsteel Scythe
+		Tooltip: Three plates of riftsteel, laid along one curve
+	}
+
+	KeepersHarvest: {
+		DisplayName: Keeper's Harvest
+		Tooltip: After a strike, five rift shards burst out of the point
+	}
+
+	HallowedHarvester: {
+		DisplayName: Hallowed Harvester
+		Tooltip: A blade that is mostly wing
+	}
+
+	OpticScythe: {
+		DisplayName: Optic Scythe
+		Tooltip: Every strike has a twin, mirrored through you, at three fifths of the damage
+	}
+
+	Seamreaper: {
+		DisplayName: Seamreaper
+		Tooltip: A needle on a haft, still threaded
+	}
+
+	VerdantReaper: {
+		DisplayName: Verdant Reaper
+		Tooltip: Chlorophyte grows on it faster than it wears
+	}
+
+	MourningScythe: {
+		DisplayName: Mourning Scythe
+		Tooltip:
+			'''
+			After a strike, two embers leap out of the point
+			Every hit sets the target ablaze
+			'''
+	}
+
+	Shuttlecut: {
+		DisplayName: Shuttlecut
+		Tooltip:
+			'''
+			After a strike, threads run from the point to the two nearest enemies
+			The threads cut whatever crosses them
+			'''
+	}
+
+	FinalHarvest: {
+		DisplayName: Final Harvest
+		Tooltip: The four pillars' light, down one blade
+	}
+
+	Lastlight: {
+		DisplayName: Lastlight
+		Tooltip: After a strike, an eye opens over the point and looks every way: six white rays
+	}
+
+	ScarecrowHat: {
+		DisplayName: Scarecrow Hat
+		Tooltip: 4% increased reaping critical strike chance
+	}
+
+	ScarecrowShirt: {
+		DisplayName: Scarecrow Shirt
+		Tooltip: 5% increased reaping damage
+	}
+
+	ScarecrowTrousers: {
+		DisplayName: Scarecrow Trousers
+		Tooltip: 6% increased movement speed
+	}
+
+	LongHaft: {
+		DisplayName: Long Haft
+		Tooltip: Your scythes reach {0}% further
+	}
+
+	HarvestCharm: {
+		DisplayName: Harvest Charm
+		Tooltip: Harvest fills {0}% faster
+	}
+
+	BoneSheath: {
+		DisplayName: Bone Sheath
+		Tooltip: "{0}% increased reaping speed"
+	}
+
+	ReapersKit: {
+		DisplayName: Reaper's Kit
+		Tooltip:
+			'''
+			{0}% more of every scythe's blade counts as its edge
+			Harvest fills {1}% faster
+			{2}% increased reaping speed
+			'''
+	}
+
+	SoulLantern: {
+		DisplayName: Soul Lantern
+		Tooltip:
+			'''
+			Your Reaps deal {0}% more damage
+			A Reap leaves {1}% of the Harvest behind
+			'''
+	}
+
+	GrimInsignia: {
+		DisplayName: Grim Insignia
+		Tooltip:
+			'''
+			{0}% increased reaping damage
+			{1}% increased reaping critical strike chance
+			{2}% more of every scythe's blade counts as its edge
+			Harvest fills {3}% faster
+			{4}% increased reaping speed
+			Your Reaps deal {5}% more damage
+			A Reap leaves {6}% of the Harvest behind
+			'''
+	}
+
+	HarvestPotion: {
+		DisplayName: Harvest Potion
+		Tooltip: 10% increased reaping damage and Harvest fills 20% faster
+	}
+
+	RiftsteelMask: {
+		DisplayName: Riftsteel Mask
+		Tooltip:
+			'''
+			12% increased reaping damage
+			6% increased reaping critical strike chance
+			'''
+	}
+
+	DarnerVeil: {
+		DisplayName: Darner Veil
+		Tooltip:
+			'''
+			11% increased reaping damage
+			8% increased reaping critical strike chance
+			'''
+	}
+
+	WeaverShroud: {
+		DisplayName: Weaver Shroud
+		Tooltip:
+			'''
+			16% increased reaping damage
+			10% increased reaping speed
+			'''
+	}
+
+	FirstVeil: {
+		DisplayName: First Veil
+		Tooltip:
+			'''
+			17% increased reaping damage
+			10% increased reaping critical strike chance
+			'''
+	}
+
+	ScarecrowEffigy: {
+		DisplayName: Scarecrow Effigy
+		Tooltip:
+			'''
+			Summons the Hollow Harvester
+			Use at night, on the surface
+			'''
+	}
+
+	HollowHarvesterBag: {
+		DisplayName: Treasure Bag (Hollow Harvester)
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	HollowHarvesterMask: {
+		DisplayName: Hollow Harvester Mask
+		Tooltip: ""
+	}
+
+	HollowHarvest: {
+		DisplayName: Hollow Harvest
+		Tooltip: After a strike, three straw crows burst out of the point
+	}
+
+	CrowCharm: {
+		DisplayName: Crow Charm
+		Tooltip: Every Reap lets a flock of six crows out around you
 	}
 
 	Whetstone: {
@@ -1228,6 +2107,20 @@ Items: {
 }
 
 SetBonus: {
+	TidewrackSet:
+		'''
+		Strikes in the edge band of your reach bank a swell, up to {0}
+		A Reap breaks them: a wave runs along the floor each way to the rim of your reach, {1}% of weapon damage per swell
+		'''
+	SunwroughtSet:
+		'''
+		While your Harvest is full, every strike rolls a sun out of the point it hit for {0}% of its damage
+		Its path is drawn from your reticle, and it gathers {1}% damage for each enemy it rolls through
+		'''
+	FirstReaper: Enemies inside your reach take 18% more damage from you: while you hold a scythe, the reach is your regard
+	WeaverReaper: Your hits plant anchors and the loom strings a thread between them; it takes an anchor on every hit
+	DarnerReaper: Stitched enemies take 20% more damage from you, and your strikes on them land as if on the edge
+	Scarecrow: Harvest fills {0}% faster and holds twice as long before it drains
 	Ronin: Iaido: stand without attacking for {0} seconds and your next stroke strikes with the edge on everything it touches
 	Fissurite: Every {0}th hit cracks the target, taking {1}% more damage for 3 seconds
 	Dustseeker: Ore and creatures both show through stone, and you deal 8% more ranged damage
@@ -1248,6 +2141,51 @@ SetBonus: {
 }
 
 Buffs: {
+	MenagerieHornBuff: {
+		DisplayName: Menagerie
+		Description: The beasts of the horn fight for you
+	}
+
+	WildCourtBuff: {
+		DisplayName: Wild Court
+		Description: The court fights for you - all four in session is 15% summon damage
+	}
+
+	GroveConclaveBuff: {
+		DisplayName: Grove Conclave
+		Description: The conclave fights for you, and trades places every 6 seconds
+	}
+
+	ArkBuff: {
+		DisplayName: The Ark
+		Description: The whole ark fights for you
+	}
+
+	BeetlingBuff: {
+		DisplayName: Gilded Beetling
+		Description: A gilded beetling fights for you
+	}
+
+	RimeSpriteBuff: {
+		DisplayName: Rime-spirit
+		Description: A rime-spirit fights for you
+	}
+
+	HermitShellBuff: {
+		DisplayName: In the Shell
+		Description: +8 defense, 12% less damage taken - until you move
+	}
+
+	PotCrabBuff: {
+		DisplayName: Hermit Crab
+		Description: A hermit crab fights for you
+	}
+
+	HarvestBuff: {
+		DisplayName: Harvest
+		Description: 10% increased reaping damage and Harvest fills 20% faster
+	}
+
 	Cracked: {
 		DisplayName: Cracked
 		Description: Taking 15% more damage
@@ -1346,6 +2284,71 @@ Tiles: {
 }
 
 NPCs: {
+	ScarabSultan: {
+		DisplayName: Scarab Sultan
+		Bestiary: A golden scarab king that flies the dunes with its sun held in its legs. It draws the path of every ball it kicks before it kicks it, which is the only courtesy it shows.
+	}
+
+	SandRoller: {
+		DisplayName: Sand Roller
+		Bestiary: A dung beetle the size of a dog. Its ball is a shield until it sends it rolling at you - and then it is just a beetle.
+	}
+
+	DustDevil: {
+		DisplayName: Dust Devil
+		Bestiary: A whirlwind with a dead scarab turning in its eye. When the ring of grit closes, it breathes in, and everything near it is pulled toward the middle.
+	}
+
+	RimeColossus: {
+		DisplayName: The Rime
+		Bestiary: An old spirit of the mountain, packed snow over a heart of glacier. It carries a block of ice the size of a boulder and has been walking the same snowfields since before anyone named them.
+	}
+
+	DriftHare: {
+		DisplayName: Drift Hare
+		Bestiary: It runs under the snow, and the only thing you see is the heap moving toward you - and two black ear tips. When the heap stops under your feet, step away.
+	}
+
+	FrostWisp: {
+		DisplayName: Frost Wisp
+		Bestiary: A flicker of cold that crosses and recrosses the air in front of you. It barely hurts to touch; what it leaves hanging behind it does.
+	}
+
+	OldShellback: {
+		DisplayName: Old Shellback
+		Bestiary: An ancient hermit crab that outgrew every shell the sea could offer, and took a sunken ship's hull instead. It still carries the cannon.
+	}
+
+	BarnacleCrab: {
+		DisplayName: Barnacle Crab
+		Bestiary: So crusted with barnacles it barely feels a blow. Hit it once and it clamps shut; leave it be, and it comes out lunging.
+	}
+
+	ScavengerGull: {
+		DisplayName: Scavenger Gull
+		Bestiary: It wheels over the beach doing no harm at all - until it stops, cries, and dives along the line it has picked.
+	}
+
+	ThornbackBoar: {
+		DisplayName: Thornback Boar
+		Bestiary: A forest boar that rolled in brambles until they took root. It scrapes the ground before it charges, and once it has picked its line, it does not turn.
+	}
+
+	LanternMole: {
+		DisplayName: Lantern Mole
+		Bestiary: Nobody knows who strapped the first lantern to a mole. The light moving behind the cave wall is the only warning before the ground breaks open.
+	}
+
+	PitcherSnapper: {
+		DisplayName: Pitcher Snapper
+		Bestiary: A jungle pitcher that grew tired of waiting for insects to fall in. It swells, then lobs its digestive acid at wherever its meal was standing.
+	}
+
+	HollowHarvester: {
+		DisplayName: Hollow Harvester
+		Bestiary: A scarecrow that outlived its field. It still keeps the crows off - by sending them at whatever comes near - and it still knows how far its scythe can reach.
+	}
+
 	Ronin: {
 		DisplayName: Ronin
 		Bestiary: A swordsman who outlived his lord and traded the katana for the kama. He says the field is honest work. He does not say what grows in it.
@@ -1521,12 +2524,73 @@ NPCs: {
 }
 
 Projectiles: {
+	HarvesterPumpkin.DisplayName: Jack-o'-Lantern
+	HarvesterField.DisplayName: Last Harvest
+	EyeTremor.DisplayName: Tremor
+	EclipseCorona.DisplayName: Corona
+	EventHorizonVortex.DisplayName: Event Horizon
+	AlmanacCharge.DisplayName: Almanac Charge
+	EquinoxLance.DisplayName: Equinox Lance
+	HornBeast.DisplayName: Menagerie Beast
+	CourtBeast.DisplayName: Court Beast
+	ConclaveBeast.DisplayName: Conclave Beast
+	ArkBeast.DisplayName: Ark Beast
+	MenagerieSpit.DisplayName: Hatchling Spit
+	ConclaveStrike.DisplayName: Conclave Strike
+	WindArrow.DisplayName: Wind Arrow
+	WindPellet.DisplayName: Spray Pellet
+	WindIcicle.DisplayName: Frost Icicle
+	HorizonRose.DisplayName: Rose of Bows
+	HorizonGaze.DisplayName: Horizon Gaze
+	ConfluenceSlash.DisplayName: Confluence
+	ConfluenceWave.DisplayName: Current
+	WorldseamSeam.DisplayName: Seam
+	MeridianBlade.DisplayName: Meridian Blade
+	AegisStrike.DisplayName: Aegis Dash
+	AegisGust.DisplayName: Gust
+	StepThread.DisplayName: Threadstep
+	SunBall.DisplayName: Sun
+	SunShard.DisplayName: Sun Shard
+	SandPillar.DisplayName: Sand Pillar
+	ScepterPillar.DisplayName: Sand Pillar
+	Beetling.DisplayName: Gilded Beetling
+	BeetlingMinion.DisplayName: Gilded Beetling
+	KhopeshFlare.DisplayName: Sun Flare
+	ScarabArrow.DisplayName: Scarab Arrow
+	ScepterBolt.DisplayName: Sun Bolt
+	SunPebble.DisplayName: Sun Pebble
+	SunMote.DisplayName: Sun Mote
+	RimeShockwave.DisplayName: Rime Shockwave
+	RimeBoulder.DisplayName: Glacier Block
+	RimeShard.DisplayName: Ice Shard
+	RimeIcicle.DisplayName: Falling Icicle
+	RimeWall.DisplayName: Ice Wall
+	FrostMote.DisplayName: Frost Mote
+	RimeSplinter.DisplayName: Ice Splinter
+	RimeArrow.DisplayName: Icicle Arrow
+	RollingSnowball.DisplayName: Rolling Snowball
+	RimeSprite.DisplayName: Rime-spirit
+	FrostfellIcicle.DisplayName: Frostfell Icicle
+	ShellbackBubble.DisplayName: Brine Bubble
+	ShellbackCannonball.DisplayName: Barnacled Cannonball
+	ShellbackWave.DisplayName: Slam Wave
+	BarnacleShrapnel.DisplayName: Barnacle Shrapnel
+	ConchBubble.DisplayName: Conch Bubble
+	ConchDroplet.DisplayName: Brine Droplet
+	UndertowWhirl.DisplayName: Undertow
+	PotCrabMinion.DisplayName: Hermit Crab
+	PitcherSpit.DisplayName: Pitcher Acid
+	ReapCrow.DisplayName: Straw Crow
+	HarvesterScythe.DisplayName: Harvester's Scythe
+	HarvesterCrow.DisplayName: Straw Crow
+	HarvesterCut.DisplayName: Harvester's Cut
 	ScytheSwing.DisplayName: Scythe
 	ScytheReapSpin.DisplayName: Reap
 	ReapStone.DisplayName: Reaped Stone
 	ReapGlass.DisplayName: Glass Crescent
 	KusarigamaHead.DisplayName: Kusarigama
 	ReapBolt.DisplayName: Reaped Bolt
+	ReapThread.DisplayName: Reaped Thread
 	ReapingSlash.DisplayName: Reaping Cut
 	RiftShard.DisplayName: Rift Shard
 	RiftTear.DisplayName: Rift Tear
@@ -1586,9 +2650,20 @@ Projectiles: {
 	LidDisc.DisplayName: Lid Disc
 	HoneyGlob.DisplayName: Honey Glob
 	FrostIcicle.DisplayName: Frost Icicle
+	TideBreaker.DisplayName: Tide Breaker
+	SunwroughtSun.DisplayName: Sunwrought Sun
 }
 
 Chat: {
+	HarvesterPhase3: The Hollow Harvester tears its cloak open. The last harvest begins.
+	ScarabPhase2: The sun in the Sultan's legs cracks open!
+	ScarabDown: The Scarab Sultan has fallen. The dunes are quiet.
+	RimePhase2: The wind rises off the mountain...
+	RimeDown: The snowfields fall quiet.
+	ShellbackPhase2: The Old Shellback's mast snaps - and it only gets angrier!
+	ShellbackDown: The Old Shellback sinks back beneath the waves...
+	HarvesterPhase2: The Hollow Harvester tears its scythe free. Nothing in its reach is safe now.
+	HarvesterDown: The Hollow Harvester has been cut down. The field is quiet.
 	Ronin0: A sword asks you to come close. A scythe asks you to stay exactly where you are.
 	Ronin1: Strike with the edge. Anything nearer than that is only leaning on the handle.
 	Ronin2: My lord is dust. The field, at least, still needs cutting.
@@ -1650,3 +2725,39 @@ Common: {
 
 Mounts.PlateMount.DisplayName: Riding Plate
 DamageClasses.ReapingDamage.DisplayName: reaping damage
+Keybinds.RegardDash.DisplayName: Regard Dash (Regard Aegis)
+
+Configs: {
+	TerrapexClientConfig: {
+		DisplayName: Terrapex
+
+		Reach: {
+			Label: Reaper reach display
+			Tooltip: How much of the scythe's reach is drawn. Arc shows only the stretch of rim facing the cursor.
+		}
+
+		ReachOpacity: {
+			Label: Reaper reach opacity
+			Tooltip: How bright the reach, the moon and the Long Night are drawn. The strike reticle never fades below a third.
+		}
+	}
+
+	ReachStyle: {
+		Arc: {
+			Label: Arc toward the cursor
+			Tooltip: ""
+		}
+
+		Full: {
+			Label: Full circle
+			Tooltip: ""
+		}
+
+		Reticle: {
+			Label: Reticle only
+			Tooltip: ""
+		}
+
+		Tooltip: ""
+	}
+}

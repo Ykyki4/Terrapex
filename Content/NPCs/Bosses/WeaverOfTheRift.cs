@@ -18,6 +18,7 @@ using Terrapex.Content.Items.Consumables;
 using Terrapex.Content.Items.Materials;
 using Terrapex.Content.Items.Placeable;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 using Terrapex.Content.Projectiles;
 
 namespace Terrapex.Content.NPCs.Bosses
@@ -981,7 +982,8 @@ namespace Terrapex.Content.NPCs.Bosses
 				ModContent.ItemType<Weft>(),
 				ModContent.ItemType<LoomStaff>(),
 				ModContent.ItemType<Sailcloth>(),
-				ModContent.ItemType<Rend>()));
+				ModContent.ItemType<Rend>(),
+				ModContent.ItemType<Shuttlecut>()));
 			normal.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Shuttle>(), 8));
 			normal.OnSuccess(ItemDropRule.Common(ModContent.ItemType<ThreadOfFate>(), 4));
 			npcLoot.Add(normal);

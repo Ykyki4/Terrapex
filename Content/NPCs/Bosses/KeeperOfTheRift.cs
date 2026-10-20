@@ -20,6 +20,7 @@ using Terrapex.Content.Items.Armor;
 using Terrapex.Content.Items.Accessories;
 using Terrapex.Common.Systems;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 using Terrapex.Content.Projectiles;
 
 namespace Terrapex.Content.NPCs.Bosses
@@ -864,7 +865,8 @@ namespace Terrapex.Content.NPCs.Bosses
 				ModContent.ItemType<Riftflow>(),
 				ModContent.ItemType<WardenPlate>(),
 				ModContent.ItemType<OrbitLash>(),
-				ModContent.ItemType<ShardCaster>()));
+				ModContent.ItemType<ShardCaster>(),
+				ModContent.ItemType<KeepersHarvest>()));
 			notExpert.OnSuccess(ItemDropRule.Common(ModContent.ItemType<CompanionEye>()));
 			npcLoot.Add(notExpert);
 		}

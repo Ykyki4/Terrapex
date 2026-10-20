@@ -1,0 +1,54 @@
+{
+ "en": {
+  "Items": {
+   "HarvestMoon": {
+    "DisplayName": "Harvest Moon",
+    "Tooltip": "Each cut ends in the next of four rites: tide, sun, frost, fire\nA whirlpool, a rolling sun pebble, a falling icicle, a burning crescent\nThe moon over your reach shows which comes next\nReap: all four at once where you aim"
+   },
+   "Eclipse": {
+    "DisplayName": "Eclipse",
+    "Tooltip": "Each cut ends in the next of five rites: tide, sun, frost, fire, rift\nA cut on the edge gives two rites at once, under a corona\nEvery hit burns with hellfire\nReap: all five at once where you aim"
+   },
+   "LongNight": {
+    "DisplayName": "Long Night",
+    "Tooltip": "Five rites in turn, two on the edge\nReap: all five at once, the Death Sickle's three sickles, and three seconds of night\nThrough the night your reach goes dark and every cut inside it lands on the edge"
+   },
+   "EventHorizon": {
+    "DisplayName": "Event Horizon",
+    "Tooltip": "Five rites in turn, two on the edge, and the Long Night on a Reap\nEvery cut opens a vortex on its point that drags small enemies to its core\nThe vortex collapses into all five rites at once"
+   }
+  },
+  "Projectiles": {
+   "EclipseCorona": "Corona",
+   "EventHorizonVortex": "Event Horizon"
+  }
+ },
+ "ru": {
+  "items": {
+   "HarvestMoon": [
+    "Урожайная луна",
+    "Каждый удар заканчивается следующим из четырёх обрядов: прилив, солнце, мороз, огонь\nВодоворот, катящийся солнечный камешек, падающая сосулька, горящий полумесяц\nЛуна над кругом досягаемости показывает, какой следующий\nСбор: все четыре сразу в точке прицела"
+   ],
+   "Eclipse": [
+    "Затмение",
+    "Каждый удар заканчивается следующим из пяти обрядов: прилив, солнце, мороз, огонь, разлом\nУдар кромкой даёт два обряда сразу, под короной\nКаждое попадание жжёт адским пламенем\nСбор: все пять сразу в точке прицела"
+   ],
+   "LongNight": [
+    "Долгая ночь",
+    "Пять обрядов по очереди, два на кромке\nСбор: все пять сразу, три серпа Косы смерти и три секунды ночи\nНочью круг досягаемости темнеет, и каждый удар внутри него — кромка"
+   ],
+   "EventHorizon": [
+    "Горизонт событий",
+    "Пять обрядов по очереди, два на кромке, Долгая ночь по Сбору\nКаждый удар открывает в точке воронку, которая тянет мелких врагов к центру\nВоронка схлопывается во все пять обрядов сразу"
+   ]
+  }
+ },
+ "tiers": {
+  "HarvestMoon": 2,
+  "Eclipse": 4,
+  "LongNight": 5,
+  "EventHorizon": 6,
+  "EclipseCorona": 4,
+  "EventHorizonVortex": 6
+ }
+}

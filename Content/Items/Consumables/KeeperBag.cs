@@ -6,6 +6,7 @@ using Terrapex.Content.Items.Accessories;
 using Terrapex.Content.Items.Armor;
 using Terrapex.Content.Items.Materials;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 
 namespace Terrapex.Content.Items.Consumables
 {
@@ -41,7 +42,8 @@ namespace Terrapex.Content.Items.Consumables
 				ModContent.ItemType<Riftflow>(),
 				ModContent.ItemType<WardenPlate>(),
 				ModContent.ItemType<OrbitLash>(),
-				ModContent.ItemType<ShardCaster>()));
+				ModContent.ItemType<ShardCaster>(),
+				ModContent.ItemType<KeepersHarvest>()));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CompanionEye>()));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<KeeperMask>(), 4));
 			itemLoot.Add(ItemDropRule.Common(ItemID.GoldCoin, 1, 10, 16));

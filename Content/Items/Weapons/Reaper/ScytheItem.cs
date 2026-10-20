@@ -46,6 +46,9 @@ namespace Terrapex.Content.Items.Weapons.Reaper
 
 		public float RangePixels => RangeTiles * 16f;
 
+		/// <summary>The reach as this player has it, after the Long Haft and anything like it.</summary>
+		public float RangeFor(Player player) => RangePixels * player.GetModPlayer<ReaperPlayer>().rangeMult;
+
 		/// <summary>The afterimage, strike and Reap tint.</summary>
 		public virtual Color SlashColor => new(232, 207, 148);
 
@@ -85,8 +88,18 @@ namespace Terrapex.Content.Items.Weapons.Reaper
 			player.ChangeDir(aim.X >= 0f ? 1 : -1);
 			reaper.SpendHarvest();
 			reaper.DrawBlade();
+			int damage = (int)(player.GetWeaponDamage(Item) * reaper.reapDamage);
 			Reap(player, player.GetSource_ItemUse(Item), player.MountedCenter, aim,
-				player.GetWeaponDamage(Item), player.GetWeaponKnockback(Item, Item.knockBack));
+				damage, player.GetWeaponKnockback(Item, Item.knockBack));
+
+			// the Crow Charm: every Reap lets a flock out in a ring
+			if (reaper.crowCharm)
+			{
+				for (int i = 0; i < Content.Items.Accessories.CrowCharm.Crows; i++)
+					Projectile.NewProjectile(player.GetSource_ItemUse(Item), player.MountedCenter,
+						Vector2.UnitX.RotatedBy(MathHelper.TwoPi * i / Content.Items.Accessories.CrowCharm.Crows) * 9f,
+						ModContent.ProjectileType<ReapCrow>(), damage / 2, 2f, player.whoAmI);
+			}
 		}
 
 		/// <summary>
@@ -98,7 +111,7 @@ namespace Terrapex.Content.Items.Weapons.Reaper
 		{
 			Vector2 center = player.MountedCenter;
 			Vector2 to = mouse - center;
-			float range = RangePixels;
+			float range = RangeFor(player);
 			float len = to.Length();
 			if (len > range)
 			{
@@ -211,7 +224,8 @@ namespace Terrapex.Content.Items.Weapons.Reaper
 		{
 			int edge = (int)System.Math.Round(Main.LocalPlayer.GetModPlayer<ReaperPlayer>().edgeShare * 100f);
 			tooltips.Add(new TooltipLine(Mod, "ScytheStrike",
-				Language.GetTextValue("Mods.Terrapex.Common.ScytheStrike", (int)RangeTiles)));
+				Language.GetTextValue("Mods.Terrapex.Common.ScytheStrike",
+					(int)(RangeTiles * Main.LocalPlayer.GetModPlayer<ReaperPlayer>().rangeMult))));
 			tooltips.Add(new TooltipLine(Mod, "ScytheEdge",
 				Language.GetTextValue("Mods.Terrapex.Common.ScytheEdge", edge)));
 			tooltips.Add(new TooltipLine(Mod, "ScytheReap",

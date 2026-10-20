@@ -19,6 +19,7 @@ using Terrapex.Content.Items.Materials;
 using Terrapex.Content.Items.Mounts;
 using Terrapex.Content.Items.Placeable;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 using Terrapex.Content.Projectiles;
 
 namespace Terrapex.Content.NPCs.Bosses
@@ -902,7 +903,8 @@ namespace Terrapex.Content.NPCs.Bosses
 				ModContent.ItemType<Unblinking>(),
 				ModContent.ItemType<Regard>(),
 				ModContent.ItemType<KeeperStaff>(),
-				ModContent.ItemType<Closure>()));
+				ModContent.ItemType<Closure>(),
+				ModContent.ItemType<Lastlight>()));
 			normal.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Nothing>(), 20));
 			normal.OnSuccess(ItemDropRule.Common(ModContent.ItemType<WholeEye>(), 4));
 			normal.OnSuccess(ItemDropRule.Common(ModContent.ItemType<RealityAnchor>(), 4));

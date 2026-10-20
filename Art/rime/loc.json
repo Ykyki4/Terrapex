@@ -1,0 +1,73 @@
+{
+  "en": {
+    "Items": {
+      "Glacierbreaker": {"DisplayName": "Glacierbreaker", "Tooltip": "Frostburns what it hits\nThe first blow of each swing knocks three ice splinters off the head"},
+      "HoarfrostBow": {"DisplayName": "Hoarfrost Bow", "Tooltip": "Turns wooden arrows into icicles\nIcicles drop after a moment and burst into three splinters where they break"},
+      "SnowcapStaff": {"DisplayName": "Snowcap Staff", "Tooltip": "Lobs a snowball that rolls along the ground\nThe snowball grows as it rolls, up to nearly twice the size and damage"},
+      "GlacierBell": {"DisplayName": "Glacier Bell", "Tooltip": "Summons a rime-spirit to fight for you\nIts darting strikes frostburn"},
+      "FrostfellScythe": {"DisplayName": "Frostfell Scythe", "Tooltip": "After each strike an icicle drops onto the point - three on the edge\nThe Reap brings a row of six icicles down around you"},
+      "PermafrostHeart": {"DisplayName": "Permafrost Heart", "Tooltip": "Standing still for a second grows a shell of frost over you\nThe shell takes 30% off the next hit and bursts into six ice splinters\nImmunity to Chilled and Frozen"},
+      "RimeMask": {"DisplayName": "Rime Mask", "Tooltip": ""},
+      "RimeBag": {"DisplayName": "Treasure Bag (The Rime)", "Tooltip": "{$CommonItemTooltip.RightClickToOpen}"},
+      "FrozenHorn": {"DisplayName": "Frozen Horn", "Tooltip": "Summons the Rime\nUse in the Snow biome"},
+      "FrostPelt": {"DisplayName": "Frost Pelt", "Tooltip": "'Thick enough to sleep in a snowdrift'"},
+      "RimeCrystal": {"DisplayName": "Rime Crystal", "Tooltip": "'It never quite stops glowing'"}
+    },
+    "NPCs": {
+      "RimeColossus": {"DisplayName": "The Rime", "Bestiary": "An old spirit of the mountain, packed snow over a heart of glacier. It carries a block of ice the size of a boulder and has been walking the same snowfields since before anyone named them."},
+      "DriftHare": {"DisplayName": "Drift Hare", "Bestiary": "It runs under the snow, and the only thing you see is the heap moving toward you - and two black ear tips. When the heap stops under your feet, step away."},
+      "FrostWisp": {"DisplayName": "Frost Wisp", "Bestiary": "A flicker of cold that crosses and recrosses the air in front of you. It barely hurts to touch; what it leaves hanging behind it does."}
+    },
+    "Projectiles": {
+      "RimeShockwave": "Rime Shockwave",
+      "RimeBoulder": "Glacier Block",
+      "RimeShard": "Ice Shard",
+      "RimeIcicle": "Falling Icicle",
+      "RimeWall": "Ice Wall",
+      "FrostMote": "Frost Mote",
+      "RimeSplinter": "Ice Splinter",
+      "RimeArrow": "Icicle Arrow",
+      "RollingSnowball": "Rolling Snowball",
+      "RimeSprite": "Rime-spirit",
+      "FrostfellIcicle": "Frostfell Icicle"
+    },
+    "Buffs": {
+      "RimeSpriteBuff": {"DisplayName": "Rime-spirit", "Description": "A rime-spirit fights for you"}
+    },
+    "Chat": {
+      "RimePhase2": "The wind rises off the mountain...",
+      "RimeDown": "The snowfields fall quiet."
+    }
+  },
+  "ru": {
+    "items": {
+      "Glacierbreaker": ["Ледолом", "Обжигает холодом то, во что попадает\nПервый удар каждого взмаха откалывает от бойка три ледяные щепы"],
+      "HoarfrostBow": ["Лук инея", "Превращает деревянные стрелы в сосульки\nСосульки через миг идут вниз и раскалываются на три щепы там, где разбились"],
+      "SnowcapStaff": ["Посох снежной шапки", "Бросает снежок, который катится по земле\nКатясь, снежок растёт — почти вдвое и по размеру, и по урону"],
+      "GlacierBell": ["Ледниковый колокол", "Призывает духа изморози, который сражается за вас\nЕго броски обжигают холодом"],
+      "FrostfellScythe": ["Коса ледопада", "После каждого удара на точку падает сосулька — три, если удар кромкой\nСбор обрушивает вокруг вас ряд из шести сосулек"],
+      "PermafrostHeart": ["Сердце вечной мерзлоты", "Если секунду стоять на месте, вас покрывает панцирь инея\nПанцирь снимает 30% следующего удара и разлетается шестью ледяными щепами\nИммунитет к Охлаждению и Заморозке"],
+      "RimeMask": ["Маска Изморози", ""],
+      "RimeBag": ["Сумка (Изморозь)", "ПКМ, чтобы открыть"],
+      "FrozenHorn": ["Мёрзлый рог", "Призывает Изморозь\nИспользуйте в снежном биоме"],
+      "FrostPelt": ["Морозная шкурка", "«Достаточно тёплая, чтобы спать в сугробе»"],
+      "RimeCrystal": ["Кристалл изморози", "«Так до конца и не гаснет»"]
+    },
+    "npcs": {
+      "RimeColossus": ["Изморозь", "Древний дух горы: слежавшийся снег поверх ледникового сердца. Носит глыбу льда размером с валун и ходит по одним и тем же снежным полям с тех пор, как у них не было имён."],
+      "DriftHare": ["Сугробный заяц", "Бегает под снегом, и видно только движущийся к вам сугроб — и два чёрных кончика ушей. Если сугроб остановился у вас под ногами, отойдите."],
+      "FrostWisp": ["Морозный огонёк", "Искорка холода, которая снова и снова пересекает воздух перед вами. Сама почти не ранит — ранит то, что она оставляет висеть за собой."]
+    },
+    "buffs": {
+      "RimeSpriteBuff": ["Дух изморози", "Дух изморози сражается за вас"]
+    }
+  },
+  "tiers": {
+    "Glacierbreaker": 2, "HoarfrostBow": 2, "SnowcapStaff": 2, "GlacierBell": 2, "FrostfellScythe": 2,
+    "PermafrostHeart": 2, "RimeMask": 2, "RimeBag": 2, "FrozenHorn": 2, "FrostPelt": 2, "RimeCrystal": 2,
+    "RimeColossus": 2, "DriftHare": 2, "FrostWisp": 2,
+    "RimeShockwave": 2, "RimeBoulder": 2, "RimeShard": 2, "RimeIcicle": 2, "RimeWall": 2, "FrostMote": 2,
+    "RimeSplinter": 2, "RimeArrow": 2, "RollingSnowball": 2, "RimeSprite": 2, "FrostfellIcicle": 2,
+    "RimeSpriteBuff": 2
+  }
+}

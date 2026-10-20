@@ -168,27 +168,106 @@ def coins(copper: int | None) -> str:
 ASSIGN = re.compile(r"^\s*(?:Item|NPC)\.(\w+)\s*(?:=|\+=)\s*(.+?);\s*$", re.M)
 
 
-def parse_source(path: Path) -> Entity | None:
-    src = path.read_text(encoding="utf-8", errors="replace")
+ROOTS = {"ModItem": "item", "ModNPC": "npc", "ModBuff": "buff",
+         "ModTile": "tile", "ModProjectile": "projectile", "ModMount": "mount"}
+CLASS_DECL = re.compile(r"public\s+(abstract\s+|sealed\s+)?class\s+(\w+)\s*:\s*(\w+)")
+_bases: dict[str, str] | None = None
 
-    m = re.search(r"public\s+class\s+(\w+)\s*:\s*(\w+)", src)
-    if not m:
-        return None
-    cls, base = m.group(1), m.group(2)
-    kind = {"ModItem": "item", "ModNPC": "npc", "ModBuff": "buff",
-            "ModTile": "tile", "ModProjectile": "projectile",
-            "ModMount": "mount",
-            # the reaper class: every scythe derives from this abstract item
-            "ScytheItem": "item"}.get(base)
+
+def _base_map() -> dict[str, str]:
+    """Every class in Content mapped to its base, so an item built on an intermediate
+    abstract class (ScytheItem, ConfluenceBlade, MenagerieItem...) still resolves."""
+    global _bases
+    if _bases is None:
+        _bases = {}
+        for f in (ROOT / "Content").rglob("*.cs"):
+            for m in CLASS_DECL.finditer(f.read_text(encoding="utf-8", errors="replace")):
+                _bases[m.group(2)] = m.group(3)
+    return _bases
+
+
+def _root(base: str) -> tuple[str | None, bool]:
+    """(kind, derives from ScytheItem) for a base class name."""
+    seen, reaper = set(), False
+    while base not in ROOTS and base not in seen:
+        seen.add(base)
+        if base == "ScytheItem":
+            reaper = True
+        nxt = _base_map().get(base)
+        if nxt is None:
+            return None, reaper
+        base = nxt
+    return ROOTS.get(base), reaper
+
+
+_helpers: dict | None = None
+HELPER_DECL = re.compile(r"protected\s+void\s+(\w+)\s*\(([^)]*)\)\s*\{(.*?)\n\t\t\}", re.S)
+
+
+def _helper_map() -> dict:
+    """Stat helpers declared on intermediate bases - `Defaults(size, damage, ...)` on a tree's
+    blade, `BookDefaults(damage: ...)`, `Base(...)` - as (parameter names, the Item field each
+    parameter is written into, the damage class the body sets). Without this every tree weapon
+    showed no damage at all, because its SetDefaults is one call with bare numbers."""
+    global _helpers
+    if _helpers is None:
+        _helpers = {}
+        for f in (ROOT / "Content").rglob("*.cs"):
+            for m in HELPER_DECL.finditer(f.read_text(encoding="utf-8", errors="replace")):
+                params = [p.split()[-1] for p in m.group(2).split(",") if p.strip()]
+                fields = {}
+                for field, val in re.findall(r"Item\.(\w+)\s*=\s*(\w+)\s*;", m.group(3)):
+                    if val in params:
+                        fields.setdefault(val, []).append(field)
+                dc = re.search(r"DamageType\s*=\s*DamageClass\.(\w+)", m.group(3))
+                _helpers[m.group(1)] = (params, fields, dc.group(1) if dc else None)
+    return _helpers
+
+
+def parse_sources(path: Path) -> list[Entity]:
+    """Every concrete content class in a file. A file holding several (a tree's four
+    horns, its four buffs) is cut into one slice per class so each reads its own stats."""
+    src = path.read_text(encoding="utf-8", errors="replace")
+    decls = list(CLASS_DECL.finditer(src))
+    out = []
+    for i, m in enumerate(decls):
+        if m.group(1) and "abstract" in m.group(1):
+            continue
+        kind, _ = _root(m.group(3))
+        if kind is None:
+            continue
+        if len(decls) == 1:
+            chunk = src
+        else:
+            start = src.rfind("///", 0, m.start())
+            prev_end = decls[i - 1].end() if i else 0
+            start = start if start > prev_end and start >= 0 else m.start()
+            end = decls[i + 1].start() if i + 1 < len(decls) else len(src)
+            chunk = src[:src.find("namespace")] + src[start:end] if "namespace" in src else src[start:end]
+        e = _parse_one(path, chunk, m.group(2), m.group(3))
+        if e:
+            out.append(e)
+    return out
+
+
+def parse_source(path: Path) -> Entity | None:
+    found = parse_sources(path)
+    return found[0] if found else None
+
+
+def _parse_one(path: Path, src: str, cls: str, base: str) -> Entity | None:
+    kind, reaper = _root(base)
     if kind is None:
         return None
+    # `using Blunderbuss = ...Shellback.BarnacleBlunderbuss;` - read recipes by the real name
+    for alias, real in re.findall(r"^using\s+(\w+)\s*=\s*[\w.]+\.(\w+);", src, re.M):
+        src = re.sub(rf"<{alias}>", f"<{real}>", src)
 
     e = Entity(name=cls, kind=kind, path=path)
-    # a class subfolder (Weapons/Reaper) still files under its parent
-    e.folder = path.parent.name
-    if path.parent.parent.name in ("Weapons",):
-        e.folder = path.parent.parent.name
-    if base == "ScytheItem":
+    # an item files under its category (Items/Weapons/Trees/Melee -> Weapons)
+    rel = path.relative_to(ROOT / "Content").parts
+    e.folder = rel[1] if rel[0] == "Items" and len(rel) > 2 else path.parent.name
+    if reaper:
         # SetDefaults lives on the base class, so the damage class is not in this file
         e.stats["damageClass"] = "Reaping"
 
@@ -213,6 +292,29 @@ def parse_source(path: Path) -> Entity | None:
 
     # ---- field assignments (whole file; SetDefaults is where they live but a
     #      few classes set damage in SetStaticDefaults or a helper)
+    for name, args in re.findall(r"\b(\w+)\(([^()]*)\)\s*;", src):
+        helper = _helper_map().get(name)
+        if not helper or name in ("SetDefaults",):
+            continue
+        params, fields, dc = helper
+        for i, arg in enumerate(a.strip() for a in args.split(",")):
+            if ":" in arg:
+                pname, arg = (x.strip() for x in arg.split(":", 1))
+            elif i < len(params):
+                pname = params[i]
+            else:
+                continue
+            n = _num(arg)
+            for field in fields.get(pname, []):
+                if n is not None:
+                    e.stats.setdefault(field, n)
+                elif field == "rare":
+                    r = re.search(r"ItemRarityID\.(\w+)", arg)
+                    if r:
+                        e.stats.setdefault("rare", r.group(1))
+        if dc and "damageClass" not in e.stats:
+            e.stats["damageClass"] = DAMAGE_CLASS.get(dc, dc)
+
     for key, val in ASSIGN.findall(src):
         val = val.strip()
         if key in ("width", "height", "damage", "defense", "crit", "useTime",
@@ -271,7 +373,7 @@ def parse_source(path: Path) -> Entity | None:
     for f in ("accessory", "consumable", "autoReuse", "noMelee", "channel",
               "vanity", "expert", "noUseGraphic", "boss", "friendly",
               "noGravity", "noTileCollide", "useTurn"):
-        if re.search(rf"(?:Item|NPC)\.{f}\s*=\s*true", src):
+        if re.search(rf"\b(?:Item|NPC)\.{f}\s*=\s*true", src):
             e.flags.add(f)
 
     if re.search(r"ItemID\.Sets\.Spears\[\s*(?:Type|Item\.type)\s*\]\s*=\s*true", src):
@@ -533,8 +635,7 @@ def collect() -> dict:
     loc = parse_hjson(HJSON.read_text(encoding="utf-8"))
     entities: dict[str, Entity] = {}
     for p in sorted((ROOT / "Content").rglob("*.cs")):
-        e = parse_source(p)
-        if e:
+        for e in parse_sources(p):
             entities[e.name] = e
 
     # NPC-only extras
@@ -568,8 +669,7 @@ if __name__ == "__main__":
         loc = parse_hjson(HJSON.read_text(encoding="utf-8"))
         ents = {}
         for p in sorted((ROOT / "Content").rglob("*.cs")):
-            e = parse_source(p)
-            if e:
+            for e in parse_sources(p):
                 ents[e.name] = e
         print(f"{len(ents)} entities, sections: {list(loc)}")
         for k in ("item", "npc", "buff", "tile", "projectile", "mount"):

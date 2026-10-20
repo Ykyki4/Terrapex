@@ -1,0 +1,58 @@
+{
+ "en": {
+  "Items": {
+   "Almanac": {
+    "DisplayName": "Almanac",
+    "Tooltip": "Casts the page it is open at: Tide, Sun, Snow or Scree\nTide blows a bursting brine bubble, Sun lobs a bolt that raises a pillar of sand,\nSnow rolls a growing snowball, Scree throws a cone of stones\nThe book turns its own page every 4 casts\n'Four tomes, one binding'"
+   },
+   "EquinoxAlmanac": {
+    "DisplayName": "Equinox Almanac",
+    "Tooltip": "Casts the page it is open at: Tide, Sun, Snow or Scree\nRight-click to turn the page\nHold to charge: when the ring closes, the page casts its greater form\nand a lance of the Riftflow runs down your aim"
+   },
+   "Solstice": {
+    "DisplayName": "Solstice",
+    "Tooltip": "Every cast is the chosen page and the page opposite it\nRight-click to turn the page\nHold to charge: both pages cast their greater forms, a Riftflow lance fires\nand a strand of the Loom is strung across the cursor"
+   },
+   "Cosmogony": {
+    "DisplayName": "Cosmogony",
+    "Tooltip": "The four pages stand around you\nEach cast shuts the book, and every page throws its own spell at the cursor\nRight-click chooses a page; the chosen page is lit and hits harder\nHold to charge: all four greater forms, the lance, the strand,\nand the Regard opens on the cursor\n'Before the world, the book'"
+   }
+  },
+  "Projectiles": {
+   "AlmanacCharge": "Almanac Charge",
+   "EquinoxLance": "Equinox Lance"
+  }
+ },
+ "ru": {
+  "items": {
+   "Almanac": [
+    "Альманах",
+    "Колдует страницу, на которой открыт: прилив, солнце, снег или осыпь\nПрилив выдыхает лопающийся пузырь, солнце бросает болт, поднимающий песчаный столб,\nснег катит растущий снежок, осыпь бросает конус камней\nКнига сама переворачивает страницу каждые 4 каста\n«Четыре тома, один переплёт»"
+   ],
+   "EquinoxAlmanac": [
+    "Равноденствие",
+    "Колдует страницу, на которой открыт: прилив, солнце, снег или осыпь\nПКМ переворачивает страницу\nУдерживайте, чтобы зарядить: когда кольцо сомкнётся, страница колдует свою большую форму,\nа по прицелу бьёт копьё Разломного потока"
+   ],
+   "Solstice": [
+    "Солнцестояние",
+    "Каждый каст — выбранная страница и противоположная ей\nПКМ переворачивает страницу\nУдерживайте, чтобы зарядить: обе страницы в большой форме, копьё Разломного потока\nи нить Станка поперёк курсора"
+   ],
+   "Cosmogony": [
+    "Космогония",
+    "Четыре страницы стоят вокруг вас\nКаждый каст захлопывает книгу, и каждая страница бросает в курсор своё заклинание\nПКМ выбирает страницу; выбранная светится и бьёт сильнее\nУдерживайте, чтобы зарядить: все четыре большие формы, копьё, нить\nи на курсоре открывается Взгляд\n«До мира была книга»"
+   ]
+  },
+  "projectiles": {
+   "AlmanacCharge": "Заряд альманаха",
+   "EquinoxLance": "Копьё равноденствия"
+  }
+ },
+ "tiers": {
+  "Almanac": 2,
+  "EquinoxAlmanac": 4,
+  "Solstice": 5,
+  "Cosmogony": 6,
+  "AlmanacCharge": 4,
+  "EquinoxLance": 4
+ }
+}

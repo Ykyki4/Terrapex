@@ -24,9 +24,19 @@ SCYTHES = [
     ("Reaper/Thornreaper", "Терновник", "крафт · джунгли"),
     ("Reaper/Kusarigama", "Кусаригама", "лавка Ронина"),
     ("Reaper/Hellreaper", "Адорез", "крафт · адский камень"),
-    ("RiftScythe", "Разломная коса", "T4 · пока ближний бой"),
+    ("Reaper/RiftsteelScythe", "Коса разломной стали", "T3 · крафт"),
+    ("Reaper/KeepersHarvest", "Жатва Хранителя", "Хранитель Разлома"),
+    ("Reaper/HallowedHarvester", "Святой Жнец", "крафт · святые слитки"),
+    ("Reaper/OpticScythe", "Оптическая коса", "Близнецы"),
+    ("RiftScythe", "Разломная коса", "T4 · Разломный колосс"),
+    ("Reaper/Seamreaper", "Шовная коса", "T4 · крафт"),
+    ("Reaper/VerdantReaper", "Хлорофитовая коса", "крафт · хлорофит"),
+    ("Reaper/MourningScythe", "Траурная коса", "Тыквенная луна"),
+    ("Reaper/Shuttlecut", "Челнок", "Ткач Разлома"),
+    ("Reaper/FinalHarvest", "Последняя Жатва", "крафт · люминит"),
+    ("Reaper/Lastlight", "Последний Свет", "Первый Хранитель"),
 ]
-PER_ROW = 7
+PER_ROW = 8
 
 K = 5
 BG = (36, 31, 50, 255)
@@ -61,7 +71,7 @@ for path, ru, where in SCYTHES:
         "reach": number(src, r"Reach\s*=>\s*([\d.]+)f"),
     })
 
-ICON_BOX = 52 * K
+ICON_BOX = 60 * K
 CW, CH = ICON_BOX + 24, ICON_BOX + 150
 PAD = 20
 rows = (len(cards) + PER_ROW - 1) // PER_ROW

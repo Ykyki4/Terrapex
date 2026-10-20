@@ -16,12 +16,18 @@ namespace Terrapex.Common.Reaper
 	/// | Gravedigger | Blood Zombie, Drippler - 4% |
 	/// | Frostbite Sickle | Ice Slime, Spiked Ice Slime, Zombie Eskimo - 2%, plus a third of ice chests |
 	/// | Hivecutter | Queen Bee - one in three, from the boss in normal mode and from the bag in expert |
+	/// | Optic Scythe | the Twins - one in four, from the second twin to fall, and from their bag |
+	/// | Mourning Scythe | Mourning Wood, Pumpkin Moon - one in eight |
+	/// | Bone Sheath (accessory) | Angry Bones in the Dungeon - one in forty |
 	/// </summary>
 	public class ScytheLootNPC : GlobalNPC
 	{
 		public const int GravediggerChance = 25;
 		public const int FrostbiteChance = 50;
 		public const int HivecutterChance = 3;
+		public const int OpticChance = 4;
+		public const int MourningChance = 8;
+		public const int BoneSheathChance = 40;
 
 		public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
 		{
@@ -39,6 +45,26 @@ namespace Terrapex.Common.Reaper
 					npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FrostbiteSickle>(), FrostbiteChance));
 					break;
 
+				case NPCID.Retinazer:
+				case NPCID.Spazmatism:
+					// vanilla's own twin rule: only the second to die carries the loot
+					LeadingConditionRule last = new(new Conditions.MissingTwin());
+					last.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),
+						ModContent.ItemType<OpticScythe>(), OpticChance));
+					npcLoot.Add(last);
+					break;
+
+				case NPCID.MourningWood:
+					npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MourningScythe>(), MourningChance));
+					break;
+
+				case NPCID.AngryBones:
+				case NPCID.AngryBonesBig:
+				case NPCID.AngryBonesBigMuscle:
+				case NPCID.AngryBonesBigHelmet:
+					npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Content.Items.Accessories.BoneSheath>(), BoneSheathChance));
+					break;
+
 				case NPCID.QueenBee:
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),
 						ModContent.ItemType<Hivecutter>(), HivecutterChance));
@@ -50,10 +76,15 @@ namespace Terrapex.Common.Reaper
 	public class ScytheLootBag : GlobalItem
 	{
 		public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-			=> entity.type == ItemID.QueenBeeBossBag;
+			=> entity.type == ItemID.QueenBeeBossBag || entity.type == ItemID.TwinsBossBag;
 
 		public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
-			=> itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Hivecutter>(), ScytheLootNPC.HivecutterChance));
+		{
+			if (item.type == ItemID.QueenBeeBossBag)
+				itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Hivecutter>(), ScytheLootNPC.HivecutterChance));
+			else
+				itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<OpticScythe>(), ScytheLootNPC.OpticChance));
+		}
 	}
 
 	/// <summary>

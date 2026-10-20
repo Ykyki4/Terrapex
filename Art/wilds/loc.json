@@ -1,0 +1,28 @@
+{
+  "en": {
+    "Items": {
+      "TuskCharm": { "DisplayName": "Tusk Charm", "Tooltip": "5 armor penetration\n'It went through a fence. You are not a fence.'" },
+      "MolesLantern": { "DisplayName": "Mole's Lantern", "Tooltip": "15% increased mining speed\nProvides a small light" }
+    },
+    "NPCs": {
+      "ThornbackBoar": { "DisplayName": "Thornback Boar", "Bestiary": "A forest boar that rolled in brambles until they took root. It scrapes the ground before it charges, and once it has picked its line, it does not turn." },
+      "LanternMole": { "DisplayName": "Lantern Mole", "Bestiary": "Nobody knows who strapped the first lantern to a mole. The light moving behind the cave wall is the only warning before the ground breaks open." },
+      "PitcherSnapper": { "DisplayName": "Pitcher Snapper", "Bestiary": "A jungle pitcher that grew tired of waiting for insects to fall in. It swells, then lobs its digestive acid at wherever its meal was standing." }
+    },
+    "Projectiles": {
+      "PitcherSpit": "Pitcher Acid"
+    }
+  },
+  "ru": {
+    "items": {
+      "TuskCharm": ["Амулет из клыка", "5 пробития брони\n'Он прошёл сквозь забор. Вы — не забор.'"],
+      "MolesLantern": ["Кротовий фонарь", "Скорость добычи увеличена на 15%\nДаёт немного света"]
+    },
+    "npcs": {
+      "ThornbackBoar": ["Колючий вепрь", "Лесной кабан, так долго валявшийся в терновнике, что тот пустил корни. Перед разбегом он роет землю — и, выбрав линию, уже не сворачивает."],
+      "LanternMole": ["Крот с фонарём", "Никто не знает, кто первым привязал фонарь к кроту. Свет, ползущий за стеной пещеры, — единственное предупреждение, прежде чем земля разверзнется."],
+      "PitcherSnapper": ["Кувшинка-плевунья", "Кувшинчиковое растение джунглей, которому надоело ждать, пока насекомые упадут сами. Оно раздувается и плюёт кислотой туда, где стояла добыча."]
+    }
+  },
+  "tiers": { "TuskCharm": 0, "MolesLantern": 0, "ThornbackBoar": 0, "LanternMole": 0, "PitcherSnapper": 0 }
+}

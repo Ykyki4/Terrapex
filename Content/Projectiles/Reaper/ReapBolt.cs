@@ -18,7 +18,7 @@ namespace Terrapex.Content.Projectiles.Reaper
 	/// </summary>
 	public class ReapBolt : ModProjectile
 	{
-		public const int Soul = 0, Ice = 1, Thorn = 2, Fire = 3, Sand = 4, Rot = 5;
+		public const int Soul = 0, Ice = 1, Thorn = 2, Fire = 3, Sand = 4, Rot = 5, Rift = 6, Prime = 7;
 
 		/// <summary>ai[1]: thrown by an ordinary swing, so it banks Harvest like a wave. A Reap's bolts do not.</summary>
 		public const float FromSwing = 1f;
@@ -51,6 +51,8 @@ namespace Terrapex.Content.Projectiles.Reaper
 			new(new Color(255, 144, 64), DustID.Torch, BuffID.OnFire, 180, 4, 60, 0f, 0.99f, 0.55f),
 			new(new Color(232, 200, 122), DustID.Sand, 0, 0, 2, 70, 0.20f, 1f, 0.36f),
 			new(new Color(155, 111, 194), DustID.Demonite, 0, 0, -1, 150, 0f, 0.93f, 0.75f),       // rot: lingers
+			new(new Color(255, 154, 217), DustID.PinkTorch, 0, 0, 2, 45, 0f, 1.01f, 0.36f),          // rift: speeds up
+			new(new Color(255, 236, 214), DustID.WhiteTorch, 0, 0, 3, 40, 0f, 1f, 0.42f),           // prime: a ray of the Regard
 		};
 
 		private Style S => Styles[(int)Projectile.ai[0] % Styles.Length];

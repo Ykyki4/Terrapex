@@ -108,6 +108,7 @@ namespace Terrapex.Content.NPCs.TownNPCs
 		{
 			new NPCShop(Type, ShopName)
 				.Add<Whetstone>()
+				.Add<HarvestCharm>(Condition.DownedEyeOfCthulhu)
 				.Add<Kusarigama>(Condition.DownedSkeletron)
 				.Add<RoninKabuto>(Condition.DownedSkeletron)
 				.Add<RoninDo>(Condition.DownedSkeletron)

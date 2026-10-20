@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terrapex.Common.Particles;
 
 namespace Terrapex.Content.NPCs.Bosses
 {
@@ -95,6 +96,27 @@ namespace Terrapex.Content.NPCs.Bosses
 					DustID.Stone, hit.HitDirection, -1f, 90, default, 1.1f);
 				d.velocity *= 1.4f;
 			}
+
+			// matte on purpose: a slab of T0 stone breaks into stone, never into light
+			if (NPC.life > 0)
+			{
+				HarvestFX.Rubble(NPC.Center, Dense, 2, 2.5f, 0.8f, 1.5f);
+				return;
+			}
+			// the shatter: a few big slabs, a spray of chips, and a grey ring of grit
+			Vector2 c = NPC.Center;
+			Vector2 outward = NPC.rotation.ToRotationVector2().RotatedBy(-MathHelper.PiOver2);
+			for (int i = 0; i < 4; i++)
+				ParticleSystem.Spawn(new Chip(c + Main.rand.NextVector2Circular(6f, 6f),
+					outward * Main.rand.NextFloat(1.5f, 3.5f) + Main.rand.NextVector2Circular(2f, 2f),
+					Dense[Main.rand.Next(Dense.Length)], Main.rand.NextFloat(2.2f, 3.2f), 70));
+			HarvestFX.Rubble(c, Dense, 14, 5f, 1.1f, 2f);
+			ParticleSystem.Spawn(new Shockwave(c, new Color(0x84, 0x76, 0x96) * 0.6f, 0.1f, 0.8f, 20) { Glow = false });
+			HarvestFX.MatteCrack(c, outward.RotatedBy(1.2f), 16f, new Color(0x1f, 0x19, 0x30), 24, 2f);
+			HarvestFX.MatteCrack(c, outward.RotatedBy(-1.2f), 16f, new Color(0x1f, 0x19, 0x30), 24, 2f);
 		}
+
+		private static readonly Color[] Dense =
+			{ new(0xba, 0xac, 0xc4), new(0x84, 0x76, 0x96), new(0x58, 0x4a, 0x6e), new(0x3b, 0x30, 0x50) };
 	}
 }

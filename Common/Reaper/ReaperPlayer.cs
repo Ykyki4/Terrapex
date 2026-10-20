@@ -37,6 +37,18 @@ namespace Terrapex.Common.Reaper
 		public float edgeShare;
 		public float harvestGain;
 
+		/// <summary>Multiplies every scythe's reach (Long Haft).</summary>
+		public float rangeMult;
+		/// <summary>Multiplies a Reap's damage (Soul Lantern).</summary>
+		public float reapDamage;
+		/// <summary>Share of the meter a Reap leaves behind (Soul Lantern).</summary>
+		public float reapRefund;
+		/// <summary>Multiplies how long the meter holds before draining (Scarecrow set).</summary>
+		public float holdMult;
+
+		public bool scarecrowSet;
+		public bool crowCharm;
+
 		public bool roninSet;
 		private int stillTicks;
 
@@ -52,16 +64,22 @@ namespace Terrapex.Common.Reaper
 		{
 			edgeShare = BaseEdgeShare;
 			harvestGain = 1f;
+			rangeMult = 1f;
+			reapDamage = 1f;
+			reapRefund = 0f;
+			holdMult = 1f;
 			roninSet = false;
+			scarecrowSet = false;
+			crowCharm = false;
 		}
 
 		public void AddHarvest(float amount)
 		{
 			harvest = Math.Min(HarvestMax, harvest + amount * harvestGain);
-			harvestIdle = HarvestHold;
+			harvestIdle = (int)(HarvestHold * holdMult);
 		}
 
-		public void SpendHarvest() => harvest = 0f;
+		public void SpendHarvest() => harvest = HarvestMax * reapRefund;
 
 		/// <summary>Called by a swing as it starts, so the stance is used once.</summary>
 		public void DrawBlade() => stillTicks = 0;

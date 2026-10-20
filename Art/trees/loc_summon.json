@@ -1,0 +1,68 @@
+{
+ "en": {
+  "Items": {
+   "MenagerieHorn": {
+    "DisplayName": "Menagerie Horn",
+    "Tooltip": "Summons a beast of the menagerie to fight for you\nEach summon is the next beast: crab, beetling, rime sprite, hatchling\nThe crab walks and grips its prey, the beetling dives, the sprite rams and chills, the hatchling spits"
+   },
+   "WildCourt": {
+    "DisplayName": "Wild Court",
+    "Tooltip": "Summons a beast of the court to fight for you\nEach summon is the next beast: crab, beetling, rime sprite, hatchling\nWhile all four beasts are out, the court is in session: 15% increased summon damage"
+   },
+   "GroveConclave": {
+    "DisplayName": "Grove Conclave",
+    "Tooltip": "Summons a beast of the conclave to fight for you\nEach summon is the next beast; all four out is 15% increased summon damage\nEvery 6 seconds the beasts trade places and each strikes its own target at once"
+   },
+   "TheArk": {
+    "DisplayName": "The Ark",
+    "Tooltip": "Summons the whole ark: all four beasts in one minion slot\nThe court is always in session: 15% increased summon damage\nEvery 6 seconds the beasts trade places and strike at once\nEvery 3 seconds each beast fires a volley"
+   }
+  },
+  "Projectiles": {
+   "HornBeast": "Menagerie Beast",
+   "CourtBeast": "Court Beast",
+   "ConclaveBeast": "Conclave Beast",
+   "ArkBeast": "Ark Beast",
+   "MenagerieSpit": "Hatchling Spit",
+   "ConclaveStrike": "Conclave Strike"
+  },
+  "Buffs": {
+   "MenagerieHornBuff": {
+    "DisplayName": "Menagerie",
+    "Description": "The beasts of the horn fight for you"
+   },
+   "WildCourtBuff": {
+    "DisplayName": "Wild Court",
+    "Description": "The court fights for you - all four in session is 15% summon damage"
+   },
+   "GroveConclaveBuff": {
+    "DisplayName": "Grove Conclave",
+    "Description": "The conclave fights for you, and trades places every 6 seconds"
+   },
+   "ArkBuff": {
+    "DisplayName": "The Ark",
+    "Description": "The whole ark fights for you"
+   }
+  }
+ },
+ "ru": {
+  "items": {
+   "MenagerieHorn": ["Рог зверинца", "Призывает зверя из зверинца\nКаждый призыв — следующий зверь: краб, жучок, морозный дух, вылупыш\nКраб ходит и держит добычу, жучок пикирует, дух врезается и морозит, вылупыш плюётся"],
+   "WildCourt": ["Дикий двор", "Призывает зверя двора\nКаждый призыв — следующий зверь: краб, жучок, морозный дух, вылупыш\nКогда на поле все четыре — двор в сборе: +15% к урону призыва"],
+   "GroveConclave": ["Совет рощи", "Призывает зверя совета\nКаждый призыв — следующий зверь; все четыре на поле — +15% к урону призыва\nРаз в 6 секунд звери меняются местами и бьют каждый по своей цели одновременно"],
+   "TheArk": ["Ковчег", "Призывает весь ковчег: все четыре зверя в одном слоте\nДвор всегда в сборе: +15% к урону призыва\nРаз в 6 секунд звери меняются местами и бьют одновременно\nРаз в 3 секунды каждый зверь даёт залп"]
+  },
+  "buffs": {
+   "MenagerieHornBuff": ["Зверинец", "Звери рога сражаются за вас"],
+   "WildCourtBuff": ["Дикий двор", "Двор сражается за вас — все четыре в сборе дают +15% к урону призыва"],
+   "GroveConclaveBuff": ["Совет рощи", "Совет сражается за вас и раз в 6 секунд меняется местами"],
+   "ArkBuff": ["Ковчег", "Весь ковчег сражается за вас"]
+  }
+ },
+ "tiers": {
+  "MenagerieHorn": 2, "WildCourt": 4, "GroveConclave": 5, "TheArk": 6,
+  "HornBeast": 2, "CourtBeast": 4, "ConclaveBeast": 5, "ArkBeast": 6,
+  "MenagerieSpit": 2, "ConclaveStrike": 5,
+  "MenagerieHornBuff": 2, "WildCourtBuff": 4, "GroveConclaveBuff": 5, "ArkBuff": 6
+ }
+}

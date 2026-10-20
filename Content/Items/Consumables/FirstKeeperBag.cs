@@ -8,6 +8,7 @@ using Terrapex.Content.Items.Materials;
 using Terrapex.Content.Items.Mounts;
 using Terrapex.Content.Items.Pets;
 using Terrapex.Content.Items.Weapons;
+using Terrapex.Content.Items.Weapons.Reaper;
 
 namespace Terrapex.Content.Items.Consumables
 {
@@ -39,7 +40,8 @@ namespace Terrapex.Content.Items.Consumables
 				ModContent.ItemType<Unblinking>(),
 				ModContent.ItemType<Regard>(),
 				ModContent.ItemType<KeeperStaff>(),
-				ModContent.ItemType<Closure>()));
+				ModContent.ItemType<Closure>(),
+				ModContent.ItemType<Lastlight>()));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Nothing>(), 10));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<WholeEye>(), 1));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<RealityAnchor>(), 1));

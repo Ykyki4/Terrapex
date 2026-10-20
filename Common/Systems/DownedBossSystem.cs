@@ -11,6 +11,10 @@ namespace Terrapex.Common.Systems
 		public static bool downedKeeper;
 		public static bool downedWeaver;
 		public static bool downedFirstKeeper;
+		public static bool downedHarvester;
+		public static bool downedShellback;
+		public static bool downedScarab;
+		public static bool downedRime;
 
 		public override void OnWorldLoad()
 		{
@@ -18,6 +22,10 @@ namespace Terrapex.Common.Systems
 			downedKeeper = false;
 			downedWeaver = false;
 			downedFirstKeeper = false;
+			downedHarvester = false;
+			downedShellback = false;
+			downedScarab = false;
+			downedRime = false;
 		}
 
 		public override void OnWorldUnload()
@@ -26,6 +34,10 @@ namespace Terrapex.Common.Systems
 			downedKeeper = false;
 			downedWeaver = false;
 			downedFirstKeeper = false;
+			downedHarvester = false;
+			downedShellback = false;
+			downedScarab = false;
+			downedRime = false;
 		}
 
 		public override void SaveWorldData(TagCompound tag)
@@ -38,6 +50,14 @@ namespace Terrapex.Common.Systems
 				tag["downedWeaver"] = true;
 			if (downedFirstKeeper)
 				tag["downedFirstKeeper"] = true;
+			if (downedHarvester)
+				tag["downedHarvester"] = true;
+			if (downedShellback)
+				tag["downedShellback"] = true;
+			if (downedScarab)
+				tag["downedScarab"] = true;
+			if (downedRime)
+				tag["downedRime"] = true;
 		}
 
 		public override void LoadWorldData(TagCompound tag)
@@ -46,6 +66,10 @@ namespace Terrapex.Common.Systems
 			downedKeeper = tag.ContainsKey("downedKeeper");
 			downedWeaver = tag.ContainsKey("downedWeaver");
 			downedFirstKeeper = tag.ContainsKey("downedFirstKeeper");
+			downedHarvester = tag.ContainsKey("downedHarvester");
+			downedShellback = tag.ContainsKey("downedShellback");
+			downedScarab = tag.ContainsKey("downedScarab");
+			downedRime = tag.ContainsKey("downedRime");
 		}
 
 		public override void NetSend(BinaryWriter writer)
@@ -55,6 +79,10 @@ namespace Terrapex.Common.Systems
 			flags[1] = downedDormantEye;
 			flags[2] = downedWeaver;
 			flags[3] = downedFirstKeeper;
+			flags[4] = downedHarvester;
+			flags[5] = downedShellback;
+			flags[6] = downedScarab;
+			flags[7] = downedRime;
 			writer.Write(flags);
 		}
 
@@ -65,6 +93,10 @@ namespace Terrapex.Common.Systems
 			downedDormantEye = flags[1];
 			downedWeaver = flags[2];
 			downedFirstKeeper = flags[3];
+			downedHarvester = flags[4];
+			downedShellback = flags[5];
+			downedScarab = flags[6];
+			downedRime = flags[7];
 		}
 	}
 }

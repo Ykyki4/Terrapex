@@ -29,6 +29,12 @@ namespace Terrapex.Content.Projectiles.Reaper
 	public class ReapingSlash : ModProjectile
 	{
 		private const int Life = 16;
+
+		/// <summary>
+		/// |ai[2]| for a cut that is itself an after-effect (the Optic Scythe's twin): it cuts like any
+		/// other but does not call AfterStrike, or every echo would echo again.
+		/// </summary>
+		public const float Echo = 2f;
 		private const int ActiveFrom = 2;
 		private const int ActiveTo = 11;
 		private const float Radius = 46f;
@@ -78,17 +84,26 @@ namespace Terrapex.Content.Projectiles.Reaper
 			return Vector2.DistanceSquared(nearest, Projectile.Center) <= Radius * Radius;
 		}
 
+		/// <summary>
+		/// On the edge band - or, under the Darner reaper head, on any stitched enemy: the thread
+		/// tells the reaper where to aim, so a stitched target is always struck as if at the rim.
+		/// </summary>
+		private bool StrikesEdge(NPC target)
+			=> Edge || (Main.player[Projectile.owner].GetModPlayer<Common.Players.TerrapexPlayer>().darnerReaper
+				&& target.GetGlobalNPC<Common.GlobalNPCs.BoundGlobalNPC>().IsBound);
+
 		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
 		{
-			if (Edge)
+			if (StrikesEdge(target))
 				modifiers.SetCrit();
 			modifiers.HitDirectionOverride = Math.Sign(target.Center.X - Main.player[Projectile.owner].Center.X);
 		}
 
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			RangedHit(Projectile, target, hit, Edge);
-			if (Edge)
+			bool edge = StrikesEdge(target);
+			RangedHit(Projectile, target, hit, edge);
+			if (edge)
 			{
 				for (int i = 0; i < 8; i++)
 				{
@@ -121,7 +136,7 @@ namespace Terrapex.Content.Projectiles.Reaper
 			if (Projectile.owner != Main.myPlayer)
 				return;
 			Player owner = Main.player[Projectile.owner];
-			if (owner.HeldItem.ModItem is ScytheItem scythe)
+			if (owner.HeldItem.ModItem is ScytheItem scythe && Math.Abs(Projectile.ai[2]) < Echo)
 			{
 				Vector2 aim = (Projectile.Center - owner.MountedCenter).SafeNormalize(Vector2.UnitX * owner.direction);
 				scythe.AfterStrike(owner, Projectile, aim, Edge);

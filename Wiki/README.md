@@ -47,6 +47,7 @@ After that, `.github/workflows/wiki.yml` rebuilds and publishes on every push to
 | `Wiki/data/site.json` | owner and repo name. Edit this |
 | `Wiki/data/tiers.json` | which tier each thing belongs to, and the armour sets |
 | `Wiki/data/ru.json` | every Russian string on the site |
+| `Wiki/data/setups.json` | the class setups: which item goes in which slot, boss by boss, per class. Only the choice is authored; names, damage, defence and set bonuses are read from the sources |
 | `Wiki/assets/terrapex.css` | the skin |
 | `Wiki/pages/{en,ru}/*.md` | hand-written pages, copied over the generated tree |
 | `Wiki/legacy-wikigg/` | the abandoned wiki.gg MediaWiki attempt, kept for reference |
@@ -99,5 +100,12 @@ by hand if a page looks wrong:
 - **Set bonuses** are read from the `Mods.Terrapex.SetBonus.*` key a head asks
   for, and the Fissurite placeholders `{0}`/`{1}` are filled with 8 and 15 to
   match the code.
-- **Off-class armour.** Tiers 0-2 ship one set each. The class setup tables show
-  it for every class but say plainly when it is not that class's set.
+- **Set bonuses** fill their `{0}`/`{1}` from the arguments the head passes to
+  `GetTextValue` in `UpdateArmorSet`, evaluated against the mod's `const` fields
+  (`bonus_text`). An argument it cannot evaluate prints as `…` rather than a wrong number.
+- **Stat helpers.** A tree weapon's `SetDefaults` is one call such as
+  `Defaults(56, 44, 22, ...)`; the parser reads the helper's declaration on the base
+  class to learn which parameter is the damage.
+- **Class setups** (`class-setups/<class>.md`) come from `Wiki/data/setups.json`. A key
+  there that is neither a Terrapex class nor a vanilla item named in `ru.json` prints
+  `! setup entry:` — that is a typo, not a vanilla item.

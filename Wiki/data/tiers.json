@@ -19,6 +19,28 @@
   },
 
   "content": {
+    "HarvestMoon": 2, "Eclipse": 4, "LongNight": 5, "EventHorizon": 6, "EclipseCorona": 4, "EventHorizonVortex": 6,
+
+    "Almanac": 2, "EquinoxAlmanac": 4, "Solstice": 5, "Cosmogony": 6, "AlmanacCharge": 4, "EquinoxLance": 4,
+
+    "MenagerieHorn": 2, "WildCourt": 4, "GroveConclave": 5, "TheArk": 6, "HornBeast": 2, "CourtBeast": 4, "ConclaveBeast": 5, "ArkBeast": 6, "MenagerieSpit": 2, "ConclaveStrike": 5, "MenagerieHornBuff": 2, "WildCourtBuff": 4, "GroveConclaveBuff": 5, "ArkBuff": 6,
+
+    "Wayfinder": 2, "CompassRose": 4, "TradeWind": 5, "Horizon": 6,
+
+    "Confluence": 2, "TrueConfluence": 4, "Worldseam": 5, "Meridian": 6, "ConfluenceSlash": 2, "ConfluenceWave": 2, "WorldseamSeam": 5, "MeridianBlade": 6,
+
+    "TidewrackHood": 0, "TidewrackCoat": 0, "TidewrackBoots": 0, "SunwroughtNemes": 1, "SunwroughtCarapace": 1, "SunwroughtGreaves": 1, "BarnacledHone": 0, "ScarabAmulet": 1, "RimeboundWrap": 2,
+
+    "TidewalkerSandals": 0, "SandstriderWraps": 1, "RimetreadBoots": 2, "WayfarersBoots": 2, "RiftstrideBoots": 3, "ThreadstepBoots": 4, "WorldwalkerBoots": 6, "GullFeather": 0, "SquallAegis": 2, "RiftAegis": 4, "WeaversAegis": 5, "RegardAegis": 6,
+
+    "SunIdol": 1, "ScarabSultanBag": 1, "ScarabSultanMask": 1, "SultansCarapace": 1, "GildedChitin": 1, "Sunsand": 1, "SultansKhopesh": 1, "SunwingBow": 1, "SunScepter": 1, "BeetlingStaff": 1, "KhepriScythe": 1, "ScarabSultan": 1, "SandRoller": 1, "DustDevil": 1, "BeetlingBuff": 1, "SunBall": 1, "SunShard": 1, "SandPillar": 1, "ScepterPillar": 1, "Beetling": 1, "BeetlingMinion": 1, "KhopeshFlare": 1, "ScarabArrow": 1, "ScepterBolt": 1, "SunPebble": 1, "SunMote": 1,
+
+    "Glacierbreaker": 2, "HoarfrostBow": 2, "SnowcapStaff": 2, "GlacierBell": 2, "FrostfellScythe": 2, "PermafrostHeart": 2, "RimeMask": 2, "RimeBag": 2, "FrozenHorn": 2, "FrostPelt": 2, "RimeCrystal": 2, "RimeColossus": 2, "DriftHare": 2, "FrostWisp": 2, "RimeShockwave": 2, "RimeBoulder": 2, "RimeShard": 2, "RimeIcicle": 2, "RimeWall": 2, "FrostMote": 2, "RimeSplinter": 2, "RimeArrow": 2, "RollingSnowball": 2, "RimeSprite": 2, "FrostfellIcicle": 2, "RimeSpriteBuff": 2,
+
+    "OldShellback": 0, "BarnacleCrab": 0, "ScavengerGull": 0, "WreckersCutlass": 0, "BarnacleBlunderbuss": 0, "BrineConch": 0, "RustedCrabPot": 0, "Undertow": 0, "BarnacledBell": 0, "ShellbackBag": 0, "OldShellbackMask": 0, "HermitsHull": 0, "BarnacleCluster": 0, "ShellbackBubble": 0, "ShellbackCannonball": 0, "ShellbackWave": 0, "BarnacleShrapnel": 0, "ConchBubble": 0, "ConchDroplet": 0, "UndertowWhirl": 0, "PotCrabMinion": 0, "HermitShellBuff": 0, "PotCrabBuff": 0,
+
+    "TuskCharm": 0, "MolesLantern": 0, "ThornbackBoar": 0, "LanternMole": 0, "PitcherSnapper": 0,
+
     "FissuriteOre": 0, "FissuriteBar": 0, "RiftDust": 0, "CrackedStone": 0,
     "FissuritePickaxe": 0, "FissuriteAxe": 0, "FissuriteHammer": 0,
     "Skol": 0, "Wedge": 0, "Crackthrower": 0, "DustBeam": 0, "DustLash": 0,
@@ -28,7 +50,7 @@
     "FissuriteOreTile": 0, "CrackedStoneTile": 0, "RiftTorchTile": 0,
     "FissureSlime": 0, "FissureSlimelet": 0, "Hangstone": 0, "Voidfly": 0,
     "FacetBeetle": 0, "FissureSight": 0, "Cracked": 0,
-    "FrostbiteSickle": 0, "Gravedigger": 0, "Sandsweeper": 0, "Lidcutter": 1, "Rotreaper": 1, "Veinreaper": 1, "Hivecutter": 1, "Thornreaper": 2, "Hellreaper": 2, "ReapBolt": 0, "ReapingSlash": 0, "FrostIcicle": 0, "LidDisc": 1, "ScytheSwing": 0, "ScytheReapSpin": 0, "RustedSickle": 0, "FissuriteScythe": 0, "Whetstone": 0, "Ronin": 0,
+    "FrostbiteSickle": 0, "Gravedigger": 0, "Sandsweeper": 0, "Lidcutter": 1, "Rotreaper": 1, "Veinreaper": 1, "Hivecutter": 1, "Thornreaper": 2, "Hellreaper": 2, "ReapBolt": 0, "ReapingSlash": 0, "FrostIcicle": 0, "LidDisc": 1, "ScytheSwing": 0, "ScytheReapSpin": 0, "RiftsteelScythe": 3, "KeepersHarvest": 3, "HallowedHarvester": 4, "OpticScythe": 4, "Seamreaper": 4, "VerdantReaper": 5, "MourningScythe": 5, "Shuttlecut": 5, "FinalHarvest": 6, "Lastlight": 6, "ReapThread": 5, "ScarecrowHat": 0, "ScarecrowShirt": 0, "ScarecrowTrousers": 0, "LongHaft": 0, "HarvestCharm": 0, "BoneSheath": 2, "ReapersKit": 2, "SoulLantern": 4, "GrimInsignia": 5, "HarvestPotion": 0, "RiftsteelMask": 3, "DarnerVeil": 4, "WeaverShroud": 5, "FirstVeil": 6, "HarvestBuff": 0, "ScarecrowEffigy": 2, "HollowHarvesterBag": 2, "HollowHarvesterMask": 2, "HollowHarvest": 2, "CrowCharm": 2, "HollowHarvester": 2, "HarvesterCut": 2, "HarvesterCrow": 2, "HarvesterScythe": 2, "ReapCrow": 2, "RustedSickle": 0, "FissuriteScythe": 0, "Whetstone": 0, "Ronin": 0,
 
     "DormantEye": 1, "EyePlate": 1, "FacetBroodmother": 1, "Spall": 1,
     "Lid": 1, "StoneEye": 1, "RockfallStaff": 1, "SleepersRod": 1,

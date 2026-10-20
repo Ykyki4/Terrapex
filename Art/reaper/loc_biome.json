@@ -1,0 +1,41 @@
+{
+  "en": {
+    "Items": {
+      "TidewrackHood": {"DisplayName": "Tidewrack Hood", "Tooltip": "{0}% increased reaping critical strike chance\nHarvest fills {1}% faster"},
+      "TidewrackCoat": {"DisplayName": "Tidewrack Coat", "Tooltip": "{0}% increased reaping damage\n{1}% more of the blade counts as edge"},
+      "TidewrackBoots": {"DisplayName": "Tidewrack Boots", "Tooltip": "{0}% increased reaping speed\n{1}% increased movement speed"},
+      "SunwroughtNemes": {"DisplayName": "Sunwrought Nemes", "Tooltip": "{0}% increased reaping critical strike chance\nScythe reach is {1}% wider"},
+      "SunwroughtCarapace": {"DisplayName": "Sunwrought Carapace", "Tooltip": "{0}% increased reaping damage\nReaps deal {1}% more damage"},
+      "SunwroughtGreaves": {"DisplayName": "Sunwrought Greaves", "Tooltip": "{0}% increased reaping speed\nHarvest holds {1}% longer before it drains"},
+      "BarnacledHone": {"DisplayName": "Barnacled Hone", "Tooltip": "Critical blade hits crust a barnacle on the target, up to {0}\nA strike at range knocks them all off: {1}% more damage and extra Harvest for each"},
+      "ScarabAmulet": {"DisplayName": "Scarab Amulet", "Tooltip": "After a Reap the sun rises for {0} seconds:\nscythe reach is {1}% wider and {2}% more of the blade counts as edge"},
+      "RimeboundWrap": {"DisplayName": "Rimebound Wrap", "Tooltip": "Hits with the haft throw the target back hard and frostbite it\nThe next edge or strike hit on a frostbitten target shatters the frost for {0}% more damage"}
+    },
+    "SetBonus": {
+      "TidewrackSet": "Strikes in the edge band of your reach bank a swell, up to {0}\nA Reap breaks them: a wave runs along the floor each way to the rim of your reach, {1}% of weapon damage per swell",
+      "SunwroughtSet": "While your Harvest is full, every strike rolls a sun out of the point it hit for {0}% of its damage\nIts path is drawn from your reticle, and it gathers {1}% damage for each enemy it rolls through"
+    }
+  },
+  "ru": {
+    "items": {
+      "TidewrackHood": ["Капюшон утопленника", "+{0}% к шансу крита косами\nЖатва наполняется на {1}% быстрее"],
+      "TidewrackCoat": ["Бушлат утопленника", "+{0}% к урону косами\nКромка лезвия длиннее на {1}%"],
+      "TidewrackBoots": ["Сапоги утопленника", "+{0}% к скорости кос\n+{1}% к скорости передвижения"],
+      "SunwroughtNemes": ["Солнечный немес", "+{0}% к шансу крита косами\nДосягаемость кос шире на {1}%"],
+      "SunwroughtCarapace": ["Солнечный панцирь", "+{0}% к урону косами\nСбор бьёт на {1}% сильнее"],
+      "SunwroughtGreaves": ["Солнечные поножи", "+{0}% к скорости кос\nЖатва держится на {1}% дольше перед затуханием"],
+      "BarnacledHone": ["Ракушечное точило", "Крит лезвием налепляет на цель ракушку, до {0}\nУдар в точке сбивает их все: +{1}% урона и Жатва за каждую"],
+      "ScarabAmulet": ["Амулет скарабея", "После Сбора на {0} с встаёт солнце:\nдосягаемость шире на {1}%, кромка лезвия длиннее на {2}%"],
+      "RimeboundWrap": ["Обмотка изморози", "Удар древком отбрасывает цель и обмораживает её\nСледующий удар кромкой или в точке по обмороженной цели раскалывает иней: +{0}% урона"]
+    },
+    "SetBonus": {
+      "TidewrackSet": "Удар в точке в полосе кромки копит волну, до {0}\nСбор обрушивает их: по полу в обе стороны бежит волна до края круга досягаемости, {1}% урона оружия за каждую",
+      "SunwroughtSet": "Пока Жатва полна, каждый удар в точке выкатывает из неё солнце с {0}% урона удара\nЕго путь нарисован от прицела; за каждого врага, через которого оно прокатилось, +{1}% урона"
+    }
+  },
+  "tiers": {
+    "TidewrackHood": 0, "TidewrackCoat": 0, "TidewrackBoots": 0,
+    "SunwroughtNemes": 1, "SunwroughtCarapace": 1, "SunwroughtGreaves": 1,
+    "BarnacledHone": 0, "ScarabAmulet": 1, "RimeboundWrap": 2
+  }
+}

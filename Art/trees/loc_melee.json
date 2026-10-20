@@ -1,0 +1,58 @@
+{
+ "en": {
+  "Items": {
+   "Confluence": {
+    "DisplayName": "Confluence",
+    "Tooltip": "Each swing carries the next current: tide, sun, frost, bone\nTide shoves and soaks, sun burns and flares, frost sheds splinters, bone cracks and throws a ricocheting splinter\nEvery third swing lets a wave of the current go"
+   },
+   "TrueConfluence": {
+    "DisplayName": "True Confluence",
+    "Tooltip": "Each swing carries the next current: tide, sun, frost, bone\nEvery swing lets a wave of the current go\nEvery fourth swing throws all four currents at once, in a fan"
+   },
+   "Worldseam": {
+    "DisplayName": "Worldseam",
+    "Tooltip": "Each swing carries the next current and lets its wave go; every fourth throws all four\nWhere a wave lands it leaves a seam in the air\nThe seam snaps shut half a second later and strikes along its line"
+   },
+   "Meridian": {
+    "DisplayName": "Meridian",
+    "Tooltip": "Currents, waves, the fan of four and the seams they leave\nEvery swing opens the five blades of the tree around you\nEach copy strikes through the cursor and lets go of its own sword's trick"
+   }
+  },
+  "Projectiles": {
+   "ConfluenceSlash": "Confluence",
+   "ConfluenceWave": "Current",
+   "WorldseamSeam": "Seam",
+   "MeridianBlade": "Meridian Blade"
+  }
+ },
+ "ru": {
+  "items": {
+   "Confluence": [
+    "Слияние",
+    "Каждый взмах несёт следующее течение: прилив, солнце, мороз, кость\nПрилив отбрасывает и мочит, солнце поджигает и вспыхивает, мороз роняет осколки, кость раскалывает и бросает рикошетящий осколок\nКаждый третий взмах выпускает волну текущей стихии"
+   ],
+   "TrueConfluence": [
+    "Истинное слияние",
+    "Каждый взмах несёт следующее течение: прилив, солнце, мороз, кость\nВолна уходит с каждым взмахом\nКаждый четвёртый взмах бросает все четыре течения сразу, веером"
+   ],
+   "Worldseam": [
+    "Шов мира",
+    "Каждый взмах несёт следующее течение и выпускает его волну; каждый четвёртый — все четыре\nТам, где волна попадает, в воздухе остаётся шов\nЧерез полсекунды шов схлопывается и бьёт по своей линии"
+   ],
+   "Meridian": [
+    "Меридиан",
+    "Течения, волны, веер из четырёх и швы, которые они оставляют\nКаждый взмах раскрывает вокруг вас пять клинков дерева\nКаждая копия пролетает через курсор и пускает в ход приём своего меча"
+   ]
+  }
+ },
+ "tiers": {
+  "Confluence": 2,
+  "TrueConfluence": 4,
+  "Worldseam": 5,
+  "Meridian": 6,
+  "ConfluenceSlash": 2,
+  "ConfluenceWave": 2,
+  "WorldseamSeam": 5,
+  "MeridianBlade": 6
+ }
+}

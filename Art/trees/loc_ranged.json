@@ -1,0 +1,43 @@
+{
+  "en": {
+    "Items": {
+      "Wayfinder": {
+        "DisplayName": "Wayfinder",
+        "Tooltip": "Wooden arrows leave it as the four winds in turn:\nspray bursts into three, sun glances off walls,\nfrost drops an icicle where it breaks, the cleft goes through"
+      },
+      "CompassRose": {
+        "DisplayName": "Compass Rose",
+        "Tooltip": "Wooden arrows leave it as the four winds in turn\nEvery fourth shot looses all four winds at once in a fan\nThe fan's arrows leave the Rib's mark on what they hit"
+      },
+      "TradeWind": {
+        "DisplayName": "Trade Wind",
+        "Tooltip": "The four winds in turn, and every fourth shot all four in a fan\nEach shot looses a lighter second arrow of the opposite wind\nArrows that fly 25 tiles catch the trade wind: they stop falling and hit 40% harder\nA tailwind arrow threads its first hit on to the next enemy"
+      },
+      "Horizon": {
+        "DisplayName": "Horizon",
+        "Tooltip": "The four winds, the fan, the second arrow and the trade wind\nEvery eighth shot a rose of eight bows opens above you\nand each looses its own arrow at the cursor in turn\nbefore the eye at its centre lays one stare down the same line"
+      }
+    },
+    "Projectiles": {
+      "WindArrow": "Wind Arrow",
+      "WindPellet": "Spray Pellet",
+      "WindIcicle": "Frost Icicle",
+      "HorizonRose": "Rose of Bows",
+      "HorizonGaze": "Horizon Gaze"
+    }
+  },
+  "ru": {
+    "items": {
+      "Wayfinder": ["Путеводитель", "Деревянные стрелы превращаются в четыре ветра по кругу:\nбрызги дробятся на три, солнце рикошетит от стен,\nиней роняет сосульку туда, где разбился, трещина пробивает насквозь"],
+      "CompassRose": ["Роза ветров", "Деревянные стрелы превращаются в четыре ветра по кругу\nКаждый четвёртый выстрел — веер из всех четырёх ветров\nСтрелы веера оставляют на цели метку Ребра"],
+      "TradeWind": ["Пассат", "Четыре ветра по кругу, каждый четвёртый выстрел — веер\nКаждый выстрел пускает вторую, лёгкую стрелу противоположного ветра\nСтрелы, пролетевшие 25 блоков, ловят попутный ветер: перестают падать и бьют на 40% сильнее\nСтрела с попутным ветром перекидывает первое попадание нитью на следующего врага"],
+      "Horizon": ["Горизонт", "Четыре ветра, веер, вторая стрела и попутный ветер\nКаждый восьмой выстрел над вами раскрывается роза из восьми луков,\nи каждый по очереди стреляет своей стрелой в курсор,\nа глаз в её центре кладёт по той же линии один взгляд"]
+    }
+  },
+  "tiers": {
+    "Wayfinder": 2,
+    "CompassRose": 4,
+    "TradeWind": 5,
+    "Horizon": 6
+  }
+}

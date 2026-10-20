@@ -11,6 +11,11 @@ before changing fight behaviour — the numbers in it and the numbers in the cod
 to stay in sync. **`EVENT_BREACH.md`** is the same document for the Breach, the wave event
 of 0.4.0 — built, not yet playtested. **`CLASS_REAPER.md`** is the same again for the fifth
 class, scythes — the edge, the Harvest meter and the Reap, with the ladder of weapons.
+**`BOSS_HARVESTER.md`** is the class's own boss, the Hollow Harvester (post-Skeletron).
+**`BOSS_SHELLBACK.md`**, **`BOSS_SCARAB.md`** and **`BOSS_RIME.md`** are the three pre-hardmode
+bosses that take the mod off the rift theme - beach, desert, snow. None of them is played yet.
+**`GUIDE_REAPER.md`** is the player-facing class setup: gear per boss, summons, and a playtest
+checklist. It quotes numbers from the code, so update it when a scythe, set or summon changes.
 
 ## Build
 
@@ -41,7 +46,7 @@ Develop Mods → Reload.
 | `Common/Players/TerrapexPlayer.cs` | set-bonus hit counter, Fissure Sight ore scan |
 | `Common/GlobalNPCs/CrackedGlobalNPC.cs` | the `Cracked` debuff's +15% incoming damage |
 | `Common/Systems/FissuriteWorldGen.cs` | fissurite veins, inserted after the vanilla `Shinies` pass |
-| `Content/NPCs/Bosses/DormantEye.cs` | boss 1: rolls on the ground, 4 plates, one phase change at 25% |
+| `Content/NPCs/Bosses/DormantEye.cs` | boss 1: rolls on the ground, 4 plates (a 12%-each dial), eye opens at 40%. Fixed rotations: rockfall / bowl / leap with `EyeTremor` floor waves, then beam / glare sweep / shard volleys. Doc `BOSS_DORMANT.md` |
 | `Content/NPCs/Bosses/EyePlate.cs` | its shell slab — orbit only, no throw |
 | `Content/NPCs/Bosses/KeeperOfTheRift.cs` | the boss: 3 phases, 13 attacks, ordered rotations, enrage, desperation |
 | `Content/NPCs/Bosses/KeeperPlate.cs` | orbiting destructible shell plate (a real NPC, not a sprite) |
@@ -52,6 +57,14 @@ Develop Mods → Reload.
 | `Content/NPCs/Spall.cs` | T1: armoured on the face it shows you. The mod's first "where is it looking" enemy |
 | `Content/NPCs/{PlateBearer,PlateShepherd}.cs` | T3: a plate as a damage budget, and the mini-boss that re-arms them |
 | `Content/NPCs/RiftReaper.cs` | T3 flyer, drawn aim line then a dash |
+| `Content/NPCs/Wilds/` | ordinary animals of vanilla biomes, no rift: `ThornbackBoar` (forest, scrape then a committed charge), `LanternMole` (caverns, swims through rock, ground breaks 30 ticks before it surfaces), `PitcherSnapper` (jungle, swells then lobs acid where you stood). Art in `Art/wilds/wilds.lua` |
+| `Content/NPCs/Bosses/OldShellback.cs` | pre-HM beach boss: a hermit crab in a wrecked hull. Scuttle / Bubbles / Cannon / Hull - hiding in the hull is a dial (crack it for a stun, or eat the slam). Shots in `Content/Projectiles/Shellback/`, drops in `Content/Items/Weapons/Shellback/`, mobs in `Content/NPCs/Ocean/`, art in `Art/shellback/`, doc `BOSS_SHELLBACK.md` |
+| `Content/NPCs/Bosses/RimeColossus.cs` | "The Rime", pre-HM snow boss: Slam / Throw / Icefall / closing Walls with a door, a blizzard wind in phase two. Hazards in `Content/Projectiles/Rime/`, weapons in `Content/Items/Weapons/Rime/`, mobs in `Content/NPCs/Snow/`, art in `Art/rime/`, doc `BOSS_RIME.md` |
+| `Content/NPCs/Bosses/ScarabSultan.cs` | pre-HM desert boss, day only: Kick (a sun ball whose drawn path is the same `BallPhysics.Step` it rolls on) / Fan / Dive / Pillars. Shots in `Content/Projectiles/Scarab/`, weapons in `Content/Items/Weapons/Scarab/`, mobs in `Content/NPCs/Desert/`, art in `Art/scarab/`, doc `BOSS_SCARAB.md` |
+| `Common/Particles/Particles.cs` | client-only particle layer drawn after dust (`Spark`, `Bloom`, `Shockwave`, `Smoke`, `Chip`, `CrackLine`, and `FX.Sparks/Impact/GroundSlam/Crack`). Each boss and tree adds its own particle types in its own file beside it (`Shellback.cs`, `Scarab.cs`, `Rime.cs`, `Harvester.cs`, `Wayfinder.cs`, `Almanac.cs`), so the shared file is never edited for one effect |
+| `CRAFTING_TREES.md` | the big crafts: one Night's Edge → True → Terra → Zenith line per class, plus the boots and dash lines. Code in `Content/Items/Weapons/Trees/<Class>/`, `Content/Projectiles/Trees/<Class>/`, `Content/Items/Accessories/Trees/` (effects in `Common/Players/TreeAccessoryPlayer.cs`), art in `Art/trees/` |
+| `Content/Items/Armor/Reaper/`, `Content/Items/Accessories/Reaper/` | the reaper's biome gear: Tidewrack (Shellback) and Sunwrought (Scarab) sets between Scarecrow and Ronin, and one reaper accessory per biome boss. Art in `Art/reaper/biome_sets.lua` |
+| `Art/merge_loc.py` | merges a content batch's `Art/<batch>/loc.json` into the hjson, `ru.json` and `tiers.json`. Batches built in parallel never edit those three files themselves |
 | `Content/NPCs/Riftling.cs` | underground hardmode mob, custom approach/lunge AI |
 | `Content/NPCs/Mirrorling.cs` | T2 cavern mob: replays the player's velocity from 30 ticks ago, mirrored |
 | `Content/NPCs/HollowEcho.cs` | T2 dungeon ghost: ignores tiles, harmless except during its telegraphed charge |
@@ -64,7 +77,11 @@ Develop Mods → Reload.
 | `Content/Items/Weapons/Reaper/` | `ScytheItem` (abstract: reach + Reap) and every scythe built on it |
 | `Content/Projectiles/Reaper/ScytheSwing.cs` | the held 270° stroke every scythe shares; its blade segment is the hitbox and the outer part is the edge |
 | `Content/NPCs/TownNPCs/Ronin.cs` | the class's NPC; moves in when anyone carries a scythe |
-| `Art/reaper/` | Aseprite scripts: `lib.lua` (2x2 grid, outline, hafts, crescents, palettes), `scythes.lua` (one hand-drawn map per scythe), `reaper_items.lua` (sickle, kusarigama, Rift Scythe, accessories), `ronin_npc.lua`. `preview_scythes.py` lays every scythe out with its numbers |
+| `Content/NPCs/Bosses/HollowHarvester.cs` | the reaper class's boss: its reach is drawn, its marks land inside it and hit harder at the rim. Three phases (60% / 25%), seven moves; the third phase's reach closes as a blade with a door (`HarvesterField`). A night boss, so every shot it fires is drawn bright, never in world light alone |
+| `Content/Projectiles/Harvester/` | its mark (`HarvesterCut`, 42 harmless ticks), straight-flying straw crows, the boomerang scythe, and in `HarvesterLateShots.cs` the lobbed jack-o'-lantern (arc drawn by the same sum it flies) and the closing field |
+| `Content/Projectiles/Reaper/ReapingSlash.cs` | the strike at a clicked point inside the reach; `AfterStrike` lets unique scythes add to it |
+| `Common/Reaper/ReapRangeLayer.cs` | draws the reach as an arc facing the cursor (a full ring hid incoming shots), its edge band and the reticle. `Facing()` is the fade every rim overlay uses; style and opacity live in `Common/Configs/TerrapexClientConfig.cs` |
+| `Art/reaper/` | Aseprite scripts: `lib.lua` (2x2 grid, outline, hafts, crescents, palettes), `scythes.lua` (one hand-drawn map per scythe), `reaper_items.lua` (sickle, kusarigama, Rift Scythe), `gear_icons.lua` (accessories, potion, buff), `scarecrow.lua`, `reaper_heads.lua` (the 1:1 reaper heads of T3-T6), `harvester.lua` (the boss and its drops), `effects.lua`, `ronin_npc.lua`. `preview_scythes.py` lays every scythe out with its numbers |
 | `Content/NPCs/Bosses/WeaverOfTheRift.cs` | boss 3: three phases, anchors, thread hazards |
 | `Content/NPCs/Bosses/WeaverAnchor.cs` | its legs; each one standing takes 10% off the damage the body receives, and its death staggers the boss |
 | `Content/NPCs/Bosses/Heave.cs` | the Breach's finale: ground-bound, four attacks, and every mouth left standing makes it bigger |
@@ -820,7 +837,7 @@ sheet through `override string Texture`, so the second type costs no art.
 `Wiki/` builds a bilingual static site (English at the root, Russian under `/ru/`)
 out of `Content/`, `Localization/` and two authored tables. Nothing on it is
 written twice: item stats come from `SetDefaults`, recipes from `AddRecipes`,
-drops from `ModifyNPCLoot`, names and tooltips from the hjson. 203 pages per
+drops from `ModifyNPCLoot`, names and tooltips from the hjson. 361 pages per
 language, published to GitHub Pages by `.github/workflows/wiki.yml`.
 
 ```
@@ -832,6 +849,10 @@ automatically, but the generator prints `! no tier assigned` until it appears in
 `Wiki/data/tiers.json`, and `! N missing translations` until it appears in
 `Wiki/data/ru.json`. Both are warnings — the page still builds, falling back to
 English and to no tier badge.
+
+**Class setups are authored, boss by boss**, in `Wiki/data/setups.json` (one slot table per
+class per stage). A new boss or a better item means a line there; its numbers still come
+from the code. `GUIDE_REAPER.md` is the long-form version of the reaper's column.
 
 The rest — why the URLs are flat, what the drop parser does and does not
 understand, how to override a generated page with a hand-written one — is in

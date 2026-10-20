@@ -1,0 +1,130 @@
+{
+ "en": {
+  "Items": {
+   "TidewalkerSandals": {
+    "DisplayName": "Tidewalker Sandals",
+    "Tooltip": "Grants the ability to swim\nAllows walking on water\n25% increased movement speed in water"
+   },
+   "SandstriderWraps": {
+    "DisplayName": "Sandstrider Wraps",
+    "Tooltip": "Faster acceleration on sand, immunity to desert winds\n10% increased movement speed in the desert\nRunning kicks up sand that confuses enemies behind you"
+   },
+   "RimetreadBoots": {
+    "DisplayName": "Rimetread Boots",
+    "Tooltip": "Provides extra mobility on ice\nFaster acceleration on snow and ice"
+   },
+   "WayfarersBoots": {
+    "DisplayName": "Wayfarer's Boots",
+    "Tooltip": "The wearer can run super fast\n20% increased movement speed, 10% more in the desert and 25% more in water\nAllows swimming and walking on water, extra mobility on ice\nRunning kicks up sand that confuses enemies behind you\nImmunity to Slow and desert winds"
+   },
+   "RiftstrideBoots": {
+    "DisplayName": "Riftstride Boots",
+    "Tooltip": "Allows flight and super fast running\nEverything the Wayfarer's Boots do\nLanding from a great height throws nearby enemies back"
+   },
+   "ThreadstepBoots": {
+    "DisplayName": "Threadstep Boots",
+    "Tooltip": "Allows flight and running up to 7.5\nEverything the Riftstride Boots do\nImmunity to lava and fire blocks, walk on water and lava\n10% increased movement speed\nRun off a ledge and a thread holds you level for one second"
+   },
+   "WorldwalkerBoots": {
+    "DisplayName": "Worldwalker Boots",
+    "Tooltip": "Allows Terraspark flight and running up to 8.5\nEverything the Threadstep and Terraspark Boots do\n8% increased movement speed"
+   },
+   "GullFeather": {
+    "DisplayName": "Gull Feather",
+    "Tooltip": "Double tap a direction for a light dash"
+   },
+   "SquallAegis": {
+    "DisplayName": "Squall Aegis",
+    "Tooltip": "Double tap a direction to dash into an enemy\nThe dash pushes a gust ahead that throws enemies back\nGrants immunity to knockback and fire blocks"
+   },
+   "RiftAegis": {
+    "DisplayName": "Rift Aegis",
+    "Tooltip": "Double tap a direction to dash through enemies, hitting all of them\nYou are briefly invulnerable at the end of the dash\nThe dash still pushes a gust ahead\nImmunity to knockback and fire blocks\nPuts a shell around you when below 50% life"
+   },
+   "WeaversAegis": {
+    "DisplayName": "Weaver's Aegis",
+    "Tooltip": "Everything the Rift Aegis does\nEach dash leaves a damaging thread along its path for 2 seconds\nAbsorbs 25% of damage done to players on your team while above 25% life\nAllows the ability to climb walls and a chance to dodge attacks"
+   },
+   "RegardAegis": {
+    "DisplayName": "Regard Aegis",
+    "Tooltip": "Press the Regard Dash key to dash toward the cursor\nEverything the Weaver's Aegis does\nFor one second after the dash, enemies it passed through take 30% more damage from you"
+   }
+  },
+  "Projectiles": {
+   "AegisStrike": "Aegis Dash",
+   "AegisGust": "Gust",
+   "StepThread": "Threadstep"
+  },
+  "Keybinds": {
+   "RegardDash": {
+    "DisplayName": "Regard Dash (Regard Aegis)"
+   }
+  }
+ },
+ "ru": {
+  "items": {
+   "TidewalkerSandals": [
+    "Сандалии прибоя",
+    "Позволяют плавать\nПозволяют ходить по воде\n+25% к скорости передвижения в воде"
+   ],
+   "SandstriderWraps": [
+    "Обмотки дюн",
+    "Быстрый разгон на песке, иммунитет к ветру пустыни\n+10% к скорости передвижения в пустыне\nБег взбивает песок, который сбивает с толку врагов позади"
+   ],
+   "RimetreadBoots": [
+    "Сапоги наледи",
+    "Улучшают передвижение по льду\nБыстрый разгон на снегу и льду"
+   ],
+   "WayfarersBoots": [
+    "Сапоги странника",
+    "Позволяют очень быстро бегать\n+20% к скорости передвижения, ещё +10% в пустыне и +25% в воде\nПозволяют плавать и ходить по воде, улучшают передвижение по льду\nБег взбивает песок, который сбивает с толку врагов позади\nИммунитет к замедлению и ветру пустыни"
+   ],
+   "RiftstrideBoots": [
+    "Шаг разлома",
+    "Позволяют летать и очень быстро бегать\nВсё, что дают Сапоги странника\nПриземление с большой высоты отбрасывает врагов рядом"
+   ],
+   "ThreadstepBoots": [
+    "Шаг нити",
+    "Позволяют летать и бегать до 7.5\nВсё, что даёт Шаг разлома\nИммунитет к лаве и огненным блокам, ходьба по воде и лаве\n+10% к скорости передвижения\nСбегите с уступа на бегу, и нить удержит вас одну секунду"
+   ],
+   "WorldwalkerBoots": [
+    "Сапоги мироходца",
+    "Полёт Terraspark и бег до 8.5\nВсё, что дают Шаг нити и Сапоги Terraspark\n+8% к скорости передвижения"
+   ],
+   "GullFeather": [
+    "Перо чайки",
+    "Дважды нажмите направление для лёгкого рывка"
+   ],
+   "SquallAegis": [
+    "Эгида шквала",
+    "Дважды нажмите направление для рывка во врага\nРывок толкает перед собой порыв, отбрасывающий врагов\nИммунитет к отбрасыванию и огненным блокам"
+   ],
+   "RiftAegis": [
+    "Эгида разлома",
+    "Двойное нажатие — рывок сквозь врагов, задевающий всех\nВ конце рывка — короткая неуязвимость\nРывок по-прежнему толкает порыв\nИммунитет к отбрасыванию и огненным блокам\nНиже 50% здоровья — ледяной панцирь"
+   ],
+   "WeaversAegis": [
+    "Эгида ткача",
+    "Всё, что даёт Эгида разлома\nЗа каждым рывком на 2 с остаётся ранящая нить\nПоглощает 25% урона союзников по команде, пока здоровье выше 25%\nПозволяет лазать по стенам и иногда уклоняться от атак"
+   ],
+   "RegardAegis": [
+    "Эгида взгляда",
+    "Клавиша «Рывок взгляда» — рывок к курсору\nВсё, что даёт Эгида ткача\nСекунду после рывка задетые враги получают от вас на 30% больше урона"
+   ]
+  }
+ },
+ "tiers": {
+  "TidewalkerSandals": 0,
+  "SandstriderWraps": 1,
+  "RimetreadBoots": 2,
+  "WayfarersBoots": 2,
+  "RiftstrideBoots": 3,
+  "ThreadstepBoots": 4,
+  "WorldwalkerBoots": 6,
+  "GullFeather": 0,
+  "SquallAegis": 2,
+  "RiftAegis": 4,
+  "WeaversAegis": 5,
+  "RegardAegis": 6
+ }
+}

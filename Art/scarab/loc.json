@@ -1,0 +1,72 @@
+{
+  "en": {
+    "Items": {
+      "SunIdol": {"DisplayName": "Sun Idol", "Tooltip": "Summons the Scarab Sultan\nUse during the day in the surface desert"},
+      "ScarabSultanBag": {"DisplayName": "Treasure Bag (Scarab Sultan)", "Tooltip": "{$CommonItemTooltip.RightClickToOpen}"},
+      "ScarabSultanMask": {"DisplayName": "Scarab Sultan Mask", "Tooltip": ""},
+      "SultansCarapace": {"DisplayName": "Sultan's Carapace", "Tooltip": "Getting hit releases a ring of eight sun motes\nCan only happen once every 3 seconds"},
+      "GildedChitin": {"DisplayName": "Gilded Chitin", "Tooltip": "A shell plate lacquered in gold"},
+      "Sunsand": {"DisplayName": "Sunsand", "Tooltip": "Sand that held the sun too long and still glows"},
+      "SultansKhopesh": {"DisplayName": "Sultan's Khopesh", "Tooltip": "Sets enemies on fire\nEvery third hit sets off a sun flare on the target"},
+      "SunwingBow": {"DisplayName": "Sunwing Bow", "Tooltip": "Turns Wooden Arrows into Scarab Arrows\nScarab Arrows bounce off the first wall they hit"},
+      "SunScepter": {"DisplayName": "Sun Scepter", "Tooltip": "Lobs a sun bolt\nWhere it lands, a pillar of sand bursts out of the ground"},
+      "BeetlingStaff": {"DisplayName": "Beetling Staff", "Tooltip": "Summons a gilded beetling to fight for you\nIt lines up on a target and dives straight through it"},
+      "KhepriScythe": {"DisplayName": "Khepri's Scythe", "Tooltip": "After each strike, a sun pebble drops out of it and rolls on\nAn edge strike drops two, one each way"}
+    },
+    "NPCs": {
+      "ScarabSultan": {"DisplayName": "Scarab Sultan", "Bestiary": "A golden scarab king that flies the dunes with its sun held in its legs. It draws the path of every ball it kicks before it kicks it, which is the only courtesy it shows."},
+      "SandRoller": {"DisplayName": "Sand Roller", "Bestiary": "A dung beetle the size of a dog. Its ball is a shield until it sends it rolling at you - and then it is just a beetle."},
+      "DustDevil": {"DisplayName": "Dust Devil", "Bestiary": "A whirlwind with a dead scarab turning in its eye. When the ring of grit closes, it breathes in, and everything near it is pulled toward the middle."}
+    },
+    "Projectiles": {
+      "SunBall": "Sun",
+      "SunShard": "Sun Shard",
+      "SandPillar": "Sand Pillar",
+      "ScepterPillar": "Sand Pillar",
+      "Beetling": "Gilded Beetling",
+      "BeetlingMinion": "Gilded Beetling",
+      "KhopeshFlare": "Sun Flare",
+      "ScarabArrow": "Scarab Arrow",
+      "ScepterBolt": "Sun Bolt",
+      "SunPebble": "Sun Pebble",
+      "SunMote": "Sun Mote"
+    },
+    "Buffs": {
+      "BeetlingBuff": {"DisplayName": "Gilded Beetling", "Description": "A gilded beetling fights for you"}
+    },
+    "Chat": {
+      "ScarabPhase2": "The sun in the Sultan's legs cracks open!",
+      "ScarabDown": "The Scarab Sultan has fallen. The dunes are quiet."
+    }
+  },
+  "ru": {
+    "items": {
+      "SunIdol": ["Солнечный идол", "Призывает Скарабея-Султана\nИспользуйте днём в пустыне на поверхности"],
+      "ScarabSultanBag": ["Сумка с сокровищами (Скарабей-Султан)", "ПКМ, чтобы открыть"],
+      "ScarabSultanMask": ["Маска Скарабея-Султана", ""],
+      "SultansCarapace": ["Панцирь Султана", "При получении урона выпускает кольцо из восьми солнечных искр\nНе чаще раза в 3 секунды"],
+      "GildedChitin": ["Позолоченный хитин", "Пластина панциря, покрытая золотым лаком"],
+      "Sunsand": ["Солнечный песок", "Песок, слишком долго хранивший солнце, - он всё ещё светится"],
+      "SultansKhopesh": ["Хопеш Султана", "Поджигает врагов\nКаждый третий удар вызывает солнечную вспышку на цели"],
+      "SunwingBow": ["Лук Солнечных крыл", "Превращает деревянные стрелы в стрелы скарабея\nСтрелы скарабея отскакивают от первой стены"],
+      "SunScepter": ["Солнечный скипетр", "Навесом бросает солнечный заряд\nТам, где он упадёт, из земли вырывается песчаный столп"],
+      "BeetlingStaff": ["Посох жучка", "Призывает позолоченного жучка\nОн прицеливается и пикирует сквозь цель"],
+      "KhepriScythe": ["Коса Хепри", "После каждого удара из неё выпадает и катится солнечный камешек\nУдар кромкой роняет два, в обе стороны"]
+    },
+    "npcs": {
+      "ScarabSultan": ["Скарабей-Султан", "Золотой король-скарабей, летающий над дюнами с солнцем в лапах. Путь каждого шара он рисует до того, как пнёт его, - это единственная любезность, которую он оказывает."],
+      "SandRoller": ["Песчаный катальщик", "Навозник размером с собаку. Его шар - щит, пока он не пустит его катиться на вас, а после этого он просто жук."],
+      "DustDevil": ["Пыльный дьявол", "Вихрь с мёртвым скарабеем, кружащимся в его глазу. Когда кольцо песка смыкается, он делает вдох, и всё рядом тянет к центру."]
+    },
+    "buffs": {
+      "BeetlingBuff": ["Позолоченный жучок", "Позолоченный жучок сражается за вас"]
+    }
+  },
+  "tiers": {
+    "SunIdol": 1, "ScarabSultanBag": 1, "ScarabSultanMask": 1, "SultansCarapace": 1, "GildedChitin": 1, "Sunsand": 1,
+    "SultansKhopesh": 1, "SunwingBow": 1, "SunScepter": 1, "BeetlingStaff": 1, "KhepriScythe": 1,
+    "ScarabSultan": 1, "SandRoller": 1, "DustDevil": 1, "BeetlingBuff": 1,
+    "SunBall": 1, "SunShard": 1, "SandPillar": 1, "ScepterPillar": 1, "Beetling": 1, "BeetlingMinion": 1,
+    "KhopeshFlare": 1, "ScarabArrow": 1, "ScepterBolt": 1, "SunPebble": 1, "SunMote": 1
+  }
+}

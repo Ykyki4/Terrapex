@@ -293,4 +293,225 @@ do
   finish(g, DIR .. "Hellreaper.png")
 end
 
+-------------------------------------------------------------------------------
+-- Hardmode. Same rule: each blade has its own idea, drawn by hand; only the
+-- hafts come from the shared rule. 24x24 art cells (48 px) unless noted.
+
+local function standardHaft(g, lit, body, dark, grain)
+  haft(g, 1.3, 22.8, 9.4, 4.6, 1.15, lit, body, dark, grain)
+end
+
+-- Riftsteel Scythe: three steel plates laid over each other along the curve,
+-- each with its own lit top and dark seam - a blade built like the armour
+do
+  local g = newGrid(24, 24)
+  standardHaft(g, hex("baacc4"), hex("847696"), hex("3b3050"), { 0.3, 0.6 })
+  stamp(g, {
+    "...aaab.........",
+    "..abbbbcaaarr...",
+    ".abbbbcabbbcd...",
+    "eeebbcdabbbbcaa.",
+    "...eecdbbbbcdabb",
+    ".....eeeebccdabc",
+    "........eedd.abc",
+    "............abcd",
+    "............bbcd",
+    "...........ebcd.",
+    "...........ecd..",
+    "............ed..",
+  }, { a = hex("c9bdd1"), b = hex("93849f"), c = hex("635478"), d = hex("3f3357"), e = hex("f4efe6"),
+       r = RIFT[1] }, 8, 2)
+  finish(g, DIR .. "RiftsteelScythe.png")
+end
+
+-- Keeper's Harvest: the Keeper's eye, open, at the neck, and a crescent of its
+-- shell plates curving away from it
+do
+  local g = newGrid(24, 24)
+  standardHaft(g, hex("baacc4"), hex("847696"), hex("3b3050"), { 0.45 })
+  stamp(g, {
+    "....aaaa.........",
+    "..aabbbbaa.......",
+    ".abbwwwwbbaab....",
+    "abbwwiiwwbbbbc...",
+    "abwwippiwwcbbbc..",
+    "abwwiiiiwwcabbbc.",
+    "bbbwwwwwwcc.abbc.",
+    ".bcbbwwbccd..abcd",
+    "..ccdddcd....abcd",
+    "...eeeee.....bbcd",
+    "............ebcd.",
+    "............ecd..",
+    ".............ed..",
+  }, { a = hex("c9bdd1"), b = hex("93849f"), c = hex("635478"), d = hex("3f3357"), e = hex("f4efe6"),
+       w = hex("e8cf94"), i = RIFT[2], p = hex("241733") }, 6, 1)
+  finish(g, DIR .. "KeepersHarvest.png")
+end
+
+-- Hallowed Harvester, 26x26: the blade is a wing - a gold-white membrane whose
+-- lower edge breaks into feather tips instead of running as one cutting line
+do
+  local g = newGrid(26, 26)
+  haft(g, 1.3, 24.8, 9.8, 5.0, 1.15, hex("fff8e0"), hex("e0c070"), hex("8a6a2a"), { 0.35, 0.7 })
+  stamp(g, {
+    "...aaaaa..........",
+    "..abbbbbbaa.......",
+    ".abbbbbbbbbaa.....",
+    "abbcbbbcbbbbbaa...",
+    "bbccbbccbbbcbbbb..",
+    ".cdccbcdcbbccbbbc.",
+    "..d.cdd.ccdccbcbc.",
+    "......d..dd.dccbcd",
+    "..........d..dccd.",
+    "..............dcd.",
+    "...............d..",
+  }, { a = hex("ffffff"), b = hex("fff0b0"), c = hex("f0c040"), d = hex("b0802a") }, 8, 2)
+  finish(g, DIR .. "HallowedHarvester.png")
+end
+
+-- Optic Scythe, 26x26: two blades on one haft, one forward and a smaller one
+-- turned back, and the Twins' two eyes - red and green - set where they meet
+do
+  local g = newGrid(26, 26)
+  haft(g, 1.3, 24.8, 10.0, 5.6, 1.15, hex("9aa2bc"), hex("666e8c"), hex("3b4260"), { 0.4 })
+  stamp(g, {
+    "aab..............",
+    ".bbc.....aaab....",
+    "..ccd...abbbbcc..",
+    "...dRd.abbcccbbc.",
+    "....RRGGbcd..dbbc",
+    "....dRGGd.....dbc",
+    ".....d.d.......bc",
+    "...............bd",
+    "..............ebd",
+    ".............ecd.",
+    "............ed...",
+  }, { a = hex("eef1f8"), b = hex("c8cee0"), c = hex("9aa2bc"), d = hex("666e8c"), e = hex("ffffff"),
+       R = hex("ff5a5a"), G = hex("6aff7a") }, 6, 1)
+  finish(g, DIR .. "OpticScythe.png")
+end
+
+-- Seamreaper, 26x26: a needle more than a blade - thin, dark, hooked - with a
+-- turquoise thread looped back from its point to the haft
+do
+  local g = newGrid(26, 26)
+  local VOIDR = { hex("9fb4bb"), hex("61818c"), hex("3d5560"), hex("22343e"), hex("7ff2e0") }
+  haft(g, 1.3, 24.8, 10.0, 5.4, 1.1, VOIDR[1], VOIDR[2], VOIDR[4], { 0.25, 0.5, 0.75 })
+  crescent(g, { x = 16.0, y = 11.0, r = 9.4 }, { x = 14.6, y = 12.6, r = 8.8 },
+    function(x, y) return x > 10.2 and y < 19.5 end, VOIDR)
+  -- the thread: from the point, sagging back across to the haft
+  stamp(g, {
+    "...........t",
+    "..........t.",
+    ".........t..",
+    "......ttt...",
+    "....tt......",
+    "..tt........",
+  }, { t = hex("35c9b8") }, 7, 15)
+  -- the needle's eye, a hole at the neck
+  clear(g, 12, 3)
+  finish(g, DIR .. "Seamreaper.png")
+end
+
+-- Verdant Reaper, 26x26: chlorophyte crystals growing out of the neck in a
+-- fan, longest at the point - a cluster, not a line
+do
+  local g = newGrid(26, 26)
+  haft(g, 1.3, 24.8, 9.6, 6.0, 1.15, hex("8ab050"), hex("5a7a30"), hex("33461e"), { 0.3, 0.6 })
+  stamp(g, {
+    "..a.....a........",
+    "..ab...abb.......",
+    "..abb.abbc...a...",
+    "...abbabcc..abb..",
+    "...abbbbcc.abbc..",
+    "....bbbbbcabbc...",
+    "....bbbbbbbbc....",
+    ".....bccbbbbbbbbe",
+    "......ccbbbcccdd.",
+    ".......dccbbe....",
+    "........dcbbe....",
+    ".........dcbe....",
+    "..........ce.....",
+  }, { a = hex("e0ffb0"), b = hex("8ce060"), c = hex("4aa038"), d = hex("2a5a2a"), e = hex("f0fff0") }, 8, 1)
+  finish(g, DIR .. "VerdantReaper.png")
+end
+
+-- Mourning Scythe, 26x26: a gnarled branch with a lit pumpkin grinning at the
+-- neck, and a blade of charred wood with an ember edge
+do
+  local g = newGrid(26, 26)
+  haft(g, 1.3, 24.8, 9.6, 6.4, 1.2, hex("7a5a40"), hex("4a3428"), hex("2a1c18"), { 0.2, 0.5, 0.8 })
+  stamp(g, { "k.", ".k", "k." }, { k = hex("2a1c18") }, 2, 15)  -- knots
+  crescent(g, { x = 16.0, y = 11.6, r = 9.6 }, { x = 13.2, y = 15.6, r = 8.8 },
+    function(x, y) return x > 11.4 and y < 18.5 end,
+    { hex("6a5a5a"), hex("4a3a3e"), hex("33282c"), hex("221a1e"), hex("ff9040") })
+  stamp(g, {
+    "..g...",
+    ".oooo.",
+    "oyoyoo",
+    "ooyyoo",
+    "oyyyyo",
+    ".oooo.",
+  }, { g = hex("4a9a38"), o = hex("e87a20"), y = hex("ffe060") }, 8, 3)
+  finish(g, DIR .. "MourningScythe.png")
+end
+
+-- Shuttlecut, 28x28: the blade is a weaving shuttle - a long spindle of pale
+-- silk with a dark frame band through it, pointed at both ends
+do
+  local g = newGrid(28, 28)
+  haft(g, 1.3, 26.8, 10.4, 6.6, 1.15, hex("3d6068"), hex("22343e"), hex("0a1620"), { 0.3, 0.6 })
+  stamp(g, {
+    "aab...............",
+    "abbbb.............",
+    ".bbbbbc...........",
+    "..bcccbbc.........",
+    "...cddcbbcc.......",
+    "....cdddddbbc.....",
+    ".....ccdddddcbbc..",
+    "......cccdddddcbbc",
+    ".......cccccddcbbe",
+    "..........cccccdbe",
+    "..............ccce",
+    "................e.",
+  }, { a = hex("eef9f6"), b = hex("c2e0da"), c = hex("93b8b6"), d = hex("22343e"), e = hex("ffffff") }, 10, 4)
+  finish(g, DIR .. "Shuttlecut.png")
+end
+
+-- Final Harvest, 30x30: one long luminite blade with the four pillars' colours -
+-- solar, vortex, nebula, stardust - running in a strip down its spine
+do
+  local g = newGrid(30, 30)
+  haft(g, 1.4, 28.6, 11.4, 6.0, 1.2, hex("c8f0e0"), hex("5a8a8a"), hex("1e3a44"), { 0.25, 0.5, 0.75 })
+  local A, B = { x = 18.6, y = 13.4, r = 11.6 }, { x = 15.0, y = 19.2, r = 10.6 }
+  crescent(g, A, B, function(x, y) return x > 11.4 and y < 22.5 end,
+    { hex("ffffff"), hex("d8fff0"), hex("8ad8c0"), hex("3a7a80"), hex("ffffff") })
+  local BANDS = { hex("ff9a3a"), hex("3ae0c0"), hex("ff6ad8"), hex("6ab0ff") }
+  eachBladeCell(g, A, B, -160, function(x, y, s, fromSpine, fromEdge)
+    -- the pillars' colours run as one strip along the spine; the body stays luminite.
+    -- Filling the whole blade with them made a flag, not a weapon
+    if fromEdge >= 0.9 and fromSpine >= 0.9 and fromSpine < 2.0 then
+      put(g, x, y, BANDS[math.min(4, math.floor(s / 50) + 1)])
+    end
+  end)
+  stamp(g, { ".w.", "wWw", ".w." }, { w = hex("d8fff0"), W = hex("ffffff") }, 10, 4)
+  finish(g, DIR .. "FinalHarvest.png")
+end
+
+-- Lastlight, 28x28: the prime white of T6, the blade closed by lids - dark
+-- lines across it like the First Keeper's - and one warm eye at the neck
+do
+  local g = newGrid(28, 28)
+  haft(g, 1.3, 26.8, 10.4, 6.0, 1.2, hex("eef1f8"), hex("9aa2bc"), hex("3b4260"), { 0.33, 0.66 })
+  local A, B = { x = 17.4, y = 12.6, r = 10.8 }, { x = 14.0, y = 17.8, r = 9.8 }
+  crescent(g, A, B, function(x, y) return x > 11.0 and y < 21.0 end,
+    { hex("ffffff"), hex("eef1f8"), hex("c8cee0"), hex("9aa2bc"), hex("ffffff") })
+  eachBladeCell(g, A, B, -160, function(x, y, s, fromSpine, fromEdge)
+    if fromEdge >= 0.9 and (math.floor(s) % 40 < 4) then put(g, x, y, hex("3b4260")) end
+  end)
+  stamp(g, { ".ooo.", "oaWao", "oWiWo", "oaWao", ".ooo." },
+    { o = hex("0d0f1c"), a = hex("ffd79a"), W = hex("ff9f4a"), i = hex("0d0f1c") }, 9, 3)
+  finish(g, DIR .. "Lastlight.png")
+end
+
 print("scythes: done")

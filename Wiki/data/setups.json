@@ -1,0 +1,126 @@
+{
+  "_doc": "Class setups, boss by boss. The only authored part is WHICH items go where; names, sprites, damage and set bonuses are read from the mod's sources at build time. A plain string is an item key (a Terrapex class name, or a vanilla ItemID name); an {en, ru} object is free text. Rendered by class_setups_pages() in generate.py.",
+
+  "stages": [
+    {"id": "pre", "en": "Before the bosses", "ru": "До боссов"},
+    {"id": "dormant", "boss": "DormantEye", "summon": "StoneLid", "en": "The Dormant Eye", "ru": "Дремлющее Око",
+     "tip": {"en": "Every plate still standing takes 12% off the damage the core receives - break them first. The eye opens at 40%: the bowl's line on the floor shows where it rolls, and the leap's marker shows where it lands and where the tremors run. Jump both.",
+             "ru": "Каждая стоящая плита режет урон по ядру на 12% — сбейте их первыми. На 40% глаз открывается: штрихи на полу показывают, куда покатится таран, метка прыжка — куда он приземлится и куда побегут толчки. Оба перепрыгиваются."}},
+    {"id": "shellback", "boss": "OldShellback", "summon": "BarnacledBell", "en": "Old Shellback", "ru": "Старый Панцирь",
+     "tip": {"en": "When it pulls into the hull, spend the time hitting the hull: crack it and you get a long stunned window. Ignore it and it leaps onto the marked spot - jump the waves that run out both ways.",
+             "ru": "Когда он прячется в корпус — бейте корпус: расколете, и получите долгое окно оглушения. Не расколете — он прыгнет в отмеченную точку, перепрыгивайте волны в обе стороны."}},
+    {"id": "scarab", "boss": "ScarabSultan", "summon": "SunIdol", "en": "Scarab Sultan", "ru": "Скарабей-Султан",
+     "tip": {"en": "Daytime, surface desert. The sun ball's whole path is drawn as a dotted line before it is kicked - step off the line, not away from the ball.",
+             "ru": "Днём, на поверхности пустыни. Весь путь солнечного шара нарисован пунктиром до пинка — уходите с линии, а не от шара."}},
+    {"id": "rime", "boss": "RimeColossus", "summon": "FrozenHorn", "en": "The Rime", "ru": "Изморозь",
+     "tip": {"en": "The slam's cracks run exactly as far as the wave will. In the blizzard, chevrons over your head show the next wind 90 ticks early. The closing walls always have a door.",
+             "ru": "Трещины удара оземь бегут ровно туда, куда дойдёт волна. В метель шевроны над головой за 90 тиков показывают новое направление ветра. В смыкающихся стенах всегда есть дверь."}},
+    {"id": "harvester", "boss": "HollowHarvester", "summon": "ScarecrowEffigy", "en": "The Hollow Harvester", "ru": "Пустой Жнец",
+     "tip": {"en": "Night, surface. Its marks land only inside its drawn circle and hit harder at the rim - close in is weaker cuts but the dash and the contact. In phase three the circle itself closes as a blade: leave through the door between the two lit posts.",
+             "ru": "Ночью на поверхности. Его метки ложатся только внутри нарисованного круга и бьют сильнее у края — вблизи порезы слабее, но там рывок и контакт. В третьей фазе сам круг сжимается лезвием: выходите через дверь между двумя горящими столбами."}},
+    {"id": "wof", "en": "Up to the Wall of Flesh", "ru": "До Стены плоти"},
+    {"id": "keeper", "boss": "KeeperOfTheRift", "summon": "FracturedEye", "en": "Keeper of the Rift", "ru": "Хранитель Разлома",
+     "tip": {"en": "The first hardmode boss, before the mechanical ones. Its beams are thin, harmless lines for their first 46 ticks - read the sweep, then move. Plates thrown at you return to their orbit.",
+             "ru": "Первый босс хардмода, до механических. Лучи первые 46 тиков — тонкие безвредные линии: прочитайте развёртку и уходите. Брошенные плиты возвращаются на орбиту."}},
+    {"id": "mechs", "boss": "Heave", "summon": "BreachFlare", "en": "The mechanical bosses and the Breach", "ru": "Механические боссы и Прорыв",
+     "tip": {"en": "The Breach is started with a Breach Flare in the caverns. Mouths open in the stone around you; every one left standing makes the Heave at the end bigger - close them, or fight a larger finale for more Ejecta.",
+             "ru": "Прорыв запускается сигнальной ракетой в слое пещер. Вокруг в камне открываются устья; каждое оставленное делает финального Взброса больше — закрывайте их или берите больший финал ради Выброса."}},
+    {"id": "weaver", "boss": "WeaverOfTheRift", "summon": "ThreadSkein", "en": "Weaver of the Rift", "ru": "Ткач Разлома",
+     "tip": {"en": "After Plantera. Every anchor still standing shelters it by 10%; cutting one staggers it - threads drop and it takes 35% more for a moment. Threads are harmless while they tighten.",
+             "ru": "После Плантеры. Каждый стоящий якорь укрывает его на 10%; срезанный якорь оглушает — нити падают, и на миг он получает на 35% больше. Пока нить натягивается, она безвредна."}},
+    {"id": "premoon", "en": "Up to the Moon Lord", "ru": "До Лунного Лорда"},
+    {"id": "firstkeeper", "boss": "FirstKeeper", "summon": "UnbrokenEye", "en": "The First Keeper", "ru": "Первый Хранитель",
+     "tip": {"en": "After the Moon Lord. Inside its cone of sight damage doubles both ways. Each lid alive narrows the cone; cut lids to open it, or leave them to keep it shut - they grow back.",
+             "ru": "После Лунного Лорда. Внутри конуса взгляда урон удваивается в обе стороны. Каждое живое веко сужает конус: срезайте, чтобы открыть его, или оставьте, чтобы держать закрытым, — они отрастают."}},
+    {"id": "end", "en": "Endgame", "ru": "Эндгейм"}
+  ],
+
+  "classes": {
+    "melee": {
+      "pre": {"armor": ["FissuriteHelmet", "FissuriteBreastplate", "FissuriteGreaves"], "weapons": ["Skol", "Wedge"], "acc": ["DustyBoots", "TuskCharm", "PocketShard", "GullFeather"]},
+      "dormant": {"armor": ["FissuriteHelmet", "FissuriteBreastplate", "FissuriteGreaves"], "weapons": ["Skol", "Wedge"], "acc": ["DustyBoots", "TuskCharm", "PocketShard", "GullFeather"]},
+      "shellback": {"armor": ["FissuriteHelmet", "FissuriteBreastplate", "FissuriteGreaves"], "weapons": ["Lid", "Glasscutter"], "acc": ["PlateShield", "TuskCharm", "DustyBoots", "TidewalkerSandals"]},
+      "scarab": {"armor": ["FissuriteHelmet", "FissuriteBreastplate", "FissuriteGreaves"], "weapons": ["Lid", "Glasscutter", "WreckersCutlass"], "acc": ["HermitsHull", "PlateShield", "TuskCharm", "SandstriderWraps"]},
+      "rime": {"armor": [{"en": "Fissurite, or vanilla Molten once you reach the Underworld", "ru": "Трещинит или ванильная Литая броня, когда доберётесь до Преисподней"}], "weapons": ["SultansKhopesh", "Lid"], "acc": ["SultansCarapace", "HermitsHull", "TuskCharm", "SandstriderWraps"]},
+      "harvester": {"armor": [{"en": "Vanilla Molten armor", "ru": "Ванильная Литая броня"}], "weapons": ["Bonefissure", "Glacierbreaker"], "acc": ["PermafrostHeart", "SultansCarapace", "TuskCharm", "RimetreadBoots"]},
+      "wof": {"armor": [{"en": "Vanilla Molten armor", "ru": "Ванильная Литая броня"}], "weapons": ["Confluence", "Bonefissure"], "acc": ["PermafrostHeart", "WayfarersBoots", "SquallAegis", "TuskCharm"]},
+      "keeper": {"armor": ["RiftsteelHelm", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["Slabmaul", "Confluence"], "acc": ["Overburden", "RiftstrideBoots", "SquallAegis", "WarriorEmblem"]},
+      "mechs": {"armor": ["RiftsteelHelm", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["RiftshardCleaver", "TrueConfluence"], "acc": ["Overburden", "RiftstrideBoots", "SquallAegis", "WarriorEmblem"]},
+      "weaver": {"armor": ["DarnerMask", "DarnerCoat", "DarnerBoots"], "weapons": ["Seam", "TrueConfluence"], "acc": ["ClothBelt", "RiftWings", "ThreadstepBoots", "RiftAegis"]},
+      "premoon": {"armor": ["WeaverHelm", "WeaverChasuble", "WeaverTreads"], "weapons": ["Worldseam", "Warp", "Shuttle"], "acc": ["ThreadOfFate", "WeaveCharm", "WeaversAegis", "ThreadstepBoots"]},
+      "firstkeeper": {"armor": ["WeaverHelm", "WeaverChasuble", "WeaverTreads"], "weapons": ["Worldseam", "Warp"], "acc": ["ThreadOfFate", "WeaveCharm", "WeaversAegis", "WorldwalkerBoots"]},
+      "end": {"armor": ["FirstHelm", "FirstCuirass", "FirstGreaves"], "weapons": ["Meridian", "FirstShard", "Nothing"], "acc": ["RealityAnchor", "WholeEye", "RegardAegis", "WorldwalkerBoots", "FirstWings"]}
+    },
+
+    "ranged": {
+      "pre": {"armor": [{"en": "Vanilla ore armor - no Terrapex ranged set before Dustseeker", "ru": "Ванильная рудная броня — до Пылеискателя стрелкового сета в моде нет"}], "weapons": ["Crackthrower"], "acc": ["DustyBoots", "TuskCharm", "PocketShard", "GullFeather"]},
+      "dormant": {"armor": [{"en": "Vanilla ore armor", "ru": "Ванильная рудная броня"}], "weapons": ["Crackthrower"], "acc": ["DustyBoots", "TuskCharm", "PocketShard", "GullFeather"]},
+      "shellback": {"armor": [{"en": "Vanilla ore armor", "ru": "Ванильная рудная броня"}], "weapons": ["StoneEye", "Crackthrower"], "acc": ["PlateShield", "TuskCharm", "DustyBoots", "TidewalkerSandals"]},
+      "scarab": {"armor": [{"en": "Vanilla Fossil armor", "ru": "Ванильная Окаменелая броня"}], "weapons": ["StoneEye", "BarnacleBlunderbuss"], "acc": ["HermitsHull", "PlateShield", "TuskCharm", "SandstriderWraps"]},
+      "rime": {"armor": [{"en": "Vanilla Fossil armor", "ru": "Ванильная Окаменелая броня"}], "weapons": ["SunwingBow", "StoneEye"], "acc": ["SultansCarapace", "HermitsHull", "TuskCharm", "SandstriderWraps"]},
+      "harvester": {"armor": ["DustseekerHood", "DustseekerGarb", "DustseekerTreads"], "weapons": ["HoarfrostBow", "Cleft"], "acc": ["PermafrostHeart", "EchoPendant", "MirrorCharm", "RimetreadBoots"]},
+      "wof": {"armor": ["DustseekerHood", "DustseekerGarb", "DustseekerTreads"], "weapons": ["Wayfinder", "Cleft"], "acc": ["MirrorCharm", "EchoPendant", "WayfarersBoots", "SquallAegis"]},
+      "keeper": {"armor": ["RiftsteelVisor", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["Wayfinder"], "acc": ["ShardAccelerator", "MirrorCharm", "RiftstrideBoots", "RangerEmblem"]},
+      "mechs": {"armor": ["RiftsteelVisor", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["Rib", "ShardCaster", "Wayfinder"], "acc": ["ShardAccelerator", "Overburden", "RiftstrideBoots", "RangerEmblem"]},
+      "weaver": {"armor": ["DarnerVisor", "DarnerCoat", "DarnerBoots"], "weapons": ["CompassRose", "Threadcaster"], "acc": ["ShardResonator", "ShardAccelerator", "ThreadstepBoots", "RiftAegis"]},
+      "premoon": {"armor": ["WeaverVisor", "WeaverChasuble", "WeaverTreads"], "weapons": ["TradeWind", "Weft"], "acc": ["ShardResonator", "ThreadOfFate", "WeaveCharm", "WeaversAegis"]},
+      "firstkeeper": {"armor": ["WeaverVisor", "WeaverChasuble", "WeaverTreads"], "weapons": ["TradeWind", "Weft"], "acc": ["ShardResonator", "ThreadOfFate", "WeaveCharm", "WeaversAegis"]},
+      "end": {"armor": ["FirstVisor", "FirstCuirass", "FirstGreaves"], "weapons": ["Horizon", "Unblinking"], "acc": ["ShardResonator", "RealityAnchor", "WholeEye", "RegardAegis", "WorldwalkerBoots"]}
+    },
+
+    "magic": {
+      "pre": {"armor": [{"en": "Vanilla gem robes - the Glassblower set comes after the Dormant Eye", "ru": "Ванильные мантии с самоцветами — сет Стеклодува будет после Дремлющего Ока"}], "weapons": ["DustBeam"], "acc": ["DustyBoots", "PocketShard", "GullFeather"]},
+      "dormant": {"armor": [{"en": "Vanilla gem robes", "ru": "Ванильные мантии с самоцветами"}], "weapons": ["DustBeam"], "acc": ["DustyBoots", "PocketShard", "GullFeather"]},
+      "shellback": {"armor": ["GlassblowerHood", "GlassblowerRobe", "GlassblowerBoots"], "weapons": ["RockfallStaff", "DustBeam"], "acc": ["PlateShield", "PocketShard", "DustyBoots", "TidewalkerSandals"]},
+      "scarab": {"armor": ["GlassblowerHood", "GlassblowerRobe", "GlassblowerBoots"], "weapons": ["RockfallStaff", "BrineConch"], "acc": ["HermitsHull", "PlateShield", "SandstriderWraps", "GullFeather"]},
+      "rime": {"armor": ["GlassblowerHood", "GlassblowerRobe", "GlassblowerBoots"], "weapons": ["SunScepter", "RockfallStaff"], "acc": ["SultansCarapace", "HermitsHull", "SandstriderWraps", "GullFeather"]},
+      "harvester": {"armor": ["GlassblowerHood", "GlassblowerRobe", "GlassblowerBoots"], "weapons": ["SnowcapStaff", "ScreeTome"], "acc": ["PermafrostHeart", "EchoPendant", "SultansCarapace", "RimetreadBoots"]},
+      "wof": {"armor": [{"en": "Glassblower, or vanilla Jungle armor", "ru": "Стеклодув или ванильная броня Джунглей"}], "weapons": ["Almanac", "SnowcapStaff"], "acc": ["PermafrostHeart", "EchoPendant", "WayfarersBoots", "SquallAegis"]},
+      "keeper": {"armor": ["RiftsteelHood", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["Almanac"], "acc": ["ShardAccelerator", "RiftstrideBoots", "SquallAegis", "SorcererEmblem"]},
+      "mechs": {"armor": ["RiftsteelHood", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["Riftflow", "Almanac"], "acc": ["ShardAccelerator", "Overburden", "RiftstrideBoots", "SorcererEmblem"]},
+      "weaver": {"armor": ["DarnerHood", "DarnerCoat", "DarnerBoots"], "weapons": ["EquinoxAlmanac", "Stitch"], "acc": ["ShardResonator", "ShardAccelerator", "ThreadstepBoots", "RiftAegis"]},
+      "premoon": {"armor": ["WeaverHood", "WeaverChasuble", "WeaverTreads"], "weapons": ["Solstice", "LoomStaff"], "acc": ["ThreadOfFate", "WeaveCharm", "ShardResonator", "WeaversAegis"]},
+      "firstkeeper": {"armor": ["WeaverHood", "WeaverChasuble", "WeaverTreads"], "weapons": ["Solstice", "LoomStaff"], "acc": ["ThreadOfFate", "WeaveCharm", "ShardResonator", "WeaversAegis"]},
+      "end": {"armor": ["FirstHood", "FirstCuirass", "FirstGreaves"], "weapons": ["Cosmogony", "Regard"], "acc": ["RealityAnchor", "WholeEye", "RegardAegis", "WorldwalkerBoots", "FirstWings"]}
+    },
+
+    "summon": {
+      "pre": {"armor": [{"en": "Vanilla ore armor - Terrapex's summoner heads start at Riftsteel", "ru": "Ванильная рудная броня — головы призывателя в моде начинаются с Разломной стали"}], "weapons": ["DustLash"], "acc": ["DustyBoots", "PocketShard", "GullFeather"]},
+      "dormant": {"armor": [{"en": "Vanilla ore armor", "ru": "Ванильная рудная броня"}], "weapons": ["DustLash"], "acc": ["DustyBoots", "PocketShard", "GullFeather"]},
+      "shellback": {"armor": [{"en": "Vanilla ore armor", "ru": "Ванильная рудная броня"}], "weapons": ["SleepersRod", "DustLash"], "acc": ["PlateShield", "PocketShard", "TidewalkerSandals"]},
+      "scarab": {"armor": [{"en": "Vanilla Bee armor", "ru": "Ванильная Пчелиная броня"}], "weapons": ["SleepersRod", "RustedCrabPot"], "acc": ["HermitsHull", "PlateShield", "SandstriderWraps"]},
+      "rime": {"armor": [{"en": "Vanilla Bee armor", "ru": "Ванильная Пчелиная броня"}], "weapons": ["BeetlingStaff", "SleepersRod"], "acc": ["SultansCarapace", "HermitsHull", "SandstriderWraps"]},
+      "harvester": {"armor": [{"en": "Vanilla Bee or Obsidian armor", "ru": "Ванильная Пчелиная или Обсидиановая броня"}], "weapons": ["GlacierBell", "HatchlingRod", "Glassthread"], "acc": ["PermafrostHeart", "SultansCarapace", "RimetreadBoots"]},
+      "wof": {"armor": [{"en": "Vanilla Obsidian armor", "ru": "Ванильная Обсидиановая броня"}], "weapons": ["MenagerieHorn", "Glassthread"], "acc": ["PermafrostHeart", "WayfarersBoots", "SquallAegis"]},
+      "keeper": {"armor": ["RiftsteelCrown", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["MenagerieHorn", "Glassthread"], "acc": ["RiftstrideBoots", "SquallAegis", "SummonerEmblem"]},
+      "mechs": {"armor": ["RiftsteelCrown", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["WardenPlate", "OrbitLash", "MenagerieHorn"], "acc": ["CompanionEye", "Overburden", "RiftstrideBoots", "SummonerEmblem"]},
+      "weaver": {"armor": ["DarnerCowl", "DarnerCoat", "DarnerBoots"], "weapons": ["WildCourt", "Spindle"], "acc": ["CompanionEye", "ThreadstepBoots", "RiftAegis", "SummonerEmblem"]},
+      "premoon": {"armor": ["WeaverCowl", "WeaverChasuble", "WeaverTreads"], "weapons": ["GroveConclave", "Rend", "Sailcloth"], "acc": ["EchoSpindle", "CompanionEye", "ThreadOfFate", "WeaversAegis"]},
+      "firstkeeper": {"armor": ["WeaverCowl", "WeaverChasuble", "WeaverTreads"], "weapons": ["GroveConclave", "Rend"], "acc": ["EchoSpindle", "CompanionEye", "WeaveCharm", "WeaversAegis"]},
+      "end": {"armor": ["FirstCrown", "FirstCuirass", "FirstGreaves"], "weapons": ["TheArk", "Closure", "KeeperStaff"], "acc": ["PrimeCharm", "EchoSpindle", "RealityAnchor", "RegardAegis", "WorldwalkerBoots"]}
+    },
+
+    "reaper": {
+      "pre": {"armor": ["ScarecrowHat", "ScarecrowShirt", "ScarecrowTrousers"], "weapons": ["FissuriteScythe", "Sandsweeper", "Gravedigger", "FrostbiteSickle"], "acc": ["LongHaft", "GullFeather", "DustyBoots"], "buffs": ["HarvestPotion"]},
+      "dormant": {"armor": ["ScarecrowHat", "ScarecrowShirt", "ScarecrowTrousers"], "weapons": ["FissuriteScythe", "FrostbiteSickle"], "acc": ["LongHaft", "GullFeather", "DustyBoots"], "buffs": ["HarvestPotion"]},
+      "shellback": {"armor": ["ScarecrowHat", "ScarecrowShirt", "ScarecrowTrousers"], "weapons": ["GlassReaper", "Lidcutter"], "acc": ["Whetstone", "HarvestCharm", "LongHaft", "PlateShield"], "buffs": ["HarvestPotion"]},
+      "scarab": {"armor": ["TidewrackHood", "TidewrackCoat", "TidewrackBoots"], "weapons": ["Hivecutter", "Veinreaper", "Rotreaper", "Undertow"], "acc": ["BarnacledHone", "BoneSheath", "HermitsHull", "SandstriderWraps"], "buffs": ["HarvestPotion"]},
+      "rime": {"armor": ["SunwroughtNemes", "SunwroughtCarapace", "SunwroughtGreaves"], "weapons": ["KhepriScythe", "Thornreaper"], "acc": ["ScarabAmulet", "ReapersKit", "SultansCarapace", "RimetreadBoots"], "buffs": ["HarvestPotion"]},
+      "harvester": {"armor": ["RoninKabuto", "RoninDo", "RoninSuneate"], "weapons": ["FrostfellScythe", "Kusarigama"], "acc": ["ReapersKit", "ScarabAmulet", "RimeboundWrap", "LongHaft", "WayfarersBoots"], "buffs": ["HarvestPotion"]},
+      "wof": {"armor": ["RoninKabuto", "RoninDo", "RoninSuneate"], "weapons": ["HarvestMoon", "Hellreaper", "HollowHarvest"], "acc": ["ReapersKit", "CrowCharm", "RimeboundWrap", "PermafrostHeart", "SquallAegis"], "buffs": ["HarvestPotion"]},
+      "keeper": {"armor": ["RiftsteelMask", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["RiftsteelScythe", "HarvestMoon"], "acc": ["ReaperEmblem", "ReapersKit", "RiftstrideBoots", "SquallAegis"], "buffs": ["HarvestPotion"]},
+      "mechs": {"armor": ["RiftsteelMask", "RiftsteelBreastplate", "RiftsteelGreaves"], "weapons": ["KeepersHarvest", "HallowedHarvester", "OpticScythe", "Eclipse"], "acc": ["ReaperEmblem", "ReapersKit", "SoulLantern", "RiftstrideBoots"], "buffs": ["HarvestPotion"]},
+      "weaver": {"armor": ["DarnerVeil", "DarnerCoat", "DarnerBoots"], "weapons": ["Eclipse", "RiftScythe", "VerdantReaper", "Seamreaper"], "acc": ["GrimInsignia", "CrowCharm", "LongHaft", "ThreadstepBoots", "RiftAegis"], "buffs": ["HarvestPotion"]},
+      "premoon": {"armor": ["WeaverShroud", "WeaverChasuble", "WeaverTreads"], "weapons": ["LongNight", "Shuttlecut", "MourningScythe"], "acc": ["GrimInsignia", "ThreadOfFate", "WeaveCharm", "WeaversAegis"], "buffs": ["HarvestPotion"]},
+      "firstkeeper": {"armor": ["WeaverShroud", "WeaverChasuble", "WeaverTreads"], "weapons": ["LongNight", "FinalHarvest"], "acc": ["GrimInsignia", "ThreadOfFate", "WeaversAegis", "WorldwalkerBoots"], "buffs": ["HarvestPotion"]},
+      "end": {"armor": ["FirstVeil", "FirstCuirass", "FirstGreaves"], "weapons": ["EventHorizon", "Lastlight"], "acc": ["GrimInsignia", "RegardAegis", "WorldwalkerBoots", "RealityAnchor", "CrowCharm"], "buffs": ["HarvestPotion"]}
+    }
+  },
+
+  "intro": {
+    "reaper": {
+      "en": "The reaper is Terrapex's fifth class. A scythe hits twice per click: the swing round you, and a cut at the cursor inside your drawn reach - the further out, the harder (x0.5 at your feet, x1.5 at the rim), and the outer 15% of the reach always crits. Hits fill the Harvest bar under you; when it is full, right click for a Reap.",
+      "ru": "Жнец — пятый класс Terrapex. Коса бьёт дважды за клик: взмах вокруг вас и удар в точке курсора внутри нарисованной досягаемости — чем дальше, тем сильнее (×0,5 у ног, ×1,5 на краю), а внешние 15% радиуса всегда критуют. Попадания наполняют шкалу Жатвы под вами; когда она полна — ПКМ, Сбор."
+    }
+  }
+}

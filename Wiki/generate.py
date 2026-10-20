@@ -23,7 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from terrapex_parse import (ROOT, WIKI, HJSON, RARITY, coins, parse_hjson,
-                            parse_loot, parse_source, parse_spawn)
+                            parse_loot, parse_source, parse_sources, parse_spawn)
 
 try:
     from PIL import Image
@@ -62,8 +62,7 @@ class Wiki:
 
         self.ent = {}
         for p in sorted((ROOT / "Content").rglob("*.cs")):
-            e = parse_source(p)
-            if e:
+            for e in parse_sources(p):
                 self.ent[e.name] = e
 
         # NPC extras
@@ -109,6 +108,7 @@ class Wiki:
 
         # armour sets, by tier
         self.sets = self.tiers["sets"]
+        self.setups = json.loads((WIKI / "data" / "setups.json").read_text(encoding="utf-8"))
 
     # ---- strings
 
@@ -390,10 +390,8 @@ def item_page(w: Wiki, e, lang: str) -> str:
     md.append(item_stats(w, e, lang))
 
     if e.set_bonus_key:
-        bonus = (w.ru["set_bonus"].get(e.set_bonus_key) if lang == "ru"
-                 else w.loc["SetBonus"].get(e.set_bonus_key, ""))
+        bonus = bonus_text(w, e, lang)
         if bonus:
-            bonus = bonus.replace("{0}", "8").replace("{1}", "15")
             md.append(f"### {T('Set bonus')}\n\n> {bonus}\n")
         if e.set_pieces:
             md.append("\n".join("- " + link(w, p, lang, depth)
@@ -612,128 +610,179 @@ def progression_page(w: Wiki, lang: str) -> str:
     return "\n".join(md)
 
 
+
+# ---------------------------------------------------------------- set bonus numbers
+
+_CONSTS: dict[str, float] | None = None
+CONST_DECL = re.compile(r"(?:const|static\s+readonly)\s+(?:int|float|double)\s+(\w+)\s*=\s*([-\d.]+)f?\s*;")
+
+
+def _consts() -> dict[str, float]:
+    global _CONSTS
+    if _CONSTS is None:
+        _CONSTS = {}
+        for f in [*(ROOT / "Content").rglob("*.cs"), *(ROOT / "Common").rglob("*.cs")]:
+            for name, val in CONST_DECL.findall(f.read_text(encoding="utf-8", errors="replace")):
+                _CONSTS.setdefault(name, float(val))
+    return _CONSTS
+
+
+def _split_args(text: str) -> list[str]:
+    out, depth, cur = [], 0, ""
+    for ch in text:
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+        if ch == "," and depth == 0:
+            out.append(cur)
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur] if cur.strip() else out
+
+
+def bonus_text(w: Wiki, head, lang: str) -> str:
+    """A set bonus with its {0}/{1} filled the way the head's own UpdateArmorSet fills them:
+    the arguments handed to GetTextValue, evaluated against the mod's constants. A bonus whose
+    numbers cannot be worked out keeps an ellipsis rather than a wrong figure."""
+    key = head.set_bonus_key
+    text = (w.ru["set_bonus"].get(key, "") if lang == "ru" else w.loc["SetBonus"].get(key, ""))
+    if not text or "{" not in text:
+        return text
+    src = head.path.read_text(encoding="utf-8", errors="replace")
+    local = {n: float(v) for n, v in CONST_DECL.findall(src)}
+    m = re.search(r'GetTextValue\(\s*"Mods\.Terrapex\.SetBonus\.' + re.escape(key) + r'"\s*,(.*?)\)\s*;', src, re.S)
+    values = []
+    if m:
+        for arg in _split_args(m.group(1)):
+            expr = re.sub(r"\(\s*int\s*\)", "", arg)
+            expr = re.sub(r"(\d)f\b", r"\1", expr)
+            expr = re.sub(r"\b(?:\w+\.)*(\w+)\b",
+                          lambda t: str(local.get(t.group(1), _consts().get(t.group(1), t.group(0)))), expr)
+            try:
+                if not re.fullmatch(r"[\d.\s+\-*/()]+", expr):
+                    raise ValueError(expr)
+                v = eval(expr.strip(), {"__builtins__": {}})
+                values.append(str(int(v)) if float(v).is_integer() or "(int)" in arg else f"{v:g}")
+            except Exception:
+                values.append("…")
+    for i in range(10):
+        text = text.replace("{" + str(i) + "}", values[i] if i < len(values) else "…")
+    return text
+
 # ---------------------------------------------------------------- class setups
+#
+# Boss by boss, one page per class. Which item goes in which slot is the one authored
+# thing (Wiki/data/setups.json); every name, sprite, damage number, defence and set
+# bonus on the page is read from the sources, so a balance change still reaches it
+# with no edit here.
 
-def class_of(e) -> str | None:
-    dc = e.stats.get("damageClass", "")
-    if dc.startswith("Summon"):
-        return "summon"
-    return {"Melee": "melee", "Ranged": "ranged", "Magic": "magic", "Reaping": "reaper"}.get(dc)
+SETUP_CLASSES = [("melee", "Melee", "⚔"), ("ranged", "Ranged", "🏹"), ("magic", "Magic", "✨"),
+                 ("summon", "Summon", "🐾"), ("reaper", "Reaping", "🌙")]
 
-
-def head_class(w: Wiki, head: str) -> str:
-    """The class a set head serves, from what its UpdateEquip actually boosts."""
-    src = w.ent[head].path.read_text(encoding="utf-8", errors="replace")
-    for cls, pat in (("melee", "Melee"), ("ranged", "Ranged"), ("magic", "Magic")):
-        if re.search(rf"GetDamage\(DamageClass\.{pat}\)|GetCritChance\(DamageClass\.{pat}\)", src):
-            return cls
-    if re.search(r"maxMinions|GetDamage\(DamageClass\.Summon\)", src):
-        return "summon"
-    if "ReapingDamage" in src or "ReaperPlayer" in src:
-        return "reaper"
-    return "melee"
-
-
-def head_for(w: Wiki, s: dict, cls: str) -> str | None:
-    """The head of set `s` that serves `cls`, or None if the set does not."""
-    if s["class"] == cls:
-        return s["heads"][0]
-    if s["class"] != "all":
-        return None
-    for h in s["heads"]:
-        if head_class(w, h) == cls:
-            return h
-    return None
-
-
-def armour_cell(w: Wiki, s: dict, head: str, lang: str) -> str:
-    bonus_key = key_for_bonus(w, head)
-    bonus = (w.ru["set_bonus"].get(bonus_key, "") if lang == "ru"
-             else w.loc["SetBonus"].get(bonus_key, ""))
-    bonus = bonus.replace("{0}", "8").replace("{1}", "15")
-    cell = (f"{link(w, head, lang, 0)} + "
-            f"{link(w, s['body'], lang, 0, icon=False)} + "
-            f"{link(w, s['legs'], lang, 0, icon=False)}"
-            f" — {s['defense']} {w.t('Defense', lang).lower()}")
-    return cell + (f"<br>*{bonus}*" if bonus else "")
-
-
-OFF_CLASS = {
-    "en": ("This tier has no {cls} set of its own — {set} is the only one, and it "
-           "spends its bonus elsewhere. Vanilla armour is usually the better pick here."),
-    "ru": ("Своего сета под класс «{cls}» у этого тира нет — {set} единственный, и его "
-           "бонус тратится на другое. Здесь обычно лучше ванильная броня."),
+SETUP_TEXT = {
+    "en": dict(
+        intro="What to bring to each fight, boss by boss, from Terrapex's own gear - with vanilla "
+              "filling the slots where the mod has nothing better yet. Every number is read from "
+              "the mod's source when the wiki is built.",
+        pick="Pick a class:",
+        boss="Boss", summon="Summoned with", armour="Armour", weapons="Weapons",
+        acc="Accessories", buffs="Potions", defence="defence"),
+    "ru": dict(
+        intro="Что брать на каждый бой, босс за боссом, из снаряжения самого Terrapex — и ваниль "
+              "там, где у мода пока нет ничего лучше. Все числа берутся из исходников мода при "
+              "сборке вики.",
+        pick="Выберите класс:",
+        boss="Босс", summon="Призыв", armour="Броня", weapons="Оружие",
+        acc="Аксессуары", buffs="Зелья", defence="защиты"),
 }
 
 
-def class_setups_page(w: Wiki, lang: str) -> str:
-    """One table per class per tier.
+def setup_entry(w: Wiki, entry, lang: str, depth: int) -> str:
+    if isinstance(entry, dict):
+        return entry.get(lang) or entry.get("en", "")
+    # a key that is neither a Terrapex class nor a known vanilla item is a typo, not vanilla
+    if entry not in w.ent and entry not in w.ru["vanilla_items"]:
+        w.missing.append(f"setup entry: {entry}")
+    return link(w, entry, lang, depth)
 
-    The honesty rule: tiers 0-2 ship a single set each, aimed at one class, and
-    showing it four times without comment would read as a recommendation to wear
-    a mage's robe into melee. Where the tier has no set for the class, the table
-    says so instead of pretending.
-    """
+
+def setup_armour(w: Wiki, pieces: list, lang: str, depth: int) -> str:
+    X = SETUP_TEXT[lang]
+    cell = " + ".join(setup_entry(w, p, lang, depth) for p in pieces)
+    mod = [w.ent[p] for p in pieces if isinstance(p, str) and p in w.ent]
+    defence = sum(e.stats.get("defense") or 0 for e in mod)
+    if defence:
+        cell += f" — {defence} {X['defence']}"
+    head = next((e for e in mod if e.set_bonus_key), None)
+    if head:
+        bonus = bonus_text(w, head, lang).replace("\n", "<br>")
+        if bonus:
+            cell += f"<br>*{bonus}*"
+    return cell
+
+
+def setup_weapons(w: Wiki, keys: list, lang: str, depth: int) -> str:
+    out = []
+    for k in keys:
+        cell = setup_entry(w, k, lang, depth)
+        e = w.ent.get(k) if isinstance(k, str) else None
+        if e and e.stats.get("damage"):
+            cell += f" — **{e.stats['damage']}**"
+        out.append(cell)
+    return "<br>".join(out)
+
+
+def class_setup_page(w: Wiki, cls: str, label: str, lang: str) -> str:
+    data = w.setups
+    X = SETUP_TEXT[lang]
     T = lambda k: w.t(k, lang)
-    md = [f"# {T('Class setups')}\n"]
-    md.append(("What Terrapex itself offers a build at each step. Vanilla gear stays "
-               "better in several slots, so read these as the mod's contribution to a "
-               "loadout rather than the whole of one. A tier with no set for your "
-               "class says so.\n" if lang == "en" else
-               "Что даёт сборке сам Terrapex на каждом шаге. В ряде слотов ваниль "
-               "остаётся лучше, так что это вклад мода в набор, а не весь набор "
-               "целиком. Если у тира нет сета под ваш класс, об этом сказано прямо.\n"))
+    depth = 1
+    md = [f"# {T('Class setups')}: {T(label)}\n"]
+    intro = data.get("intro", {}).get(cls, {}).get(lang)
+    if intro:
+        md.append(intro + "\n")
+    others = " · ".join(f"[{T(l)}]({c}.md)" if c != cls else f"**{T(l)}**" for c, l, _ in SETUP_CLASSES)
+    md.append(others + "\n")
 
-    for n in range(7):
-        info = w.tiers["tiers"][str(n)]
-        md.append(f"## {T('Tier')} {n} — {info[lang]}\n")
-
-        tier_items = [e for e in w.ent.values()
-                      if e.kind == "item" and w.tier(e.name) == n]
-        sets_here = [(k, s) for k, s in w.sets.items() if s["tier"] == n]
-
-        # accessories and tools are class-agnostic, so they are listed once for
-        # the tier rather than repeated in all four tables
-        extras = sorted((e for e in tier_items if e.folder in ("Accessories", "Tools")),
-                        key=lambda e: (e.folder, w.name(e.name, lang)))
-        if extras:
-            md.append(f"**{T('Accessories')}:** "
-                      + " · ".join(link(w, e.name, lang, 0) for e in extras) + "\n")
-
-        for cls, label in CLASSES:
-            weapons = sorted((e for e in tier_items
-                              if e.folder == "Weapons" and class_of(e) == cls),
-                             key=lambda e: -(e.stats.get("damage") or 0))
-            on_class = [(k, s, head_for(w, s, cls)) for k, s in sets_here
-                        if head_for(w, s, cls)]
-
-            if not weapons and not sets_here:
-                continue
-
-            md.append(f"### {T(label)}\n")
-            rows = []
-            if weapons:
-                rows.append([T("Weapons"),
-                             "<br>".join(f"{link(w, e.name, lang, 0)} — "
-                                         f"**{e.stats.get('damage', '?')}**"
-                                         for e in weapons)])
-            if on_class:
-                rows.append([T("Armour"), "<br><br>".join(
-                    armour_cell(w, s, h, lang) for _, s, h in on_class)])
-            elif sets_here:
-                k, s = sets_here[0]
-                rows.append([T("Armour"),
-                             armour_cell(w, s, s["heads"][0], lang) + "<br>*"
-                             + OFF_CLASS[lang].format(
-                                 cls=T(label).lower(),
-                                 set=w.ru["sets"].get(k, k) if lang == "ru" else k)
-                             + "*"])
-            md.append(table(["", ""], rows))
+    for stage in data["stages"]:
+        slot = data["classes"][cls].get(stage["id"])
+        if not slot:
+            continue
+        md.append(f"## {stage[lang]}\n")
+        boss = stage.get("boss")
+        if boss:
+            line = f"**{X['boss']}:** {link(w, boss, lang, depth)}"
+            summon = stage.get("summon") or w.summoned_by.get(boss)
+            if summon:
+                line += f" · **{X['summon']}:** {link(w, summon, lang, depth)}"
+            md.append(line + "\n")
+        rows = []
+        if slot.get("armor"):
+            rows.append([X["armour"], setup_armour(w, slot["armor"], lang, depth)])
+        if slot.get("weapons"):
+            rows.append([X["weapons"], setup_weapons(w, slot["weapons"], lang, depth)])
+        if slot.get("acc"):
+            rows.append([X["acc"], " · ".join(setup_entry(w, k, lang, depth) for k in slot["acc"])])
+        if slot.get("buffs"):
+            rows.append([X["buffs"], " · ".join(setup_entry(w, k, lang, depth) for k in slot["buffs"])])
+        md.append(table(["", ""], rows))
+        tip = stage.get("tip", {}).get(lang)
+        if tip:
+            md.append(f'!!! tip ""\n    {tip}\n')
     return "\n".join(md)
 
 
-def key_for_bonus(w: Wiki, head: str) -> str:
-    return w.ent[head].set_bonus_key
+def class_setups_index(w: Wiki, lang: str) -> str:
+    X = SETUP_TEXT[lang]
+    T = lambda k: w.t(k, lang)
+    md = [f"# {T('Class setups')}\n", X["intro"] + "\n", X["pick"] + "\n",
+          '<div class="grid cards" markdown>\n']
+    for cls, label, emoji in SETUP_CLASSES:
+        md.append(f"- {emoji} **[{T(label)}](class-setups/{cls}.md)**\n")
+    md.append("</div>\n")
+    return "\n".join(md)
 
 
 # ---------------------------------------------------------------- home
@@ -818,7 +867,8 @@ def build_nav(w: Wiki, lang: str) -> list:
     return [
         {T("Home"): "index.md"},
         {T("Progression"): "progression.md"},
-        {T("Class setups"): "class-setups.md"},
+        {T("Class setups"): [{T("Class setups"): "class-setups.md"}] +
+                            [{T(label): f"class-setups/{cls}.md"} for cls, label, _ in SETUP_CLASSES]},
         {T("Bosses"): npcs(True)},
         {T("Enemies"): npcs(False)},
         {T("Items"): items},
@@ -973,7 +1023,9 @@ def main():
 
         write(d / "index.md", home_page(w, lang))
         write(d / "progression.md", progression_page(w, lang))
-        write(d / "class-setups.md", class_setups_page(w, lang))
+        write(d / "class-setups.md", class_setups_index(w, lang))
+        for cls, label, _ in SETUP_CLASSES:
+            write(d / "class-setups" / f"{cls}.md", class_setup_page(w, cls, label, lang))
 
         for boss in (True, False):
             sub = "bosses" if boss else "enemies"

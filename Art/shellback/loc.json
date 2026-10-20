@@ -1,0 +1,70 @@
+{
+  "en": {
+    "Items": {
+      "WreckersCutlass": {"DisplayName": "Wrecker's Cutlass", "Tooltip": "Every hit knocks two barnacles loose as shrapnel"},
+      "BarnacleBlunderbuss": {"DisplayName": "Barnacle Blunderbuss", "Tooltip": "Fires four bullets in a spread\nUses bullets as ammo"},
+      "BrineConch": {"DisplayName": "Brine Conch", "Tooltip": "Breathes out a slow, swelling bubble\nIt bursts into six falling droplets on contact or when its breath runs out"},
+      "RustedCrabPot": {"DisplayName": "Rusted Crab Pot", "Tooltip": "Lets out a hermit crab that scuttles along the ground to fight for you"},
+      "Undertow": {"DisplayName": "Undertow", "Tooltip": "After a strike, a whirlpool opens on the point\nIt drags nearby enemies into its middle and wears at them"},
+      "BarnacledBell": {"DisplayName": "Barnacled Bell", "Tooltip": "Summons the Old Shellback\nRing it on the beach"},
+      "ShellbackBag": {"DisplayName": "Treasure Bag (Old Shellback)", "Tooltip": "{$CommonItemTooltip.RightClickToOpen}"},
+      "OldShellbackMask": {"DisplayName": "Old Shellback Mask", "Tooltip": ""},
+      "HermitsHull": {"DisplayName": "Hermit's Hull", "Tooltip": "Stand still for half a second to pull into your shell\nWhile in the shell: +8 defense and 12% less damage taken\nMoving or attacking brings you out"},
+      "BarnacleCluster": {"DisplayName": "Barnacle Cluster", "Tooltip": "Scraped off a beach crab"}
+    },
+    "NPCs": {
+      "OldShellback": {"DisplayName": "Old Shellback", "Bestiary": "An ancient hermit crab that outgrew every shell the sea could offer, and took a sunken ship's hull instead. It still carries the cannon."},
+      "BarnacleCrab": {"DisplayName": "Barnacle Crab", "Bestiary": "So crusted with barnacles it barely feels a blow. Hit it once and it clamps shut; leave it be, and it comes out lunging."},
+      "ScavengerGull": {"DisplayName": "Scavenger Gull", "Bestiary": "It wheels over the beach doing no harm at all - until it stops, cries, and dives along the line it has picked."}
+    },
+    "Projectiles": {
+      "ShellbackBubble": "Brine Bubble",
+      "ShellbackCannonball": "Barnacled Cannonball",
+      "ShellbackWave": "Slam Wave",
+      "BarnacleShrapnel": "Barnacle Shrapnel",
+      "ConchBubble": "Conch Bubble",
+      "ConchDroplet": "Brine Droplet",
+      "UndertowWhirl": "Undertow",
+      "PotCrabMinion": "Hermit Crab"
+    },
+    "Buffs": {
+      "HermitShellBuff": {"DisplayName": "In the Shell", "Description": "+8 defense, 12% less damage taken - until you move"},
+      "PotCrabBuff": {"DisplayName": "Hermit Crab", "Description": "A hermit crab fights for you"}
+    },
+    "Chat": {
+      "ShellbackPhase2": "The Old Shellback's mast snaps - and it only gets angrier!",
+      "ShellbackDown": "The Old Shellback sinks back beneath the waves..."
+    }
+  },
+  "ru": {
+    "items": {
+      "WreckersCutlass": ["Абордажная сабля", "Каждый удар сбивает с цели два ракушечных осколка"],
+      "BarnacleBlunderbuss": ["Ракушечный мушкетон", "Стреляет четырьмя пулями веером\nИспользует пули"],
+      "BrineConch": ["Рассольная раковина", "Выдыхает медленный разбухающий пузырь\nПри касании или когда кончится дыхание он лопается шестью падающими каплями"],
+      "RustedCrabPot": ["Ржавая крабовая ловушка", "Выпускает рака-отшельника, который бегает по земле и сражается за вас"],
+      "Undertow": ["Отбойное течение", "После удара в точке открывается водоворот\nОн затягивает ближних врагов в середину и изматывает их"],
+      "BarnacledBell": ["Обросший колокол", "Призывает Старого Панциря\nЗвонить на пляже"],
+      "ShellbackBag": ["Сумка (Старый Панцирь)", "ПКМ, чтобы открыть"],
+      "OldShellbackMask": ["Маска Старого Панциря", ""],
+      "HermitsHull": ["Корпус отшельника", "Постойте на месте полсекунды, чтобы спрятаться в панцирь\nВ панцире: +8 защиты и на 12% меньше получаемого урона\nДвижение или атака выводят из панциря"],
+      "BarnacleCluster": ["Гроздь ракушек", "Соскоблена с пляжного краба"]
+    },
+    "npcs": {
+      "OldShellback": ["Старый Панцирь", "Древний рак-отшельник, переросший все раковины, что мог дать океан, и взявший вместо них корпус затонувшего корабля. Пушка всё ещё при нём."],
+      "BarnacleCrab": ["Ракушечный краб", "Так оброс ракушками, что почти не чувствует ударов. Ударишь раз — он захлопывается; оставишь в покое — выскочит в выпаде."],
+      "ScavengerGull": ["Чайка-падальщица", "Кружит над пляжем, никому не вредя, — пока не замрёт, не крикнет и не нырнёт по выбранной линии."]
+    },
+    "buffs": {
+      "HermitShellBuff": ["В панцире", "+8 защиты, на 12% меньше урона — пока вы не двинетесь"],
+      "PotCrabBuff": ["Рак-отшельник", "Рак-отшельник сражается за вас"]
+    }
+  },
+  "tiers": {
+    "OldShellback": 0, "BarnacleCrab": 0, "ScavengerGull": 0,
+    "WreckersCutlass": 0, "BarnacleBlunderbuss": 0, "BrineConch": 0, "RustedCrabPot": 0, "Undertow": 0,
+    "BarnacledBell": 0, "ShellbackBag": 0, "OldShellbackMask": 0, "HermitsHull": 0, "BarnacleCluster": 0,
+    "ShellbackBubble": 0, "ShellbackCannonball": 0, "ShellbackWave": 0, "BarnacleShrapnel": 0,
+    "ConchBubble": 0, "ConchDroplet": 0, "UndertowWhirl": 0, "PotCrabMinion": 0,
+    "HermitShellBuff": 0, "PotCrabBuff": 0
+  }
+}
